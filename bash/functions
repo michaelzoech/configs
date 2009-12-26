@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# Usage .. [n]
+# Go up n-levels. 
+function .. (){
+  local arg=${1:-1};
+  local dir=""
+  while [ $arg -gt 0 ]; do
+    dir="../$dir"
+    arg=$(($arg - 1));
+  done
+  cd $dir #>&/dev/null
+}
+
+# Usage ... Thing/Some
+# Go up until you encounter Thing/Some, then go there
+function ... (){
+  if [ -z "$1" ]; then
+    return
+  fi
+  local maxlvl=16
+  local dir=$1
+  while [ $maxlvl -gt 0 ]; do
+      dir="../$dir"
+      maxlvl=$(($maxlvl - 1));
+      if [ -d "$dir" ]; then 
+        cd $dir #>&/dev/null
+		return
+      fi
+  done
+}
+
+# goto file or directory through locate
+cdf (){
+	local first="$(locate -l 1 "$1" | head -n 1)";
+	if [ -f $first ]
+	then
+		cd "$(dirname $first)"
+	else
+		cd $first
+	fi
+}
+
+# do an ls after every successful cd
+function cd {
+	builtin cd "$@" && ls
+}
+
+# recursive mkdir and cd if successful
+function mkcd {
+	mkdir -p "$@" && builtin cd "$@"
+}
+
