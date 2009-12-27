@@ -5,3 +5,18 @@ alias ll="ls -lh"
 alias aa="ls -lh"
 alias mk="mkdir -p"
 alias u="j"
+
+# git
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gcm='git commit -m'
+alias gcam='git commit -a -m'
+alias gco='git checkout'
+alias gb='git branch'
+alias gs='git status'
+alias grm='git rm'
+alias gdel="git status | grep 'deleted:' | awk '{print \$3}' | xargs git rm"
+alias qg='qgit --all'
