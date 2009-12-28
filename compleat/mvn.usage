@@ -1,0 +1,10 @@
+mvn
+  ( clean
+  | compile
+  | test
+  | package
+  | install
+  | eclipse:eclipse
+  | eclipse:configure-workspace
+  );
+
