@@ -4,6 +4,9 @@ import Data.List
 
 import XMonad
 
+import XMonad.Actions.GridSelect
+import XMonad.Actions.WindowBringer
+
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.SetWMName
@@ -134,9 +137,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- Deincrement the number of windows in the master area
     , ((modMask              , xK_period), sendMessage (IncMasterN (-1)))
 
-    -- toggle the status bar gap
-    -- TODO, update this binding with avoidStruts , ((modMask              , xK_b     ),
-
     -- Quit xmonad
     , ((modMask .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
@@ -145,6 +145,14 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     -- im workspace
     , ((modMask              , xK_i     ), windows $ W.greedyView "im")
+
+    -- goto workspace and focus window
+    , ((modMask .|. shiftMask, xK_g     ), gotoMenu)
+
+    -- bring and focus window
+    , ((modMask .|. shiftMask, xK_b     ), bringMenu)
+
+    , ((modMask              , xK_s     ), goToSelected defaultGSConfig)
     ]
     ++
 
