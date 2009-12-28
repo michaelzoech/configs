@@ -1,0 +1,3 @@
+a <progs> ;
+
+progs = ! ls /usr/bin ;
