@@ -1,10 +1,22 @@
 mvn
   ( clean
   | compile
-  | test
-  | package
-  | install
+  | deploy
+  | deploy:deploy-file
+  | eclipse:clean
   | eclipse:eclipse
   | eclipse:configure-workspace
+  | install
+  | install:install-file
+  | javadoc:javadoc
+  | javadoc:jar
+  | jetty:run
+  | jetty:run-war
+  | package
+  | site
+  | source:jar
+  | source:test-jar
+  | test
+  | test-compile
   );
 
