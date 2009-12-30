@@ -18,5 +18,6 @@ mvn
   | source:test-jar
   | test
   | test-compile
-  );
+  | -Dmaven.test.skip=true
+  ) ... ;
 
