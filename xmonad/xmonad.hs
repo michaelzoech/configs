@@ -4,7 +4,6 @@ import Data.List
 
 import XMonad
 
-import XMonad.Actions.GridSelect
 import XMonad.Actions.WindowBringer
 
 import XMonad.Hooks.DynamicLog
@@ -22,6 +21,7 @@ import XMonad.Prompt.Shell
 
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
+import XMonad.Util.Scratchpad
 
 import System.Exit
 
@@ -152,7 +152,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- bring and focus window
     , ((modMask .|. shiftMask, xK_b     ), bringMenu)
 
-    , ((modMask              , xK_s     ), goToSelected defaultGSConfig)
+    , ((modMask              , xK_s     ), scratchpadSpawnActionTerminal "urxvt")
     ]
     ++
 
@@ -230,7 +230,8 @@ myManageHook = (composeAll . concat)
     , [resource =? r --> doFloat | r <- byResource]
     , [className =? c --> doF (W.shift "im") | c <- shiftClassToIM]
     , [className =? "Do" --> doIgnore]
-    ] <+> manageHook defaultConfig
+    ] <+> scratchpadManageHook (W.RationalRect 0.3 0.25 0.4 0.5)
+      <+> manageHook defaultConfig
   where byClass = ["Gimp", "MPlayer", "Totem"]
         byTitle = ["Downloads", "Preferences", "Save As..."]
         byResource = []
@@ -283,7 +284,7 @@ myXPConfig = defaultXPConfig
 myFont  = "-*-helvetica-medium-r-normal-*-18-*-*-*-*-*-iso10646-1"
 myFont2 = "-*-dejavu sans mono-medium-r-*-*-16-*-*-*-*-*-iso10646-*"
 
-myStatusbar = "dzen2 -x '500' -y '0' -h '24' -w '920' -ta 'l' -fg '#0f0f0f' -bg '#e2e2e2' -fn '" ++ myFont2 ++ "'"
+myStatusbar = "dzen2 -x '300' -y '0' -h '24' -w '1120' -ta 'l' -fg '#0f0f0f' -bg '#e2e2e2' -fn '" ++ myFont2 ++ "'"
 
 myDzenPP h = defaultPP { ppOutput = hPutStrLn h }
 
