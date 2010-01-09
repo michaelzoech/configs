@@ -77,3 +77,7 @@ let g:proj_flags="imstvg"
 map <C-T> <Esc>:tabnew<CR><Plug>ToggleProject/
 nmap <silent> <F3> <Plug>ToggleProject
 
+" show trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$\| \+\ze\t/
+
