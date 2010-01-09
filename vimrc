@@ -81,3 +81,8 @@ nmap <silent> <F3> <Plug>ToggleProject
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 
+" remove trailing whitespace and those ^M
+function Trimws()
+	%s/[ \t\r]\+$//eg
+endfunction
+
