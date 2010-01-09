@@ -1,0 +1,22 @@
+#!/bin/sh
+# every time the modification date of <file> changes
+# <action> is executed
+
+if [ "$#" != 2 ]; then
+	echo "USAGE: onsave.sh <file> <action>"
+	exit 1
+fi
+
+file=$1
+action=$2
+last_modified="0"
+
+while [ 1 ]
+do
+	current=`stat -c "%Y" $file`
+	if [ $current -gt $last_modified ]; then
+		`$action`
+		last_modified=$current
+	fi
+	sleep 2
+done
