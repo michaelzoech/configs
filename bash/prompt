@@ -1,26 +1,7 @@
 #!/bin/bash
 
-# if we're inside a git working tree, print the current git branch
-# if we're inside an svn working directory, print the current svn revision
-# #or else print the total size of all files in the directory
-function dir_info() {
-    local git_branch=$(git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-    if [[ -n $git_branch ]]; then
-        echo "($git_branch)"
-        return 0
-    fi  
-
-    local svn_rev=$(svn info 2>/dev/null | grep ^Revision | awk '{ print $2 }')
-    if [[ -n $svn_rev ]]; then
-        echo "(r$svn_rev)"
-        return 0
-    fi  
-
-#    ls -Ahs|head -n1|awk '{print $2}'
-}
-
 # truncate path if longer than 50 chars
-function dir_info2() {
+function trunc_path() {
 	wd=`pwd`
 	wdc=`echo -n "$wd" | wc -c`
 	if [ $wdc -lt 40 ]; then
@@ -33,5 +14,32 @@ function dir_info2() {
 	echo -n "${left}...${right}"
 }
 
-PS1='\u@\h:$(dir_info2)$(dir_info)\$ '
+function parse_git_dirty {
+	#git diff --quiet HEAD &>/dev/null
+	#[[ $? == 1 ]] && echo "*"
+	local lines=$(git status | grep -c "(working directory clean)")
+	[[ $lines -ne 1 ]] && echo "*"
+}
+
+function parse_git_branch {
+	 local branch=$(__git_ps1 "%s")
+	 [[ $branch ]] && echo "[$branch$(parse_git_dirty)]"
+}
+
+function parse_svn_dirty {
+	local lines=$(svn status 2>/dev/null | wc -l)
+	[[ $lines -gt 0 ]] && echo "*"
+}
+
+function parse_svn_revision {
+	local svn_rev=$(svn info 2>/dev/null | grep ^Revision | awk '{ print $2 }')
+	[[ -n $svn_rev ]] && echo "[r$svn_rev$(parse_svn_dirty)]"
+}
+
+function parse_scm {
+	parse_git_branch
+	parse_svn_revision
+}
+
+export PS1='\u@\h:$(trunc_path)$(parse_scm)\$ '
 
