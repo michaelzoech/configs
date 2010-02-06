@@ -1,7 +1,12 @@
-# enable awesome bar (completion as in firefox bar)
-set complete=l
+set complete=hsS
 set wildoptions=auto
+set wildmode=list:full
 
-#disable keys for google services
+map <Right> gt
+map <Left> gT
+
+nmap ,g :set guioptions+=
+
+" disable keys for google services
 autocmd LocationChange .* :js modes.passAllKeys = /calendar\.google\.com|wave\.google\.com|mail\.google\.com|www\.google\.com\/reader\/view/.test(buffer.URL)
 
