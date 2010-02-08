@@ -7,6 +7,7 @@ alias mk="mkdir -p"
 alias u="j"
 
 # git
+alias ga="git add"
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff'
