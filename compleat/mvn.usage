@@ -1,11 +1,13 @@
 mvn
-  ( clean
+  ( assembly:assembly
+  | clean
   | compile
   | deploy
   | deploy:deploy-file
   | eclipse:clean
   | eclipse:eclipse
   | eclipse:configure-workspace
+  | help:effective-pom
   | install
   | install:install-file
   | javadoc:javadoc
@@ -19,5 +21,9 @@ mvn
   | test
   | test-compile
   | -Dmaven.test.skip=true
+  | -o
+  | -U
+  | -P <profile>
   ) ... ;
 
+profile = ! cat pom.xml | grep '<id>' | sed 's/[^<]*<id>\([^<]*\)<\/id>*/\1/g' ;
