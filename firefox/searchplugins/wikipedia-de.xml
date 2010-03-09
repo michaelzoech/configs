@@ -1,0 +1,12 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Wikipedia (de) - Artikel</os:ShortName>
+<os:Description>Wikipedia (Deutsch)</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAMFBMVEX9/f26urpYWFhHR0eoqKh7e3vZ2dlqamqDg4MoKCiYmJgYGBjHx8cDAwM7OzsAAADm2mQXAAAAAXRSTlMAQObYZgAAAAlwSFlzAAALEgAACxIB0t1+/AAAAGtJREFUeNpjYMANhAxZTBOC0ooYOCYyWCZ0MVQxsG1nWO1TwFDAwKB9IHmGA6MDA4N0A9clBg4BBgZmM7bHDKlAbRxX2F4KrAIZMImlrqABxOgLSZ0FZnhOYZx5AMRgNmOoBFvCeIAhEclOABqEF0N29mfgAAAAAElFTkSuQmCC</os:Image>
+<UpdateInterval>7</UpdateInterval>
+<UpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/wikipedia-de.xml</UpdateUrl>
+<IconUpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/wikipedia-de.png</IconUpdateUrl>
+<SearchForm>http://de.wikipedia.org/</SearchForm>
+<os:Url type="text/html" method="GET" template="http://de.wikipedia.org/?search={searchTerms}">
+</os:Url>
+</SearchPlugin>

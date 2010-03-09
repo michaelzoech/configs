@@ -1,0 +1,12 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Hoogle</os:ShortName>
+<os:Description>Hoogle Haskell API Search</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAKJJREFUKM+NksERxCAIRX95FEQBdOGFHiyBi0V4o4H04B6SkcSVzTIeHMf3538AI8q1AAIU9ZEW4nsjCM5DzV8B10J6TJLtDTCuFne54F+W7mU1dbUFXAtQ7W/gUBJkMbD1AwGSGEjk0+YikQcV2sZAIs82jHcxHkAMu9p9lBlgLI+43ihidOae7dK03nk21+qlgi95nErL4ySxyi+73XlR+QBZH3Uqu0Ep9QAAAABJRU5ErkJggg==</os:Image>
+<UpdateInterval>7</UpdateInterval>
+<UpdateUrl>http://mycroft.mozdev.org/update.php/id0/hoogle.src</UpdateUrl>
+<IconUpdateUrl>http://mycroft.mozdev.org/update.php/id0/hoogle.png</IconUpdateUrl>
+<SearchForm>http://www.haskell.org/hoogle/</SearchForm>
+<os:Url type="text/html" method="GET" template="http://www.haskell.org/hoogle/?q={searchTerms}&amp;format=sherlock">
+</os:Url>
+</SearchPlugin>
