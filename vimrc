@@ -86,3 +86,5 @@ function Trimws()
 	%s/[ \t\r]\+$//eg
 endfunction
 
+let g:GetLatestVimScripts_allowautoinstall=1
+
