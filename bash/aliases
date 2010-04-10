@@ -5,6 +5,9 @@ alias ll="ls -lh"
 alias aa="ls -lh"
 alias mk="mkdir -p"
 alias u="j"
+alias c="cd"
+
+alias a="arun.sh"
 
 # git
 alias ga="git add"
