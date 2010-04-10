@@ -4,6 +4,7 @@ import Data.List
 
 import XMonad
 
+import XMonad.Actions.CycleWS
 import XMonad.Actions.WindowBringer
 
 import XMonad.Hooks.DynamicLog
@@ -31,7 +32,7 @@ import qualified Data.Map        as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "xfce4-terminal"
+myTerminal      = "terminal"
 
 -- Width of the window border in pixels.
 --
@@ -42,7 +43,7 @@ myBorderWidth   = 2
 -- ("right alt"), which does not conflict with emacs keybindings. The
 -- "windows key" is usually mod4Mask.
 --
-myModMask       = mod1Mask
+myModMask       = mod4Mask
 
 -- The mask for the numlock key. Numlock status is "masked" from the
 -- current modifier status, so the keybindings will work with numlock on or
@@ -84,12 +85,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [ ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modMask,               xK_p     ), shellPrompt myXPConfig)
+    , ((modMask,               xK_r     ), shellPrompt myXPConfig)
 
     -- launch gmrun
-    , ((modMask .|. shiftMask, xK_p     ), spawn "gmrun")
+    , ((modMask .|. shiftMask, xK_r     ), spawn "gmrun")
 
-    -- close focused window 
+    -- close focused window
     , ((modMask .|. shiftMask, xK_c     ), kill)
 
      -- Rotate through the available layout algorithms
@@ -99,7 +100,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
 
     -- Resize viewed windows to the correct size
-    , ((modMask,               xK_n     ), refresh)
+    --, ((modMask,               xK_n     ), refresh)
 
     -- Move focus to the next window
     , ((modMask,               xK_Tab   ), windows W.focusDown)
@@ -144,7 +145,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask              , xK_q     ), restart "xmonad" True)
 
     -- im workspace
-    , ((modMask              , xK_i     ), windows $ W.greedyView "im")
+    , ((modMask              , xK_d     ), windows $ W.greedyView "im")
 
     -- goto workspace and focus window
     , ((modMask .|. shiftMask, xK_g     ), gotoMenu)
@@ -153,6 +154,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask, xK_b     ), bringMenu)
 
     , ((modMask              , xK_s     ), scratchpadSpawnActionTerminal "urxvt")
+
+    , ((modMask              , xK_slash ), spawn "aumix -v -7")
+    , ((modMask              , xK_equal ), spawn "aumix -v +7")
+
+    , ((modMask              , xK_n     ), toggleWS)
     ]
     ++
 
@@ -163,15 +169,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [((m .|. modMask, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
-    ++
+    -- ++
 
     --
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     --
-    [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
-        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+    --[((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
+    --    | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+    --    , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 --moreKeys =
 --  [ ("M-i", windows $ W.greedyView "im") ]
@@ -284,7 +290,7 @@ myXPConfig = defaultXPConfig
 myFont  = "-*-helvetica-medium-r-normal-*-18-*-*-*-*-*-iso10646-1"
 myFont2 = "-*-dejavu sans mono-medium-r-*-*-16-*-*-*-*-*-iso10646-*"
 
-myStatusbar = "dzen2 -x '300' -y '0' -h '24' -w '1120' -ta 'l' -fg '#0f0f0f' -bg '#e2e2e2' -fn '" ++ myFont2 ++ "'"
+myStatusbar = "dzen2 -x '250' -y '878' -h '21' -w '1120' -ta 'l' -fg '#0f0f0f' -bg '#e2e2e2' -fn '" ++ myFont2 ++ "'"
 
 myDzenPP h = defaultPP { ppOutput = hPutStrLn h }
 
