@@ -9,6 +9,7 @@ import XMonad.Actions.WindowBringer
 
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 
 import XMonad.Layout.NoBorders
@@ -206,7 +207,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
 
-myLayout = avoidStruts $ onWorkspace "im" cols $ (tiled ||| Mirror tiled ||| noBorders Full)
+myLayout = avoidStruts $ smartBorders $ onWorkspace "im" cols $ (tiled ||| Mirror tiled ||| noBorders Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -243,6 +244,7 @@ myManageHook = (composeAll . concat)
     , [resource =? r --> doFloat | r <- byResource]
     , [className =? c --> doF (W.shift "im") | c <- shiftClassToIM]
     , [className =? "Do" --> doIgnore]
+    , [isFullscreen --> doFullFloat]
     ] <+> scratchpadManageHook (W.RationalRect 0.3 0.25 0.4 0.5)
       <+> manageHook defaultConfig
   where byClass = ["Gimp", "MPlayer", "Totem"]
