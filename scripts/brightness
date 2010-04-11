@@ -7,7 +7,7 @@ DIR=/sys/class/backlight/acpi_video0
 
 MIN_LEVEL=0
 MAX_LEVEL=`cat $DIR/max_brightness`
-CUR_LEVEL=`cat $DIR/brightness`
+CUR_LEVEL=`cat $DIR/actual_brightness`
 
 UP="up"
 DOWN="down"
