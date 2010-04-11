@@ -1,0 +1,12 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Arch Linux AUR</os:ShortName>
+<os:Description>searches packages in AUR on archlinux</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gEAwsEMexrFxMAAAIGSURBVDjLldHPaxNREAfw73u7ySak3TSRRKkHbypUFKoXsSihLVhtCNWmWjx4bFHEevLoURD6BwgFQbCGvfSgKBiwFqEe2oNCjRqTFKptaOqvNE2y2d33xksFtSRp5jQz3+FzGaBJGYahNMrVRuH489yhhEkHATypd8MbAQsF8/zn79XrN56l9ZaBeDLr36qJs5uW7Hn7U/S3DKzmrT5TUI8lyVcoO9Ezs7NqSwDjOMq2e0vQOS2/P7JroPdxarBqy5iuKZZXZTAFhVYr9kXDIKUpYCyRe70s4/myc+xbxfFXHQIAmI4YmpKZ002Be4up3rJDUQCgv/YVh8JfSrXhO0S8LjA5v+It2TRqOjIAAG0u/qlDU96wbasqaHhuOtNfF0ikS1HTkUMA4FXZWme7a2L8eDCmu/kjAKg5MrxRMS/fXyTXDuB2Musv2TRqCWoDAI/C34VV5+XN7s4N3a0kOYOlMEBV+EAinRnYAbxaq41UbDn4Z3arfPNaqEsCgMLYusqZEAQIIlvldPgf4OrT5X0/THFJECk+F/8Y8qpTQTdPRCLMAYCgly8FPOqkrilzW5bckyvWxk4+fB8HAAYA3Q9SE7aUVzhnxl4fzbwY6coCjP7/UGxmueNr0ewrmvYF3aOwU2HXGLv7+ldgvlA40a5p2enBAznsom4ZK94Psho7EvIs/AZ27OCLMo2U1AAAAABJRU5ErkJggg==</os:Image>
+<UpdateInterval>7</UpdateInterval>
+<UpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/aurfind.xml</UpdateUrl>
+<IconUpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/aurfind.png</IconUpdateUrl>
+<SearchForm>http://aur.archlinux.org/packages.php</SearchForm>
+<os:Url type="text/html" method="GET" template="http://aur.archlinux.org/packages.php?O=0&amp;L=0&amp;C=0&amp;K={searchTerms}">
+</os:Url>
+</SearchPlugin>
