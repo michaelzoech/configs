@@ -5,8 +5,8 @@ set wildmode=list:full
 map <Right> gt
 map <Left> gT
 
-nmap ,g :set guioptions+=
+nmap ,g :set guioptions=
 
 " disable keys for google services
-autocmd LocationChange .* :js modes.passAllKeys = /calendar\.google\.com|wave\.google\.com|mail\.google\.com|www\.google\.com\/reader\/view/.test(buffer.URL)
+autocmd LocationChange .* :js modes.passAllKeys = /calendar\.google\.com|wave\.google\.com|www\.google\.com\/calendar|mail\.google\.com|www\.google\.com\/reader\/view/.test(buffer.URL)
 
