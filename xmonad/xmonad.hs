@@ -297,7 +297,7 @@ myXPConfig = defaultXPConfig
 myFont  = "-*-verdana-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
 myFont2 = "-*-dejavu sans mono-medium-r-*-*-16-*-*-*-*-*-iso10646-*"
 
-myStatusbar = "dzen2 -x '200' -y '878' -h '21' -w '1020' -ta 'l' -fg '#000000' -bg '#eeeeee' -fn '" ++ myFont ++ "'"
+myStatusbar = "sleep 2; dzen2 -x '200' -y '878' -h '21' -w '1020' -ta 'l' -fg '#000000' -bg '#eeeeee' -fn '" ++ myFont ++ "'"
 
 myDzenPP h = defaultPP { ppOutput = hPutStrLn h }
 
