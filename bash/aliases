@@ -7,7 +7,7 @@ alias mk="mkdir -p"
 alias u="j"
 alias c="cd"
 
-alias a="arun.sh"
+alias a="arun"
 
 # git
 alias ga="git add"

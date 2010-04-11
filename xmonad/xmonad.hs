@@ -155,10 +155,17 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     , ((modMask              , xK_s     ), scratchpadSpawnActionTerminal "urxvt")
 
+    , ((modMask              , xK_n     ), toggleWS)
+
     , ((modMask              , xK_slash ), spawn "aumix -v -7")
     , ((modMask              , xK_equal ), spawn "aumix -v +7")
 
-    , ((modMask              , xK_n     ), toggleWS)
+    , ((0                    , 0x1008FF11), spawn "aumix -v -5")
+    , ((0                    , 0x1008FF13), spawn "aumix -v +5")
+    , ((0                    , 0x1008FF12), spawn "aumix -v 0")
+
+    , ((0                    , 0x1008FF02), spawn "brightness up")
+    , ((0                    , 0x1008FF03), spawn "brightness down")
     ]
     ++
 
@@ -287,10 +294,10 @@ myXPConfig = defaultXPConfig
 
 ------------------------------------------------------------------------
 
-myFont  = "-*-helvetica-medium-r-normal-*-18-*-*-*-*-*-iso10646-1"
+myFont  = "-*-verdana-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
 myFont2 = "-*-dejavu sans mono-medium-r-*-*-16-*-*-*-*-*-iso10646-*"
 
-myStatusbar = "dzen2 -x '250' -y '878' -h '21' -w '1120' -ta 'l' -fg '#0f0f0f' -bg '#e2e2e2' -fn '" ++ myFont2 ++ "'"
+myStatusbar = "dzen2 -x '200' -y '878' -h '21' -w '1020' -ta 'l' -fg '#000000' -bg '#eeeeee' -fn '" ++ myFont ++ "'"
 
 myDzenPP h = defaultPP { ppOutput = hPutStrLn h }
 
