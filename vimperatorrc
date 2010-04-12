@@ -6,6 +6,8 @@ map <Right> gt
 map <Left> gT
 
 nmap ,g :set guioptions=
+nmap e f
+nmap E F
 
 " disable keys for google services
 autocmd LocationChange .* :js modes.passAllKeys = /calendar\.google\.com|wave\.google\.com|www\.google\.com\/calendar|mail\.google\.com|www\.google\.com\/reader\/view/.test(buffer.URL)
