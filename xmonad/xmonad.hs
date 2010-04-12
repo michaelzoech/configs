@@ -45,6 +45,7 @@ myBorderWidth   = 2
 -- "windows key" is usually mod4Mask.
 --
 myModMask       = mod4Mask
+modMask2        = mod1Mask
 
 -- The mask for the numlock key. Numlock status is "masked" from the
 -- current modifier status, so the keybindings will work with numlock on or
@@ -70,7 +71,7 @@ myNumlockMask   = mod2Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = map show [1..9] ++ ["im"]
+myWorkspaces    = map show [1..9]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -89,7 +90,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,               xK_r     ), shellPrompt myXPConfig)
 
     -- launch gmrun
-    , ((modMask .|. shiftMask, xK_r     ), spawn "gmrun")
+    --, ((modMask .|. shiftMask, xK_r     ), spawn "gmrun")
 
     -- close focused window
     , ((modMask .|. shiftMask, xK_c     ), kill)
@@ -105,6 +106,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     -- Move focus to the next window
     , ((modMask,               xK_Tab   ), windows W.focusDown)
+    , ((modMask2,              xK_Tab   ), windows W.focusDown)
 
     -- Move focus to the next window
     , ((modMask,               xK_j     ), windows W.focusDown)
@@ -145,9 +147,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- Restart xmonad
     , ((modMask              , xK_q     ), restart "xmonad" True)
 
-    -- im workspace
-    , ((modMask              , xK_d     ), windows $ W.greedyView "im")
-
     -- goto workspace and focus window
     , ((modMask .|. shiftMask, xK_g     ), gotoMenu)
 
@@ -174,7 +173,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- mod-[1..9], Switch to workspace N
     -- mod-shift-[1..9], Move client to workspace N
     --
-    [((m .|. modMask, k), windows $ f i)
+    [((m .|. modMask2, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
     -- ++
@@ -186,9 +185,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     --[((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
     --    | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
     --    , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
-
---moreKeys =
---  [ ("M-i", windows $ W.greedyView "im") ]
 
 ------------------------------------------------------------------------
 -- Mouse bindings: default actions bound to mouse events
@@ -207,7 +203,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
 
-myLayout = avoidStruts $ smartBorders $ onWorkspace "im" cols $ (tiled ||| Mirror tiled ||| noBorders Full)
+myLayout = avoidStruts $ smartBorders $ onWorkspace "9" cols $ (tiled ||| Mirror tiled ||| noBorders Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -242,7 +238,7 @@ myManageHook = (composeAll . concat)
     [ [className =? c --> doFloat | c <- byClass]
     , [(liftM $ isInfixOf t) title --> doFloat | t <- byTitle]
     , [resource =? r --> doFloat | r <- byResource]
-    , [className =? c --> doF (W.shift "im") | c <- shiftClassToIM]
+    , [className =? c --> doF (W.shift "9") | c <- shiftClassToIM]
     , [className =? "Do" --> doIgnore]
     , [isFullscreen --> doFullFloat]
     ] <+> scratchpadManageHook (W.RationalRect 0.3 0.25 0.4 0.5)
@@ -331,4 +327,4 @@ main =
         logHook            = dynamicLogWithPP $ myDzenPP dzenOut,
         startupHook        = myStartupHook
     }
-    --`additionalKeysP` moreKeys
+
