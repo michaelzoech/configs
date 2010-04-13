@@ -9,6 +9,7 @@ import XMonad.Actions.CycleWS
 import XMonad.Actions.WindowBringer
 
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.FloatNext
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
@@ -49,7 +50,7 @@ myBorderWidth   = 2
 -- "windows key" is usually mod4Mask.
 --
 myModMask       = mod4Mask
-modMask2        = mod1Mask
+modMask2        = mod5Mask
 
 -- The mask for the numlock key. Numlock status is "masked" from the
 -- current modifier status, so the keybindings will work with numlock on or
@@ -140,10 +141,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask,               xK_t     ), withFocused $ windows . W.sink)
 
     -- Increment the number of windows in the master area
-    , ((modMask              , xK_comma ), sendMessage (IncMasterN 1))
+    , ((modMask              , xK_w     ), sendMessage (IncMasterN 1))
 
     -- Deincrement the number of windows in the master area
-    , ((modMask              , xK_period), sendMessage (IncMasterN (-1)))
+    , ((modMask              , xK_v     ), sendMessage (IncMasterN (-1)))
 
     -- Quit xmonad
     , ((modMask .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -170,6 +171,13 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     , ((0                    , 0x1008FF02), spawn "sudo /usr/sbin/brightness up")
     , ((0                    , 0x1008FF03), spawn "sudo /usr/sbin/brightness down")
+
+    , ((modMask2             , xK_apostrophe), spawn "mpc prev")
+    , ((modMask2             , xK_comma ), spawn "mpc next")
+    , ((modMask2             , xK_period), spawn "mpc toggle")
+    , ((modMask2             , xK_p     ), spawn "mpc seek -2%")
+    , ((modMask2             , xK_y     ), spawn "mpc seek +2%")
+    , ((modMask2             , xK_a     ), floatNext True >> spawn "Terminal --geometry=80x45+420+50 -e ncmpc")
     ]
     ++
 
@@ -249,6 +257,7 @@ myManageHook = (composeAll . concat)
     , [isFullscreen --> doFullFloat]
     ] <+> scratchpadManageHook (W.RationalRect 0.3 0.25 0.4 0.5)
       <+> manageHook defaultConfig
+      <+> floatNextHook
   where byClass = ["Gimp", "MPlayer", "Totem", "Pino", "Do"]
         byTitle = ["Downloads", "Preferences", "Save As..."]
         byResource = []
