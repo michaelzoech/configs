@@ -83,6 +83,11 @@ myWorkspaces    = map show [1..9]
 myNormalBorderColor  = "#cccccc"
 myFocusedBorderColor = "#cd8b00"
 
+--- Whether focus follows the mouse pointer.
+--
+myFocusFollowsMouse :: Bool
+myFocusFollowsMouse = True
+
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
@@ -158,7 +163,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- bring and focus window
     , ((modm .|. shiftMask, xK_b     ), bringMenu)
 
-    , ((modm              , xK_s     ), scratchpadSpawnActionTerminal "urxvt")
+    --, ((modm              , xK_s     ), scratchpadSpawnActionTerminal "urxvt")
 
     , ((modm              , xK_n     ), toggleWS)
 
@@ -178,6 +183,16 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modm2             , xK_p     ), spawn "mpc seek -2%")
     , ((modm2             , xK_y     ), spawn "mpc seek +2%")
     , ((modm2             , xK_a     ), floatNext True >> spawn "Terminal --geometry=80x45+420+50 -e ncmpc")
+
+    , ((modm2             , xK_o     ), spawn "")
+    , ((modm2             , xK_e     ), spawn "")
+    , ((modm2             , xK_u     ), spawn $ XMonad.terminal conf)
+    , ((modm2             , xK_i     ), spawn "")
+    , ((modm2             , xK_semicolon), spawn "")
+    , ((modm2             , xK_q     ), spawn "")
+    , ((modm2             , xK_j     ), spawn "")
+    , ((modm2             , xK_k     ), spawn "")
+    , ((modm2             , xK_x     ), spawn "")
     ]
     ++
 
@@ -262,11 +277,6 @@ myManageHook = (composeAll . concat)
         byTitle = ["Downloads", "Preferences", "Save As..."]
         byResource = []
         shiftClassToIM = ["Skype", "Pidgin"]
-
--- Whether focus follows the mouse pointer.
-myFocusFollowsMouse :: Bool
-myFocusFollowsMouse = True
-
 
 ------------------------------------------------------------------------
 -- Status bars and logging
