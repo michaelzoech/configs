@@ -224,7 +224,7 @@ myLayout = avoidStruts $ smartBorders $ onWorkspace "9" im $ (tiled ||| Mirror t
      im = reflectHoriz $ withIM (1%6) roster $ reflectHoriz $ Grid
       where roster = Or pidgin skype
             pidgin = Title "Buddy List"
-            skype = (ClassName "Skype") `And` (Not (Title "Options")) `And` (Role ""))
+            skype = (ClassName "Skype") `And` (Not (Title "Options")) `And` (Role "")
 
 ------------------------------------------------------------------------
 -- Window rules:
@@ -246,11 +246,10 @@ myManageHook = (composeAll . concat)
     , [(liftM $ isInfixOf t) title --> doFloat | t <- byTitle]
     , [resource =? r --> doFloat | r <- byResource]
     , [className =? c --> doF (W.shift "9") | c <- shiftClassToIM]
-    , [className =? "Do" --> doIgnore]
     , [isFullscreen --> doFullFloat]
     ] <+> scratchpadManageHook (W.RationalRect 0.3 0.25 0.4 0.5)
       <+> manageHook defaultConfig
-  where byClass = ["Gimp", "MPlayer", "Totem"]
+  where byClass = ["Gimp", "MPlayer", "Totem", "Pino", "Do"]
         byTitle = ["Downloads", "Preferences", "Save As..."]
         byResource = []
         shiftClassToIM = ["Skype", "Pidgin"]
