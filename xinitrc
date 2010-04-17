@@ -14,7 +14,8 @@ fi
 #xfdesktop &
 eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh)
 xfce4-panel &
-#xset b off
+xset b off
 xfce4-session &
 #nm-applet --sm-disable &
+setxkbmap -option terminate:ctrl_alt_bksp
 exec ~/.xmonad/xmonad-x86_64-linux
