@@ -21,11 +21,11 @@ function parse_svn_dirty {
 
 function parse_svn_revision {
 	local svn_rev=$(svn info 2>/dev/null | grep ^Revision | awk '{ print $2 }')
-	[[ -n $svn_rev ]] && echo "[r$svn_rev$(parse_svn_dirty)]"
+	[[ -n $svn_rev ]] && echo "(r$svn_rev$(parse_svn_dirty))"
 }
 
 function parse_scm {
-	echo $(__git_ps1)
+	[[ $(__git_ps1) ]] && echo $(__git_ps1)
 	parse_svn_revision
 }
 
