@@ -12,6 +12,7 @@ if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
 	eval `dbus-launch --sh-syntax --exit-with-session`
 fi
 #xfdesktop &
+eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh)
 xfce4-panel &
 #xset b off
 xfce4-session &
