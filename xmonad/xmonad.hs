@@ -28,7 +28,6 @@ import XMonad.Prompt.Shell
 
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
-import XMonad.Util.Scratchpad
 
 import System.Exit
 
@@ -163,8 +162,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- bring and focus window
     , ((modm .|. shiftMask, xK_b     ), bringMenu)
 
-    --, ((modm              , xK_s     ), scratchpadSpawnActionTerminal "urxvt")
-
     , ((modm              , xK_n     ), toggleWS)
 
     , ((modm              , xK_slash ), spawn "aumix -v -7")
@@ -270,15 +267,12 @@ myManageHook = (composeAll . concat)
     [ [className =? c --> doFloat | c <- byClass]
     , [(liftM $ isInfixOf t) title --> doFloat | t <- byTitle]
     , [resource =? r --> doFloat | r <- byResource]
-    , [className =? c --> doF (W.shift "9") | c <- shiftClassToIM]
     , [isFullscreen --> doFullFloat]
-    ] <+> scratchpadManageHook (W.RationalRect 0.3 0.25 0.4 0.5)
-      <+> manageHook defaultConfig
+    ] <+> manageHook defaultConfig
       <+> floatNextHook
-  where byClass = ["Gimp", "MPlayer", "Totem", "Pino", "Do"]
+  where byClass = ["Gimp", "MPlayer", "Totem", "Pino", "Do", "Pidgin", "Skype"]
         byTitle = ["Downloads", "Preferences", "Save As..."]
         byResource = []
-        shiftClassToIM = ["Skype", "Pidgin"]
 
 ------------------------------------------------------------------------
 -- Status bars and logging
