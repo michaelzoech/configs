@@ -229,7 +229,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
 
-myLayout = avoidStruts $ smartBorders $ onWorkspace "9" im $ (tiled ||| Mirror tiled ||| noBorders Full)
+myLayout = avoidStruts $ smartBorders $ (tiled ||| Mirror tiled ||| noBorders Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -242,11 +242,6 @@ myLayout = avoidStruts $ smartBorders $ onWorkspace "9" im $ (tiled ||| Mirror t
 
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
-
-     im = reflectHoriz $ withIM (1%6) roster $ reflectHoriz $ Grid
-      where roster = Or pidgin skype
-            pidgin = Title "Buddy List"
-            skype = (ClassName "Skype") `And` (Not (Title "Options")) `And` (Role "")
 
 ------------------------------------------------------------------------
 -- Window rules:
