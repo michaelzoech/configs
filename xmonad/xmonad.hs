@@ -87,6 +87,12 @@ myFocusedBorderColor = "#cd8b00"
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
 
+myFont  = "-*-verdana-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
+--myFont = "-*-dejavu sans mono-medium-r-*-*-16-*-*-*-*-*-iso10646-*"
+
+myStatusbar = "my-dzen.sh"
+
+
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
@@ -185,12 +191,13 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modm2             , xK_o     ), spawn "")
     , ((modm2             , xK_e     ), spawn "")
     , ((modm2             , xK_u     ), spawn $ XMonad.terminal conf)
-    , ((modm2             , xK_i     ), spawn "")
-    , ((modm2             , xK_apostrophe), spawn "")
-    , ((modm2             , xK_comma ), spawn "")
-    , ((modm2             , xK_period), spawn "")
-    , ((modm2             , xK_p     ), spawn "")
-    , ((modm2             , xK_y     ), spawn "")
+    , ((modm2             , xK_i     ), spawn "openim")
+    , ((modm2             , xK_apostrophe), spawn "firefox")
+    -- used by xinerama
+    --, ((modm2             , xK_comma ), spawn "")
+    --, ((modm2             , xK_period), spawn "")
+    , ((modm2             , xK_p     ), shellPrompt myXPConfig)
+    , ((modm2             , xK_y     ), spawn "thunderbird")
     ]
     ++
 
@@ -307,15 +314,6 @@ myXPConfig = defaultXPConfig
   }
 
 ------------------------------------------------------------------------
-
-myFont  = "-*-verdana-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
---myFont2 = "-*-dejavu sans mono-medium-r-*-*-16-*-*-*-*-*-iso10646-*"
-
-myStatusbar = "my-dzen.sh"
-
-myDzenPP h = defaultPP { ppOutput = hPutStrLn h }
-
-------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
 -- Run xmonad with the settings you specify. No need to modify this.
@@ -340,7 +338,7 @@ main =
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook <+> manageDocks,
-        logHook            = dynamicLogWithPP $ myDzenPP dzenOut,
+        logHook            = dynamicLogWithPP $ defaultPP { ppOutput = hPutStrLn dzenOut },
         startupHook        = myStartupHook
     }
 
