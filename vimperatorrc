@@ -2,6 +2,8 @@ set complete=hsS
 set wildoptions=auto
 set wildmode=list:full
 
+set visualbell=true
+
 map <Right> gt
 map <Left> gT
 
