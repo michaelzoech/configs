@@ -2,6 +2,8 @@ runtime! archlinux.vim
 
 syntax on
 
+colorscheme mydesert
+
 "set background=dark
 
 "set showcmd		" Show (partial) command in status line.
