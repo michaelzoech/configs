@@ -81,7 +81,7 @@ myWorkspaces    = map show [1..9]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#cccccc"
+myNormalBorderColor  = "#000000"
 myFocusedBorderColor = "#cd8b00"
 
 --- Whether focus follows the mouse pointer.
@@ -315,9 +315,9 @@ myXPConfig = defaultXPConfig
   --, fgColor           = "#999999"
   --, fgHLight          = "#ffffff"
   --, bgHLight          = "#4c7899"
-  --, promptBorderWidth = 0
+  , promptBorderWidth = 0
   --, position          = Bottom
-  , height            = 24
+  , height            = 20
   , historySize       = 128 
   }
 
