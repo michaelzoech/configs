@@ -7,7 +7,7 @@ set visualbell=true
 map <Right> gt
 map <Left> gT
 
-nmap ,g :set guioptions=
+nmap ,g :set guioptions=rb
 nmap e f
 nmap E F
 
