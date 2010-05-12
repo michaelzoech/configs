@@ -1,0 +1,41 @@
+own_window                yes
+own_window_class          Conky
+own_window_type           panel
+own_window_transparent    no
+own_window_colour         000000
+own_window_hints          undecorated,below,sticky,skip_taskbar,skip_pager
+update_interval           2
+double_buffer             yes
+alignment                 top_left
+background                no
+border_outer_width        0
+border_inner_margin       0
+border_width              0
+cpu_avg_samples           3
+color1                            9f9f9f
+color2                            eeeeee
+default_color             9f9f9f
+default_outline_color     white
+draw_borders              no
+draw_graph_borders        no
+draw_outline              no
+draw_shades               no
+use_xft                   yes
+xftfont                   Inconsolata:size=11
+xftalpha                  1
+gap_x                     600
+gap_y                     0
+minimum_size              850 14
+maximum_size              850 14
+net_avg_samples           2
+no_buffers                yes
+out_to_console            no
+uppercase                 no
+short_units               yes
+pad_percents              1
+text_buffer_size          512
+temperature_unit          celsius
+
+
+TEXT
+  ${color1}Date: ${color2}${time %d.%m.%y %H:%M}${color1}  Up: ${color2}${uptime_short}${color1} Battery: ${color2}${battery_percent BAT0}% ${acpiacadapter ADP1}${color1} Cpu: ${color2}${cpu}%${color1}${offset 40}GHz: ${color2}${freq_g}${color1}  Ram: ${color2}${memperc}%  ${color1}Swap: ${color2}${swapperc}%${color1}
