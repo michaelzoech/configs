@@ -28,6 +28,7 @@ import XMonad.Prompt.Shell
 
 import XMonad.Util.EZConfig
 import XMonad.Util.Run
+import XMonad.Util.Scratchpad
 
 import System.Exit
 
@@ -37,7 +38,7 @@ import qualified Data.Map        as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "terminal"
+myTerminal      = "urxvt"
 
 -- Width of the window border in pixels.
 --
@@ -118,6 +119,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     -- Resize viewed windows to the correct size
     --, ((modm,               xK_n     ), refresh)
+
+    , ((modm .|. shiftMask, xK_s     ), sendMessage ToggleStruts)
+
+    , ((modm,               xK_s     ), scratchpadSpawnActionTerminal "urxvt")
 
     -- Move focus to the next window
     , ((mod1Mask,           xK_Tab   ), windows W.focusDown)
@@ -271,9 +276,10 @@ myManageHook = (composeAll . concat)
     , [resource =? r --> doFloat | r <- byResource]
     , [isFullscreen --> doFullFloat]
     ] <+> manageHook defaultConfig
+      <+> scratchpadManageHook (W.RationalRect 0.25 0.2 0.5 0.6)
       <+> floatNextHook
   where byClass = ["Gimp", "MPlayer", "Totem", "Pino", "Do", "Pidgin", "Skype"]
-        byTitle = ["Downloads", "Preferences", "Save As..."]
+        byTitle = ["VLC (XVideo output)", "Downloads", "Preferences", "Save As..."]
         byResource = []
 
 ------------------------------------------------------------------------
