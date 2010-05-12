@@ -63,3 +63,5 @@ endfunction
 
 let g:GetLatestVimScripts_allowautoinstall=1
 
+set pastetoggle=<F12>
+
