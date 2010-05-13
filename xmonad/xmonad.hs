@@ -318,7 +318,7 @@ myXPConfig = defaultXPConfig
   , promptBorderWidth = 0
   --, position          = Bottom
   , height            = 20
-  , historySize       = 128 
+  , historySize       = 128
   }
 
 ------------------------------------------------------------------------
@@ -346,7 +346,47 @@ main =
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook <+> manageDocks,
-        logHook            = dynamicLogWithPP $ defaultPP { ppOutput = hPutStrLn dzenOut },
+        logHook            = dynamicLogWithPP $ myDzenPP dzenOut,
         startupHook        = myStartupHook
     }
+
+myDzenPP h = defaultPP {
+  ppOutput = hPutStrLn h,
+  ppSep = " ^bg(" ++ myBgBgColor ++ ")^r(1,15)^bg()",
+  ppWsSep = "",
+  ppCurrent = wrapFgBg myCurrentWsFgColor myCurrentWsBgColor,
+  ppVisible = wrapFgBg myVisibleWsFgColor myVisibleWsBgColor,
+  ppHidden = wrapFg myHiddenWsFgColor,
+  ppHiddenNoWindows = wrapFg myHiddenEmptyWsFgColor,
+  ppUrgent = wrapBg myUrgentWsBgColor,
+  ppTitle = (\x -> " " ++ wrapFg myTitleFgColor x),
+  ppLayout  = dzenColor myFgColor"" .
+                (\x -> case x of
+                    "Tall" -> wrapBitmap "tall.xpm"
+                    "Mirror Tall" -> wrapBitmap "mtall.xpm"
+                    "Full" -> wrapBitmap "full.xpm"
+                )
+  }
+  where
+    wrapFgBg fgColor bgColor content= wrap ("^fg(" ++ fgColor ++ ")^bg(" ++ bgColor ++ ")") "^fg()^bg()" content
+    wrapFg color content = wrap ("^fg(" ++ color ++ ")") "^fg()" content
+    wrapBg color content = wrap ("^bg(" ++ color ++ ")") "^bg()" content
+    wrapBitmap bitmap = "^i(" ++ myBitmapsPath ++ bitmap ++ ")"
+
+-- Paths
+myBitmapsPath = "/home/maik/.dzen/bitmaps/"
+
+-- Colors
+myBgBgColor = "black"
+myFgColor = "gray80"
+myBgColor = "gray20"
+
+myCurrentWsFgColor = "white"
+myCurrentWsBgColor = "gray40"
+myVisibleWsFgColor = "gray80"
+myVisibleWsBgColor = "gray20"
+myHiddenWsFgColor = "gray80"
+myHiddenEmptyWsFgColor = "gray50"
+myUrgentWsBgColor = "brown"
+myTitleFgColor = "white"
 
