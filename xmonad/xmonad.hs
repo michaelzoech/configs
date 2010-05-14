@@ -123,7 +123,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     , ((modm .|. shiftMask, xK_s     ), sendMessage ToggleStruts)
 
-    , ((modm,               xK_s     ), scratchpadSpawnActionTerminal "urxvt")
+    , ((modm,               xK_s     ), scratchpadSpawnActionTerminal myTerminal)
 
     -- Move focus to the next window
     , ((mod1Mask,           xK_Tab   ), windows W.focusDown)
@@ -191,7 +191,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modm2             , xK_q     ), spawn "mpc prev")
     , ((modm2             , xK_j     ), spawn "mpc next")
     , ((modm2             , xK_k     ), spawn "mpc toggle")
-    , ((modm2             , xK_x     ), floatNext True >> spawn "urxvt -geometry 80x35+480+90 -e ncmpcpp")
+    , ((modm2             , xK_x     ), floatNext True >> (spawn $ myTerminal ++ " -geometry 80x35+480+90 -e ncmpcpp"))
 
     --, ((modm2             , xK_a     ), spawn "")
     --, ((modm2             , xK_o     ), spawn "")
