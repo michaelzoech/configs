@@ -11,7 +11,7 @@ Xft.rgba:          rgb
 
 urxvt*cursorColor: #ff0000
 urxvt*cursorColor2:#000000
-urxvt*background:  #3f3f3f
+urxvt*background:  #383838
 urxvt*foreground:  #f9f9f9
 ! black
 urxvt*color0:      #1E2320
@@ -20,20 +20,20 @@ urxvt*color8:      #709080
 urxvt*color1:      #FF5050
 urxvt*color9:      #FFa0a0
 ! green
-urxvt*color2:      #60b48a
-urxvt*color10:     #c3bf9f
+urxvt*color2:      #60c48a
+urxvt*color10:     #c3bf8f
 ! yellow
-urxvt*color3:      #dfaf8f
+urxvt*color3:      #eda71f
 urxvt*color11:     #f0dfaf
 ! blue
-urxvt*color4:      #5060F0
-urxvt*color12:     #90b0ff
+urxvt*color4:      #6070F0
+urxvt*color12:     #8aaaf8
 ! purple / magenta
 urxvt*color5:      #dc8cc3
 urxvt*color13:     #ec93d3
 ! cyan
 urxvt*color6:      #8cd0d3
-urxvt*color14:     #93e0e3
+urxvt*color14:     #83d0d3
 ! white
 urxvt*color7:      #dcdccc
 urxvt*color15:     #ffffff
