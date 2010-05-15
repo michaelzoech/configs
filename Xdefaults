@@ -11,17 +11,21 @@ Xft.rgba:          rgb
 
 urxvt*cursorColor: #ff0000
 urxvt*cursorColor2:#000000
-urxvt*background:  #383838
+urxvt*background:  #393939
 urxvt*foreground:  #f9f9f9
 ! black
 urxvt*color0:      #1E2320
 urxvt*color8:      #709080
 ! red
-urxvt*color1:      #FF5050
-urxvt*color9:      #FFa0a0
+!urxvt*color1:      #FF5050
+!urxvt*color9:      #FFa0a0
+urxvt*color1:    #e9796c
+urxvt*color9:    #f9a092
 ! green
-urxvt*color2:      #60c48a
-urxvt*color10:     #c3bf8f
+!urxvt*color2:      #60c48a
+!urxvt*color10:     #c3bf8f
+urxvt*color2:    #b6e77d
+urxvt*color10:    #c3f786
 ! yellow
 urxvt*color3:      #eda71f
 urxvt*color11:     #f0dfaf
