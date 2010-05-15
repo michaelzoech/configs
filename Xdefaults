@@ -1,65 +1,50 @@
 Xcursor.theme: Human
 
 !Xft settings
-Xft.dpi:                96
-Xft.hinting:            1
-Xft.hintstyle:          hintfull
-Xft.antialias:          1
-Xft.rgba:               rgb
+Xft.dpi:           96
+Xft.hinting:       1
+Xft.hintstyle:     hintfull
+Xft.antialias:     1
+Xft.rgba:          rgb
 
-!URxvt*lineSpace: 0
+!urxvt*lineSpace: 0
 
-!
-! URxvt settings
-!
-! Zenburn color-scheme
-!URxvt*background:  #3f3f3f
-!URxvt*foreground:  #dcdccc
-! black + red
-!URxvt*color0:     #3f3f3f
-URxvt*color0:      #1E2320
-URxvt*color1:      #FF5050
-URxvt*color31:      #FF5050
-! green + yellow
-URxvt*color2:      #60b48a
-URxvt*color3:      #dfaf8f
-! blue + purple
-URxvt*color4:      #5060F0
-URxvt*color5:      #dc8cc3
-! cyan + white
-URxvt*color6:      #8cd0d3
-URxvt*color7:      #dcdccc
-! bright-black + bright-red
-URxvt*color8:      #709080
-URxvt*color9:      #FFa0a0
-! bright-green + bright-yellow
-URxvt*color10:     #c3bf9f
-URxvt*color11:     #f0dfaf
-! bright-blue + bright-purple
-URxvt*color12:     #90b0ff
-URxvt*color13:     #ec93d3
-! bright-cyan + bright-white
-URxvt*color14:     #93e0e3
-URxvt*color15:     #ffffff
+urxvt*cursorColor: #ff0000
+urxvt*cursorColor2:#000000
+urxvt*background:  #3f3f3f
+urxvt*foreground:  #f9f9f9
+! black
+urxvt*color0:      #1E2320
+urxvt*color8:      #709080
+! red
+urxvt*color1:      #FF5050
+urxvt*color9:      #FFa0a0
+! green
+urxvt*color2:      #60b48a
+urxvt*color10:     #c3bf9f
+! yellow
+urxvt*color3:      #dfaf8f
+urxvt*color11:     #f0dfaf
+! blue
+urxvt*color4:      #5060F0
+urxvt*color12:     #90b0ff
+! purple / magenta
+urxvt*color5:      #dc8cc3
+urxvt*color13:     #ec93d3
+! cyan
+urxvt*color6:      #8cd0d3
+urxvt*color14:     #93e0e3
+! white
+urxvt*color7:      #dcdccc
+urxvt*color15:     #ffffff
 
-
-URxvt.urlLauncher:  firefox
-!URxvt*font:         xft:profont:pixelsize=12
-!URxvt*boldFont:     xft:profont:pixelsize=12
-!URxvt*italicFont:   xft:profont:pixelsize=12
-!URxvt*bolditalicFont:   xft:profont:pixelsize=12
-!URxvt*font; xft:Inconsolata:pixelsize=14
-!URxvt*boldFont; xft:Inconsolata:pixelsize=14
-URxvt*font: xft:Inconsolata:pixelsize=16
-URxvt*Boldfont: xft:Inconsolata:pixelsize=16
-!URxvt*font: xft:DejaVu Sans Mono:pixelsize=14
-!URxvt*Boldfont: xft:DejaVu Sans Mono:pixelsize=14
-URxvt*scrollBar:    false
-!URxvt*internalBorder:   10
-URxvt.background:   #3f3f3f
-URxvt.foreground:   #f9f9f9
-!URxvt.cursorBlink:        True
-URxvt.cursorColor:        #ff0000
-URxvt.cursorColor2:       #000000
-URxvt.urgentOnBell: true
+urxvt*urlLauncher: firefox
+urxvt*font:        xft:Inconsolata:pixelsize=16
+urxvt*Boldfont:    xft:Inconsolata:pixelsize=16
+!urxvt*font:        xft:DejaVu Sans Mono:pixelsize=14
+!urxvt*Boldfont:    xft:DejaVu Sans Mono:pixelsize=14
+urxvt*scrollBar:   false
+!urxvt*internalBorder:   10
+!urxvt.cursorBlink: True
+urxvt*urgentOnBell:true
 
