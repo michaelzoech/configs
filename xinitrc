@@ -16,6 +16,8 @@
 #xfce4-panel &
 #xfce4-session &
 xset b off
+xset s off
+xset dpms 0 0 600
 setxkbmap -option terminate:ctrl_alt_bksp
 xsetroot -cursor_name left_ptr
 feh --bg-scale `find ~/wallpapers -type f -print | sort --random-sort | head -n 1`
