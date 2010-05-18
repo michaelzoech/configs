@@ -1,6 +1,7 @@
 runtime! archlinux.vim
 
 syntax on
+filetype plugin indent on
 
 colorscheme mydesert
 
