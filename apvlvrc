@@ -1,0 +1,2 @@
+" do not show index but go to last opened page
+set content=no
