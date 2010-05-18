@@ -7,48 +7,48 @@ Xft.hintstyle:     hintfull
 Xft.antialias:     1
 Xft.rgba:          rgb
 
-!urxvt*lineSpace: 0
+!URxvt*lineSpace: 0
 
-urxvt*cursorColor: #ff0000
-urxvt*cursorColor2:#000000
-urxvt*background:  #393939
-urxvt*foreground:  #f9f9f9
+URxvt*cursorColor: #ff0000
+URxvt*cursorColor2:#000000
+URxvt*background:  #393939
+URxvt*foreground:  #f9f9f9
 ! black
-urxvt*color0:      #1E2320
-urxvt*color8:      #709080
+URxvt*color0:      #1E2320
+URxvt*color8:      #709080
 ! red
-!urxvt*color1:      #FF5050
-!urxvt*color9:      #FFa0a0
-urxvt*color1:    #e9796c
-urxvt*color9:    #f9a092
+!URxvt*color1:      #FF5050
+!URxvt*color9:      #FFa0a0
+URxvt*color1:    #e9796c
+URxvt*color9:    #f9a092
 ! green
-!urxvt*color2:      #60c48a
-!urxvt*color10:     #c3bf8f
-urxvt*color2:    #b6e77d
-urxvt*color10:    #c3f786
+!URxvt*color2:      #60c48a
+!URxvt*color10:     #c3bf8f
+URxvt*color2:    #b6e77d
+URxvt*color10:    #c3f786
 ! yellow
-urxvt*color3:      #eda71f
-urxvt*color11:     #f0dfaf
+URxvt*color3:      #eda71f
+URxvt*color11:     #f0dfaf
 ! blue
-urxvt*color4:      #6070F0
-urxvt*color12:     #8aaaf8
+URxvt*color4:      #6070F0
+URxvt*color12:     #8aaaf8
 ! purple / magenta
-urxvt*color5:      #dc8cc3
-urxvt*color13:     #ec93d3
+URxvt*color5:      #dc8cc3
+URxvt*color13:     #ec93d3
 ! cyan
-urxvt*color6:      #8cd0d3
-urxvt*color14:     #83d0d3
+URxvt*color6:      #8cd0d3
+URxvt*color14:     #83d0d3
 ! white
-urxvt*color7:      #dcdccc
-urxvt*color15:     #ffffff
+URxvt*color7:      #dcdccc
+URxvt*color15:     #ffffff
 
-urxvt*urlLauncher: firefox
-urxvt*font:        xft:Inconsolata:pixelsize=16
-urxvt*Boldfont:    xft:Inconsolata:pixelsize=16
-!urxvt*font:        xft:DejaVu Sans Mono:pixelsize=14
-!urxvt*Boldfont:    xft:DejaVu Sans Mono:pixelsize=14
-urxvt*scrollBar:   false
-!urxvt*internalBorder:   10
-!urxvt.cursorBlink: True
-urxvt*urgentOnBell:true
+URxvt*urlLauncher: firefox
+URxvt*font:        xft:Inconsolata:pixelsize=16
+URxvt*Boldfont:    xft:Inconsolata:pixelsize=16
+!URxvt*font:        xft:DejaVu Sans Mono:pixelsize=14
+!URxvt*Boldfont:    xft:DejaVu Sans Mono:pixelsize=14
+URxvt*scrollBar:   false
+!URxvt*internalBorder:   10
+!URxvt.cursorBlink: True
+URxvt*urgentOnBell:true
 
