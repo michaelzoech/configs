@@ -1,8 +1,8 @@
 #!/bin/bash
 
-alias oo="ls"
-alias ll="ls -lh"
-alias aa="ls -lh"
+alias o="ls -lh"
+alias l="ls -lh"
+alias e="ls"
 alias mk="mkdir -p"
 alias u="j"
 alias c="cd"
