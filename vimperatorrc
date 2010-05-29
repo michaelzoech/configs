@@ -12,7 +12,7 @@ nmap e f
 nmap E F
 
 " disable keys for google services
-autocmd LocationChange .* :js modes.passAllKeys = /calendar\.google\.com|wave\.google\.com|www\.google\.com\/calendar|mail\.google\.com|www\.google\.com\/reader\/view/.test(buffer.URL)
+autocmd LocationChange .* :js modes.passAllKeys = /calendar\.google\.com|wave\.google\.com|www\.google\.com\/calendar|www\.rememberthemilk\.com|mail\.google\.com|www\.google\.com\/reader\/view/.test(buffer.URL)
 
 set "nextpattern=\\bnext\\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b,nächste Seite,\\bvorwärts\\b"
 set "previouspattern=\\bprev|previous\\b,^<$,^(<<|«)$,^(<|«),(<|«)$,vorige Seite,\\bzurück\\b"
