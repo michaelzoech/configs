@@ -1,0 +1,16 @@
+vagrant
+  ( box (add|list|remove <boxes>)
+  | destroy
+  | halt
+  | init
+  | package [<output-file>] [--include <files>]
+  | reload
+  | resume
+  | ssh
+  | ssh-config
+  | status
+  | suspend
+  | up
+  );
+
+boxes = ! vagrant box list | head -n-1 | tail -n+4 ;
