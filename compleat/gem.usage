@@ -1,0 +1,31 @@
+gem
+  ( build
+  | cert
+  | check
+  | cleanup
+  | contents
+  | dependency
+  | environment
+  | fetch
+  | generate_index
+  | help [<command>]
+  | install [-v <version>] <gemname> ...
+  | list
+  | lock
+  | mirror
+  | outdated
+  | pristine
+  | query
+  | rdoc
+  | search [--local|--remote|--both] <searchstring>
+  | server
+  | sources
+  | specification
+  | stale
+  | uninstall [-v <version>] <localgem> ...
+  | unpack
+  | update [<localgem>] ...
+  | which
+  );
+
+localgem = ! gem list --local | cut -d' ' -f1 ;
