@@ -5,6 +5,7 @@ import Data.Ratio ((%))
 
 import XMonad
 
+import XMonad.Actions.CopyWindow
 import XMonad.Actions.CycleWS
 import XMonad.Actions.SwapWorkspaces
 import XMonad.Actions.WindowBringer
@@ -110,7 +111,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     --, ((modm .|. shiftMask, xK_r     ), spawn "gmrun")
 
     -- close focused window
-    , ((modm .|. shiftMask, xK_c     ), kill)
+    , ((modm .|. shiftMask, xK_c     ), kill1)
 
      -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
@@ -217,7 +218,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [((m .|. mask, k), windows $ f i)
         | mask <- [mod1Mask, modm2]
         , (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask), (swapWithCurrent, controlMask)]]
+        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask), (swapWithCurrent, controlMask), (copy, shiftMask .|. controlMask)]]
     ++
 
     --
@@ -388,7 +389,7 @@ myCurrentWsBgColor = "gray40"
 myVisibleWsFgColor = "gray80"
 myVisibleWsBgColor = "gray20"
 myHiddenWsFgColor = "gray80"
-myHiddenEmptyWsFgColor = "gray50"
+myHiddenEmptyWsFgColor = "gray40"
 myUrgentWsBgColor = "brown"
 myTitleFgColor = "white"
 
