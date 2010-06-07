@@ -23,7 +23,7 @@ mvn
   | -Dmaven.test.skip=true
   | -o
   | -U
-  | -P <profile>
+  | -P <profile> [,<profile>] ...
   ) ... ;
 
-profile = ! cat pom.xml | grep '<id>' | sed 's/[^<]*<id>\([^<]*\)<\/id>*/\1/g' ;
+profile = ! cat pom.xml | grep -A 100000 "<profiles>" | grep -B 100000 "</profiles>" | grep '<id>' | sed 's/[^<]*<id>\([^<]*\)<\/id>*/\1/g' ;
