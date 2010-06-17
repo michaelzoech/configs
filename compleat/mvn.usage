@@ -4,12 +4,17 @@ mvn
   | compile
   | deploy
   | deploy:deploy-file
+  | dependency:tree
+  | dependency:build-classpath
   | eclipse:clean
   | eclipse:eclipse
   | eclipse:configure-workspace
+  | exec:exec
+  | exec:java
   | help:effective-pom
   | install
   | install:install-file
+  | integration-test
   | javadoc:javadoc
   | javadoc:jar
   | jetty:run
@@ -20,6 +25,7 @@ mvn
   | source:test-jar
   | test
   | test-compile
+  | verify
   | -Dmaven.test.skip=true
   | -o
   | -U
