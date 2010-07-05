@@ -104,12 +104,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
-    -- launch dmenu
-    , ((modm,               xK_r     ), spawn "xset dpms force on")
-
-    -- launch gmrun
-    --, ((modm .|. shiftMask, xK_r     ), spawn "gmrun")
-
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill1)
 
