@@ -39,4 +39,4 @@ temperature_unit          celsius
 
 
 TEXT
-  ${color1}Date: ${color2}${time %d.%m.%y %H:%M}${color1}  Up: ${color2}${uptime_short} ${if_match ${battery_percent BAT0} > 7}${color1}Battery: ${color2}${else}${color3}${endif}Battery: ${battery_percent BAT0}% ${acpiacadapter ADP1}${color1} Cpu: ${color2}${cpu}%${color1} GHz: ${color2}${freq_g}${color1}  Ram: ${color2}${memperc}%  ${color1}Swap: ${color2}${swapperc}%${color1}
+  ${color1}Date: ${color2}${time %d.%m.%y %H:%M}${color1} ${if_match ${battery_percent BAT0} > 7}${color1}Battery: ${color2}${else}${color3}${endif}Battery: ${battery_percent BAT0}% ${acpiacadapter ADP1}${color1} Cpu: ${color2}${cpu}%${color1} GHz: ${color2}${freq_g}${color1}  Ram: ${color2}${memperc}%  ${color1}Swap: ${color2}${swapperc}%${color1}
