@@ -1,0 +1,12 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Maven Repository</os:ShortName>
+<os:Description>Searches the central maven repository containing Java libraries released via the Maven 2 build system.</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH1wYREBkKw/mgGwAAAmJJREFUOMvFU7tPU2EcPd/X3u/etrS9fZcKkprwUliIIZCYGFzVODkw+Bc4ubg5OjG4OBjjqs4mGtSgDmoRBEkYkBpAnrUtfXF7aW/v6+egJixODp7kJOec8eQc4H+DTT2s9QDoOpHRb57Uf/UcQCgiuWm7sKoCQMRrZZzi12BKdgdQzqsAIHOSU5I5qGjbGadZ9goOEaOjfrOyKTgAxGXcdtZn7zC4LC6zu+0vT2+pEu47317OgAgphS4IvfA8bB/NGrkHN1UvpYVemD18PTPGGcAYcDqgps4L+zjIOR+WfV39DtFiMNE32lx7FRYME7WdVVMEVEr0jd4wqrs+kOshx/FywSEzBjWYzCaxvzzJAFXyheId01xUM0PR4/W5QQ/DRH1vbVeJZArdI5eipYUnV/4UxiVOMojCas8wSC9PgwiS4o/Vm9pKIN7rhEPRq+RYZxrFjQXOPa5HKIhm+q8DAEl+hQsOv6EdBrhXIHJqcEwrbUJSgqHK3rrOhW8jPTB+Ta/sCKNjzANAOZ/rdI9MpQCAWS2DyxyJdr3AWo1STe09J1U2FjUllGDa5qeoQ1hKn73oq24tW6GRy0sA8GPt/WcRiDgAYAezfVxilOroNdiWueyYBrTy9oocjJGjFZOmi3nGPWgc5PPq+HQVANpH5X2X8O5XAV6ZezgSVkszbXg+tqr7ZLnIyV1R0zW0pG6zVdtstxrFrfkTOyPDxWNyXSIw12t0Ot+16sELKTb8trm3MqRkJ9+09EYvFz6tbrKSubv0iMeycwDQrJeeuUxqFA2WY6Xte341/uGfp/zfz4if6nIniZMf7ZoAAAAASUVORK5CYII=</os:Image>
+<UpdateInterval>7</UpdateInterval>
+<UpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/mvn_repository.xml</UpdateUrl>
+<IconUpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/mvn_repository.png</IconUpdateUrl>
+<SearchForm>http://mvnrepository.com</SearchForm>
+<os:Url type="text/html" method="GET" template="http://mvnrepository.com/search.html?query={searchTerms}">
+</os:Url>
+</SearchPlugin>
