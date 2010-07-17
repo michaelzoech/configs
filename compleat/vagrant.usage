@@ -4,6 +4,7 @@ vagrant
   | halt
   | init
   | package [<output-file>] [--include <files>]
+  | provision
   | reload
   | resume
   | ssh
