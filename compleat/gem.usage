@@ -9,7 +9,7 @@ gem
   | fetch
   | generate_index
   | help [<command>]
-  | install [-v <version>] <gemname> ...
+  | install [-v <version> | --no-ri | --no-rdoc] ... <gemname> ...
   | list
   | lock
   | mirror
@@ -24,7 +24,7 @@ gem
   | stale
   | uninstall [-v <version>] <localgem> ...
   | unpack
-  | update [<localgem>] ...
+  | update [<localgem>] ... [--user-install]
   | which
   );
 
