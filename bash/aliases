@@ -4,7 +4,7 @@ alias o="ls -lh"
 alias l="ls -lh"
 alias e="ls"
 alias mk="mkdir -p"
-alias u="j"
+alias u="j" # http://wiki.github.com/joelthelion/autojump/
 alias c="cd"
 
 alias a="arun"
