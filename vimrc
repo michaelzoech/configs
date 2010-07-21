@@ -1,11 +1,6 @@
 runtime! archlinux.vim
 
-syntax on
-filetype plugin indent on
-
-colorscheme mydesert
-
-"set background=dark
+set nocompatible
 
 "set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
@@ -15,6 +10,13 @@ set smartcase		" Do smart case matching
 "set autowrite		" Automatically save before commands like :next and :make
 "set hidden             " Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes) in terminals
+
+filetype plugin indent on
+syntax on
+
+colorscheme mydesert
+
+"set background=dark
 
 " Scroll the viewport faster by 3 lines
 nnoremap <C-e> <C-e><C-e><C-e>
@@ -32,18 +34,16 @@ let &sbr = nr2char(8618).' '
 
 set visualbell
 
-" tikz files are latex files
-au FileType tikz set filetype=latex
-
 " tabs
 autocmd FileType * set noexpandtab
 set smarttab
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set smartindent
 
 " use 2 spaces for a tab
-autocmd FileType haskell,rb,tex,bib,xml set expandtab softtabstop=2 tabstop=2 shiftwidth=2
+autocmd FileType ruby,haskell,tex,bib,xml set expandtab softtabstop=2 tabstop=2 shiftwidth=2
 autocmd FileType tex set textwidth=70
 
 set ruler
