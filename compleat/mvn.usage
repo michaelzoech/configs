@@ -20,6 +20,7 @@ mvn
   | jetty:run
   | jetty:run-war
   | package
+  | pax:provision
   | site
   | source:jar
   | source:test-jar
