@@ -9,7 +9,7 @@ gem
   | fetch
   | generate_index
   | help [<command>]
-  | install [-v <version> | --no-ri | --no-rdoc] ... <gemname> ...
+  | install [-v <version> | --no-ri | --no-rdoc | --user-install] ... <gemname> ...
   | list
   | lock
   | mirror
