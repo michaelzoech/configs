@@ -3,7 +3,7 @@
 # <action> is executed
 
 if [ "$#" != 2 ]; then
-	echo "USAGE: onsave.sh <file> <action>"
+	echo "USAGE: onsave <file> <action>"
 	exit 1
 fi
 
