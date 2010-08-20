@@ -1,8 +1,5 @@
 ScriptID SourceID Filename
 --------------------------
 642 8136 :AutoInstall: getscript.vim
-69 6273 :AutoInstall: project.vim
 2178 9487 :AutoInstall: LatexParFormat.vim
-1658 11834 :AutoInstall:  The NERD tree
-2540 11006 :AutoInstall: snipMate
 1397 11713 :AutoInstall: xml.vim
