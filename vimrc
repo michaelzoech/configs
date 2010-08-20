@@ -74,3 +74,5 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
