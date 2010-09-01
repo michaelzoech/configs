@@ -25,3 +25,4 @@ alias gs='git status'
 alias grm='git rm'
 alias gdel="git status | grep 'deleted:' | awk '{print \$3}' | xargs git rm"
 alias qg='arun qgit --all'
+alias gru='git remote update -p'
