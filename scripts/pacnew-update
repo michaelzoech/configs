@@ -1,0 +1,9 @@
+#!/bin/bash
+# pacnew-update - merge *.pacnew files with original configurations with meld
+
+pacnew=$(find /etc -type f -name "*.pacnew")
+
+for config in $pacnew; do
+  kdesu meld ${config%\.*} $config &
+  wait
+done
