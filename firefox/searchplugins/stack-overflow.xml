@@ -1,0 +1,12 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Stack Overflow</os:ShortName>
+<os:Description>Search among stackoverflow.com questions and answers</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD/////ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv///////////2ZmZv9mZmb/ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv9mZmb///////////9mZmb/ZmZm//////////////////////////////////////////////////////9mZmb/ZmZm////////////ZmZm/2ZmZv//////ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv//////ZmZm/2ZmZv///////////2ZmZv9mZmb//////2ZmZv9mZmb/ZmZm/2ZmZv9mZmb/ZmZm/2ZmZv9mZmb//////2ZmZv9mZmb///////////9mZmb/ZmZm////////////////////////////8fX4/8nW5P+twtb/oLjP//////9mZmb/ZmZm////////////////////////////oLjP/3eZu/9pj7T/M2aZ/zNmmf8zZpn/M2aZ/zNmmf///////////////////////////////////////////zNmmf8zZpn/M2aZ/zNmmf8zZpn/d5m7/6C4z/+WwuH/wN/3//////////////////////////////////////+guM//rcLW/8nW5P/x9fj//////9/v+/+w1/X/QZ7m/1Cm6P//////////////////////////////////////////////////////7/f9/4C+7v8xluT/EYbg/zGW5P/A3/f/0933/9Pd9//////////////////////////////////f7/v/YK7q/xGG4P8RhuD/MZbk/7DX9f//////4uj6/zJh2/8yYdv/8PT8////////////////////////////UKbo/xGG4P8xluT/sNf1////////////4uj6/zJh2/8jVtj/e5ro/////////////////////////////////8Df9/+gz/P/////////////////8PT8/0944P8jVtj/bI7l/////////////////////////////////////////////////////////////////2yO5f8jVtj/T3jg//D0/P///////////////////////////////////////////////////////////3ua6P8jVtj/MmHb/+Lo+v////////////////////////////////////////////////////////////D0/P8yYdv/I1bY/9Pd9///////////////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</os:Image>
+<UpdateInterval>7</UpdateInterval>
+<UpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/stackoverflow.xml</UpdateUrl>
+<IconUpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/stackoverflow.ico</IconUpdateUrl>
+<SearchForm>http://stackoverflow.com/</SearchForm>
+<os:Url type="text/html" method="GET" template="http://stackoverflow.com/search?q={searchTerms}">
+</os:Url>
+</SearchPlugin>
