@@ -1,0 +1,11 @@
+<SearchPlugin xmlns="http://www.mozilla.org/2006/browser/search/" xmlns:os="http://a9.com/-/spec/opensearch/1.1/">
+<os:ShortName>Android Developers</os:ShortName>
+<os:Description>Android Developers</os:Description>
+<os:InputEncoding>UTF-8</os:InputEncoding>
+<os:Image width="16" height="16">data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAABMLAAATCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKSjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/6Sjhv8AAAAAAAAAAKSjhv+ko4b/pKOG/wAAAAAAAAAAAAAAAKSjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/6Sjhv+ko4b/AAAAAAAAAACko4b/pKOG/6Sjhv8AAAAAAAAAAKSjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/wAAAAAAAAAApKOG/6Sjhv+ko4b/AAAAAKSjhv+ko4b/pKOG/6Sjhv+ko4b/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKSjhv+ko4b/pKOG/wAAAACko4b/pKOG/6Sjhv+ko4b/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACko4b/pKOG/6Sjhv8AAAAApKOG/6Sjhv+ko4b/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApKOG/6Sjhv+ko4b/AAAAAKSjhv+ko4b/pKOG/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKSjhv+ko4b/pKOG/wAAAACko4b/pKOG/6Sjhv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACko4b/pKOG/6Sjhv8AAAAApKOG/6Sjhv+ko4b/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApKOG/6Sjhv+ko4b/AAAAAKSjhv+ko4b/pKOG/6Sjhv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKSjhv+ko4b/pKOG/wAAAAAAAAAApKOG/6Sjhv+ko4b/pKOG/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKSjhv+ko4b/pKOG/6Sjhv8AAAAAAAAAAKSjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/6Sjhv+ko4b/AAAAAAAAAAAAAAAApKOG/6Sjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/wAAAAAAAAAAAAAAAAAAAAAAAAAApKOG/6Sjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/6Sjhv+ko4b/pKOG/6Sjhv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8uUPAYZXLgGGZvwBhNVYP4ZGqH+HRlj/hhZ4/4ZWOP+C9rj/g+Cof4CQnD8GFywAB5PuAACQn4AAk8//9hbA==</os:Image>
+<UpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/developerandroidcom.xml</UpdateUrl>
+<SearchForm>http://developer.android.com/reference/packages.html</SearchForm>
+<os:Url type="text/html" method="GET" template="http://developer.android.com/search.html#q={searchTerms}&amp;t=undefined">
+</os:Url><os:Url type="application/opensearchdescription+xml" method="GET" template="http://mycroft.mozdev.org/updateos.php/id0/developerandroidcom.xml" rel="self">
+</os:Url>
+</SearchPlugin>
