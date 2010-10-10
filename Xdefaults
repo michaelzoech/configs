@@ -43,8 +43,8 @@ URxvt*color7:      #dcdccc
 URxvt*color15:     #ffffff
 
 URxvt*urlLauncher: firefox
-URxvt*font:        xft:Inconsolata:pixelsize=15
-URxvt*Boldfont:    xft:Inconsolata:pixelsize=15
+URxvt*font:        xft:Inconsolata:pixelsize=14
+URxvt*Boldfont:    xft:Inconsolata:pixelsize=14
 !URxvt*font:        xft:DejaVu Sans Mono:pixelsize=12
 !URxvt*Boldfont:    xft:DejaVu Sans Mono:pixelsize=12
 URxvt*scrollBar:   false
