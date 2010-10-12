@@ -101,8 +101,8 @@ myStatusbar = "my-dzen.sh"
 --
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
-    -- launch a terminal
-    [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+    -- switch keyboard layout
+    [ ((modm .|. shiftMask, xK_Return), spawn "switch-layout")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill1)
@@ -195,6 +195,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     --, ((modm2             , xK_e     ), spawn "")
     , ((modm2             , xK_u     ), spawn $ XMonad.terminal conf)
     , ((modm2             , xK_i     ), spawn "openim openchat")
+
     , ((modm2             , xK_apostrophe), spawn "firefox")
     -- used by xinerama
     --, ((modm2             , xK_comma ), spawn "")
