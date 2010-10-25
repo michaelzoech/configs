@@ -24,7 +24,7 @@ function ... (){
       dir="../$dir"
       maxlvl=$(($maxlvl - 1));
       if [ -d "$dir" ]; then 
-        cd $dir #>&/dev/null
+        cd "$dir" #>&/dev/null
 		return
       fi
   done
