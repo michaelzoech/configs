@@ -1,5 +1,5 @@
-set complete=hsS
-set wildoptions=auto
+set complete=slf
+"set wildoptions=auto
 set wildmode=list:full
 
 set visualbell=true
