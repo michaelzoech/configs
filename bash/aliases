@@ -22,6 +22,7 @@ alias gcm='git commit -m'
 alias gcam='git commit -a -m'
 alias gco='git checkout'
 alias gb='git branch'
+alias gbd='git branch -D'
 alias gs='git status'
 alias grm='git rm'
 alias gdel="git status | grep 'deleted:' | awk '{print \$3}' | xargs git rm"
