@@ -9,6 +9,8 @@ alias c="cd"
 
 alias a="arun"
 
+alias f="find . -iname"
+
 # git
 alias ga="git add"
 alias gl='git pull'
