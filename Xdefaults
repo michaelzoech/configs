@@ -42,7 +42,6 @@ URxvt*color14:     #83d0d3
 URxvt*color7:      #dcdccc
 URxvt*color15:     #ffffff
 
-URxvt*urlLauncher: firefox
 URxvt*font:        xft:Inconsolata:pixelsize=14
 URxvt*Boldfont:    xft:Inconsolata:pixelsize=14
 !URxvt*font:        xft:DejaVu Sans Mono:pixelsize=12
@@ -51,4 +50,9 @@ URxvt*scrollBar:   false
 !URxvt*internalBorder:   10
 !URxvt.cursorBlink: True
 URxvt*urgentOnBell:true
+
+URxvt*perl-ext-common: default,matcher
+
+URxvt*urlLauncher: firefox
+URxvt*matcher*button: 1
 
