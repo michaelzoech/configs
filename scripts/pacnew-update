@@ -4,6 +4,6 @@
 pacnew=$(find /etc -type f -name "*.pacnew")
 
 for config in $pacnew; do
-  kdesu meld ${config%\.*} $config &
+  gksudo meld ${config%\.*} $config &
   wait
 done
