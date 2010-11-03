@@ -1,2 +1,2 @@
 #!/bin/sh
-setxkbmap us dvorak-intl
+setxkbmap us dvorak-alt-intl
