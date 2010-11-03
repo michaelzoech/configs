@@ -13,6 +13,7 @@ alias f="find . -iname"
 
 # git
 alias ga="git add"
+alias gaa="git add -A"
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff'
