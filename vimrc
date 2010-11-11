@@ -36,7 +36,7 @@ let &sbr = nr2char(8618).' '
 
 set visualbell
 
-" tabs
+" default tab settings
 autocmd FileType * set noexpandtab
 set smarttab
 set tabstop=4
@@ -44,14 +44,14 @@ set shiftwidth=4
 set softtabstop=4
 set smartindent
 
-" use 2 spaces for a tab
-autocmd FileType ruby,haskell,tex,bib,xml set expandtab softtabstop=2 tabstop=2 shiftwidth=2
+autocmd FileType scala,ruby,haskell,tex,bib,xml set expandtab softtabstop=2 tabstop=2 shiftwidth=2
 autocmd FileType tex set textwidth=70
 
 set ruler
 
 " project plugin
 let g:proj_flags="imstvg"
+let g:proj_window_width="30"
 map <C-T> <Esc>:tabnew<CR><Plug>ToggleProject/
 nmap <silent> <F3> <Plug>ToggleProject
 
