@@ -1,0 +1,39 @@
+adb <options>
+  ( devices
+  | connect
+  | disconnect
+  | push <local> <remote>
+  | pull <remote> <local>
+  | sync [ <directory> ]
+  | shell [ <shellcmd> ]
+  | logcat [-c | -d | -f <outfile> | -s | -v <logformats>] [ <filterspec> ]
+  | forward <local> <remote>
+  | install [-l | -r | -s] ... <apk>
+  | uninstall [-k] <package>
+  | help
+  | wait-for-device
+  | start-server
+  | kill-server
+  | get-state
+  | get-serialno
+  | status-window
+  | remount
+  | reboot [bootloader|recovery]
+  | root
+  | usb
+  | tcpip <port>
+  | ppp <tty>
+  );
+
+options = [-d | -e | -s <serialno> | -p <productname>] ;
+
+logformats = (brief | process | tag | thread | raw | time | long) ;
+process = ! adb shell ps | awk -F' ' '{ print $9 }' | strings ;
+shellcmd =
+  ( am profile <process> (start <file> | stop)
+  | dumpsys meminfo [ <process> ]
+  | monkey [-v | -s <seed> | -p <package> | --hprof | --monitor-native-crashes] <eventcount>
+  | ps
+  );
+serialno = ! adb devices | tail -n +2 | strings | awk -F' ' '{ print $1 }' ;
+
