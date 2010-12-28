@@ -1,0 +1,29 @@
+#!/bin/bash
+# USAGE: printvars [-f <makefile>] VARIABLES ...
+# prints the (actual) value of the provided VARIABLES from the Makefile
+
+filename=""
+
+if [ -f GNUmakefile ] ; then
+  filename="GNUmakefile"
+elif [ -f makefile ] ; then
+  filename="makefile"
+elif [ -f Makefile ] ; then
+  filename="Makefile"
+fi
+
+if [ $1 = "-f" ] ; then
+	filename=$2
+fi
+
+if [ -n "$filename" ] ; then
+  vars=""
+  for n in $@ ; do
+    vars="$vars print-$n"
+  done
+  printvarmk=`which printvar.mk`
+  make -f $filename -f $printvarmk $vars
+else
+  echo "No makefile found" 1>&2
+  exit 1
+fi
