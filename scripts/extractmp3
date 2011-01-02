@@ -1,0 +1,16 @@
+#!/bin/sh
+if [ $# != 2 -a $# != 1 ]; then
+	echo "USAGE: extractmp3 <input-video> [<output-mp3>]"
+	exit 1
+fi
+input=$1
+output=$2
+if [ $# == 1 ]; then
+	output=`echo "$1" | sed 's/\..\{1,4\}$//'`
+fi
+if [ ! -f "$input" ]; then
+	echo "'$input' is not a file"
+	exit 1
+fi
+# overwrite of $output is checked by ffmpeg
+ffmpeg -i "$input" -f mp3 -ab 192k "$output.mp3"
