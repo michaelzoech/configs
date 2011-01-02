@@ -1,0 +1,17 @@
+#!/bin/sh
+if [ "$1" == "-h" -o "$1" == "--help" ]; then
+	echo "USAGE: screenshot [<output.png> [<seconds>]]"
+	exit 0
+fi
+output="screenshot.png"
+seconds=1
+if [ $# -gt 0 ]; then
+	output=$1
+fi
+if [ $# -gt 1 ]; then
+	seconds=$2
+fi
+sleep $seconds
+import -window root "$output" || exit 1
+#beep would be a better choice here, but does not work on my machine
+notify-send -t 1000 "captured to $output"
