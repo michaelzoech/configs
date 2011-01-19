@@ -68,8 +68,10 @@ hi Ignore	guifg=grey40
 hi Todo		guifg=orangered guibg=yellow2
 
 " color terminal definitions
-hi SpecialKey	ctermfg=darkgreen
-hi NonText	cterm=bold ctermfg=darkblue
+"hi SpecialKey	ctermfg=darkgreen
+hi SpecialKey	ctermfg=darkgrey
+"hi NonText	cterm=bold ctermfg=darkblue
+hi NonText	cterm=bold ctermfg=darkgrey
 hi Directory	ctermfg=darkcyan
 hi ErrorMsg	cterm=bold ctermfg=7 ctermbg=1
 hi IncSearch	cterm=NONE ctermfg=yellow ctermbg=green

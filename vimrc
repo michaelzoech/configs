@@ -78,3 +78,7 @@ autocmd BufReadPost *
 
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
+
+"shortcut to toggle whitespace display
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
