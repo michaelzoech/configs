@@ -41,6 +41,7 @@ alias scm='svn commit -m'
 alias sup='svn update'
 alias sd='svn diff'
 alias st='svn diff --diff-cmd meld'
+alias sll='svn log --limit'
 
 #android
 alias aun='adb uninstall'
