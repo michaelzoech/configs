@@ -6,10 +6,17 @@ alias e="ls"
 alias mk="mkdir -p"
 alias u="j" # http://wiki.github.com/joelthelion/autojump/
 alias c="cd"
-
 alias a="arun"
 
 alias f="find . -iname"
+
+# yaourt
+alias y='yaourt'
+alias ys='yaourt -S'
+alias yss='yaourt -Ss'
+alias yu='yaourt -Syu'
+alias yr='yaourt -R'
+alias yrs='yaourt -Rs'
 
 # git
 alias ga="git add"
@@ -42,6 +49,8 @@ alias sup='svn update'
 alias sd='svn diff'
 alias st='svn diff --diff-cmd meld'
 alias sll='svn log --limit'
+alias spe='svn propedit svn:externals .'
+alias spi='svn propedit svn:ignore .'
 
 #android
 alias aun='adb uninstall'
