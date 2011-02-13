@@ -1,0 +1,9 @@
+loadplugins '\.(js|penta)$'
+map -modes=n e f
+map -modes=n ,g :set<Space>guioptions=rb
+map -modes=n,v <Left> gT
+map -modes=n,v <Right> gt
+map -modes=n E F
+set visualbell
+:autocmd LocationChange (calendar|mail)\.google\.com|www\.google\.com/reader -js modes.set(modes.PASS_THROUGH)
+set fbwhitelist=,youtube.com,vimeo.com,soundcloud.com
