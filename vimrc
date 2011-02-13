@@ -44,11 +44,12 @@ set shiftwidth=4
 set softtabstop=4
 set smartindent
 
-autocmd FileType scala,ruby,haskell,tex,bib,xml setlocal sts=2 ts=2 sw=2 expandtab
+autocmd FileType groovy,scala,ruby,haskell,tex,bib,xml setlocal sts=2 ts=2 sw=2 expandtab
 autocmd FileType tex set textwidth=70
 
 " treat html files as xml (i.e. indentation and ftplugins)
 autocmd BufNewFile,BufRead *.html,*.htm set filetype=xml
+autocmd BufNewFile,BufRead *.gradle set filetype=groovy
 
 set ruler
 
