@@ -15,7 +15,7 @@ function trunc_path() {
 }
 
 function parse_svn_dirty {
-	local lines=$(svn status 2>/dev/null | wc -l)
+	local lines=$(svn status 2>/dev/null | grep "^\([ACDIMR?\!\~]\)\|\( [CM]\)" | wc -l)
 	[[ $lines -gt 0 ]] && echo "*"
 }
 
