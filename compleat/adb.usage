@@ -28,9 +28,22 @@ adb <options>
 options = [-d | -e | -s <serialno> | -p <productname>] ;
 
 logformats = (brief | process | tag | thread | raw | time | long) ;
+
 process = ! adb shell ps | awk -F' ' '{ print $9 }' | strings ;
+
+actions =
+  ( android.intent.action.MAIN
+  | android.intent.action.VIEW
+  );
+
+amcmd =
+  ( profile <process> (start <file> | stop)
+  | start [-a <actions>] [-d <data_uri>] [-t <mime_type>] [-c <category>]... [-n <component>]
+  | instrument
+  );
+
 shellcmd =
-  ( am profile <process> (start <file> | stop)
+  ( am <amcmd>
   | dumpsys meminfo [ <process> ]
   | monkey [-v | -s <seed> | -p <package> | --hprof | --monitor-native-crashes] <eventcount>
   | ps
