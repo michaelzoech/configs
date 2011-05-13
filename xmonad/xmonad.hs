@@ -278,7 +278,7 @@ myManageHook = (composeAll . concat)
     ] <+> manageHook defaultConfig
       <+> scratchpadManageHook (W.RationalRect 0.25 0.2 0.5 0.6)
       <+> floatNextHook
-  where byClass = ["Gimp", "MPlayer", "Totem", "Pino", "Do", "Pidgin", "Skype"]
+  where byClass = ["Gimp-2.6", "MPlayer", "Totem", "Pino", "Do", "Pidgin", "Skype", "Qmote"]
         byTitle = ["VLC (XVideo output)", "Downloads", "Preferences", "Save As..."]
         byResource = []
 
