@@ -1,5 +1,7 @@
 #!/bin/bash
 
+COMPLETE="complete -o bashdefault -o default -o nospace -F"
+
 alias a="arun"
 alias c="cd"
 alias e="ls"
@@ -10,7 +12,7 @@ alias o="ls -lh"
 alias u="j" # http://wiki.github.com/joelthelion/autojump/
 
 # yaourt
-alias y='yaourt'
+alias y='yaourt' ; $COMPLETE _yaourt y
 alias yr='yaourt -R'
 alias yrs='yaourt -Rs'
 alias ys='yaourt -S'
@@ -18,24 +20,24 @@ alias yss='yaourt -Ss'
 alias yu='yaourt -Syu'
 
 # git
-alias ga="git add"
+alias ga="git add" ; $COMPLETE _git_add ga
 alias gaa="git add -A"
-alias gb='git branch'
+alias gb='git branch' ; $COMPLETE _git_branch gb
 alias gbd='git branch -d'
 alias gbD='git branch -D'
-alias gco='git checkout'
-alias gc='git commit'
+alias gco='git checkout' ; $COMPLETE _git_checkout gco
+alias gc='git commit' ; $COMPLETE _git_commit gc
 alias gca='git commit -a'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
-alias gd='git diff'
+alias gd='git diff' ; $COMPLETE _git_diff gd
 alias gds='git diff --staged'
-alias gl='git log'
-alias gpu='git pull'
-alias gp='git push'
-alias grm='git rm'
+alias gl='git log' ; $COMPLETE _git_log gl
+alias gpu='git pull' ; $COMPLETE _git_pull gpu
+alias gp='git push' ; $COMPLETE _git_push gp
+alias grm='git rm' ; $COMPLETE _git_rm grm
 alias gru='git remote update -p'
-alias gs='git status'
+alias gs='git status' ; $COMPLETE _git_status gs
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 
