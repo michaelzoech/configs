@@ -1,57 +1,58 @@
 #!/bin/bash
 
-alias o="ls -lh"
-alias l="ls -lh"
-alias e="ls"
-alias mk="mkdir -p"
-alias u="j" # http://wiki.github.com/joelthelion/autojump/
-alias c="cd"
 alias a="arun"
-
+alias c="cd"
+alias e="ls"
 alias f="find . -iname"
+alias l="ls -lh"
+alias mk="mkdir -p"
+alias o="ls -lh"
+alias u="j" # http://wiki.github.com/joelthelion/autojump/
 
 # yaourt
 alias y='yaourt'
+alias yr='yaourt -R'
+alias yrs='yaourt -Rs'
 alias ys='yaourt -S'
 alias yss='yaourt -Ss'
 alias yu='yaourt -Syu'
-alias yr='yaourt -R'
-alias yrs='yaourt -Rs'
 
 # git
 alias ga="git add"
 alias gaa="git add -A"
-alias gl='git pull'
-alias gp='git push'
-alias gd='git diff'
-alias gds='git diff --staged'
-alias gdt='meldgit'
+alias gb='git branch'
+alias gbd='git branch -d'
+alias gbD='git branch -D'
+alias gco='git checkout'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gcm='git commit -m'
-alias gcam='git commit -a -m'
-alias gco='git checkout'
-alias gb='git branch'
-alias gbd='git branch -D'
-alias gs='git status'
+alias gcam='git commit -am'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gl='git log'
+alias gpu='git pull'
+alias gp='git push'
 alias grm='git rm'
-alias gdel="git status | grep 'deleted:' | awk '{print \$3}' | xargs git rm"
-alias qg='arun qgit --all'
 alias gru='git remote update -p'
+alias gs='git status'
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 
+alias gdel="git status | grep 'deleted:' | awk '{print \$3}' | xargs git rm"
+alias qg='arun qgit --all'
+
 # svn
 alias sa='svn add'
-alias ss='svn status'
 alias scm='svn commit -m'
-alias sup='svn update'
 alias sd='svn diff'
 alias st='svn diff --diff-cmd meld'
 alias sll='svn log --limit'
 alias spe='svn propedit svn:externals .'
 alias spi='svn propedit svn:ignore .'
+alias ss='svn status'
+alias sup='svn update'
 
 #android
-alias aun='adb uninstall'
 alias ain='adb install'
+alias aun='adb uninstall'
