@@ -2,6 +2,26 @@
 
 COMPLETE="complete -o bashdefault -o default -o nospace -F"
 
+# Enable bash completion for alias
+# mkalias <completion function> <alias> <command with args>
+# e.g.
+#     mkalias _git gbd git branch -d
+function mkalias () {
+	local function_name="$1"
+	local alias_name="$2"
+	local arg_count=$(($#-3))
+	shift 2
+	eval "
+		function _$alias_name {
+			COMP_CWORD+=$arg_count
+			COMP_WORDS=( "$@" \${COMP_WORDS[@]:1} )
+			$function_name
+		}"
+
+	complete -o bashdefault -o default -o nospace -F _$alias_name $alias_name
+	alias $alias_name="$*"
+}
+
 alias a="arun"
 alias c="cd"
 alias e="ls"
@@ -23,15 +43,15 @@ alias yu='yaourt -Syu'
 alias ga="git add" ; $COMPLETE _git_add ga
 alias gaa="git add -A"
 alias gb='git branch' ; $COMPLETE _git_branch gb
-alias gbd='git branch -d'
-alias gbD='git branch -D'
+mkalias _git gbd git branch -d
+mkalias _git gbD git branch -D
 alias gco='git checkout' ; $COMPLETE _git_checkout gco
 alias gc='git commit' ; $COMPLETE _git_commit gc
 alias gca='git commit -a'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
 alias gd='git diff' ; $COMPLETE _git_diff gd
-alias gds='git diff --staged'
+mkalias _git gds git diff --staged
 alias gl='git log' ; $COMPLETE _git_log gl
 alias gpu='git pull' ; $COMPLETE _git_pull gpu
 alias gp='git push' ; $COMPLETE _git_push gp
