@@ -6,7 +6,7 @@
 <UpdateInterval>7</UpdateInterval>
 <UpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/archlinux_packages.xml</UpdateUrl>
 <IconUpdateUrl>http://mycroft.mozdev.org/updateos.php/id0/archlinux_packages.ico</IconUpdateUrl>
-<SearchForm>http://www.archlinux.org/packages/search/</SearchForm>
-<os:Url type="text/html" method="GET" template="http://www.archlinux.org/packages/search/?q={searchTerms}">
+<SearchForm>http://www.archlinux.org/packages/</SearchForm>
+<os:Url type="text/html" method="GET" template="http://www.archlinux.org/packages/?q={searchTerms}">
 </os:Url>
 </SearchPlugin>
