@@ -44,8 +44,8 @@ set shiftwidth=4
 set softtabstop=4
 set smartindent
 
-autocmd FileType groovy,scala,ruby,haskell,tex,bib,xml setlocal sts=2 ts=2 sw=2 expandtab
-autocmd FileType tex set textwidth=70
+autocmd FileType groovy,scala,ruby,haskell,tex,bib,xml,erb setlocal sts=2 ts=2 sw=2 expandtab
+"autocmd FileType tex set textwidth=70
 
 " treat html files as xml (i.e. indentation and ftplugins)
 autocmd BufNewFile,BufRead *.html,*.htm set filetype=xml
@@ -80,8 +80,8 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor = "latex"
+"set grepprg=grep\ -nH\ $*
+"let g:tex_flavor = "latex"
 
 "shortcut to toggle whitespace display
 nmap <leader>l :set list!<CR>

@@ -11,7 +11,7 @@ var INFO =
 	<project name="Pentadactyl" min-version="1.0" />
 </plugin>;
 
-commands.addUserCommand(['delicious'], "Save page as a bookmark on delicious.com",
+commands.addUserCommand(['quickdelicious'], "Save page as a bookmark on delicious.com",
 	function (args) {
 		var url = "https://api.del.icio.us/v1/posts/add?";
 		url += "&url=" + encodeURIComponent(buffer.URL);
