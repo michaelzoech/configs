@@ -61,7 +61,7 @@ alias gpu='git pull' ; $COMPLETE _git_pull gpu
 alias gp='git push' ; $COMPLETE _git_push gp
 alias grm='git rm' ; $COMPLETE _git_rm grm
 alias gru='git remote update -p'
-alias gs='git status' ; $COMPLETE _git_status gs
+alias gs='git status -sb' ; $COMPLETE _git_status gs
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 
