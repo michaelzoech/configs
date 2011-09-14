@@ -51,7 +51,7 @@ mkalias _git gbd git branch -d
 mkalias _git gbD git branch -D
 alias gco='git checkout' ; $COMPLETE _git_checkout gco
 alias gc='git commit' ; $COMPLETE _git_commit gc
-alias gca='git commit -a'
+alias gca='git commit --amend'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
 alias gd='git diff' ; $COMPLETE _git_diff gd
