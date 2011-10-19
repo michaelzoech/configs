@@ -44,24 +44,24 @@ alias yss='yaourt -Ss'
 alias yu='yaourt -Syu'
 
 # git
-alias ga="git add" ; $COMPLETE _git_add ga
-alias gaa="git add -A"
-alias gb='git branch' ; $COMPLETE _git_branch gb
-mkalias _git gbd git branch -d
-mkalias _git gbD git branch -D
-alias gco='git checkout' ; $COMPLETE _git_checkout gco
-alias gc='git commit' ; $COMPLETE _git_commit gc
-alias gca='git commit --amend'
-alias gcm='git commit -m'
-alias gcam='git commit -am'
-alias gd='git diff' ; $COMPLETE _git_diff gd
-mkalias _git gds git diff --staged
-alias gl='git log' ; $COMPLETE _git_log gl
-alias gpu='git pull' ; $COMPLETE _git_pull gpu
-alias gp='git push' ; $COMPLETE _git_push gp
-alias grm='git rm' ; $COMPLETE _git_rm grm
-alias gru='git remote update -p'
-alias gs='git status -sb' ; $COMPLETE _git_status gs
+#alias ga="git add" ; $COMPLETE _git_add ga
+#alias gaa="git add -A"
+#alias gb='git branch' ; $COMPLETE _git_branch gb
+#mkalias _git gbd git branch -d
+#mkalias _git gbD git branch -D
+#alias gco='git checkout' ; $COMPLETE _git_checkout gco
+#alias gc='git commit' ; $COMPLETE _git_commit gc
+#alias gca='git commit --amend'
+#alias gcm='git commit -m'
+#alias gcam='git commit -am'
+#alias gd='git diff' ; $COMPLETE _git_diff gd
+#mkalias _git gds git diff --staged
+#alias gl='git log' ; $COMPLETE _git_log gl
+#alias gpu='git pull' ; $COMPLETE _git_pull gpu
+#alias gp='git push' ; $COMPLETE _git_push gp
+#alias grm='git rm' ; $COMPLETE _git_rm grm
+#alias gru='git remote update -p'
+#alias gs='git status -sb' ; $COMPLETE _git_status gs
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 
