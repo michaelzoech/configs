@@ -62,10 +62,10 @@ alias yu='yaourt -Syu'
 #alias grm='git rm' ; $COMPLETE _git_rm grm
 #alias gru='git remote update -p'
 #alias gs='git status -sb' ; $COMPLETE _git_status gs
-alias gsr='git svn rebase'
-alias gsd='git svn dcommit'
+#alias gsr='git svn rebase'
+#alias gsd='git svn dcommit'
 
-alias gdel="git status | grep 'deleted:' | awk '{print \$3}' | xargs git rm"
+#alias gdel="git status | grep 'deleted:' | awk '{print \$3}' | xargs git rm"
 alias qg='arun qgit --all'
 
 # svn
