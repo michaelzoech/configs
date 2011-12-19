@@ -1,0 +1,38 @@
+#!/bin/bash
+
+sdk=$1
+
+if [ ! -d "./frameworks/base/core/java" ]; then
+	echo "ERROR: Execute at root android source checkout"
+	exit 1
+fi
+
+
+if [ "$sdk" == "" ] || [ ! -d "$sdk" ]; then
+	echo "Usage: <script> </path/to/android-sdk"
+	exit 1
+fi
+
+function genSource() {
+	commit=$1
+	level=$2
+	platform="$sdk/platforms/android-$level"
+	if [ ! -d "$platform" ]; then
+		echo "WARN: No platform directory for api level $level found"
+		return
+	fi
+	git checkout $commit
+	rm -rf "$platform/sources"
+	mkdir "$platform/sources"
+	cp -r android "$platform/sources"
+}
+
+cd frameworks/base/core/java || exit 1
+
+genSource "android-2.1_r2.1s" "7"
+genSource "android-2.2.3_r2" "8"
+genSource "android-3.2.4_r1" "11"
+genSource "android-3.2.4_r1" "12"
+genSource "android-3.2.4_r1" "13"
+genSource "android-4.0.3_r1" "15"
+
