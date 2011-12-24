@@ -1,6 +1,0 @@
-ScriptID SourceID Filename
---------------------------
-642 8136 :AutoInstall: getscript.vim
-2178 9487 :AutoInstall: LatexParFormat.vim
-1397 14039 :AutoInstall: xml.vim
-2975 15542 :AutoInstall: fugitive.vim
