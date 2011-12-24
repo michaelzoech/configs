@@ -99,5 +99,3 @@ autocmd BufReadPost *
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
-call pathogen#infect()
-
