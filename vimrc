@@ -2,6 +2,21 @@ runtime! archlinux.vim
 
 set nocompatible
 
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" http://vim-scripts.org/vim/scripts.html
+Bundle 'vim-coffee-script'
+Bundle 'xml.vim'
+
+filetype plugin indent on
+syntax on
+
 "set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
@@ -10,9 +25,6 @@ set smartcase		" Do smart case matching
 "set autowrite		" Automatically save before commands like :next and :make
 set hidden       " Hide buffers when they are abandoned
 set mouse=a      " Enable mouse usage (all modes) in terminals
-
-filetype plugin indent on
-syntax on
 
 colorscheme mydesert
 
@@ -86,3 +98,6 @@ autocmd BufReadPost *
 "shortcut to toggle whitespace display
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
+
+call pathogen#infect()
+

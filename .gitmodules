@@ -1,3 +1,9 @@
 [submodule "vim/bundle/vundle"]
 	path = vim/bundle/vundle
 	url = http://github.com/gmarik/vundle.git
+[submodule "vim/bundle/vim-coffee-script"]
+	path = vim/bundle/vim-coffee-script
+	url = https://github.com/vim-scripts/vim-coffee-script.git
+[submodule "vim/bundle/xml.vim"]
+	path = vim/bundle/xml.vim
+	url = https://github.com/vim-scripts/xml.vim.git
