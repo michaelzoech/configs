@@ -64,6 +64,7 @@ git_show_alias="gsh"
 
 alias gcm='git commit -m'
 alias gru='git remote update -p'
+alias gfp='git fetch -p'
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 
