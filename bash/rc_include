@@ -1,0 +1,18 @@
+HISTSIZE=10000
+
+export EDITOR=vim
+
+ANDROID_HOME=/opt/android-sdk
+ANDROID_NDK=/opt/android-ndk
+CONFIGS_HOME=~/projects/configs/work
+
+export PATH=$PATH:~/apps/bin:$ANDROID_HOME/bin:$ANDROID_NDK:$CONFIGS_HOME/scripts
+
+source $CONFIGS_HOME/bash/aliases
+source $CONFIGS_HOME/bash/functions
+source $CONFIGS_HOME/bash/prompt
+
+[ -s "/home/maik/.scm_breeze/scm_breeze.sh" ] && . "/home/maik/.scm_breeze/scm_breeze.sh"
+
+[[ -s "/home/maik/.rvm/scripts/rvm" ]] && source "/home/maik/.rvm/scripts/rvm"
+[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
