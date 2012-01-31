@@ -25,5 +25,6 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true --expa
 #skype &
 #pidgin &
 conky &
+kupfer &
 #nm-applet --sm-disable &
 exec ck-launch-session ~/.xmonad/xmonad-x86_64-linux
