@@ -99,3 +99,11 @@ autocmd BufReadPost *
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
+" shortcuts for working with buffers and files
+map <Leader>t :CommandT<Return>
+map <Leader>n :bprev<Return>
+map <Leader>s :bnext<Return>
+map <Leader>d :bd<Return>
+" the space at the end is needed/wanted
+map <Leader>f :b 
+
