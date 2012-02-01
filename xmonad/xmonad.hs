@@ -171,7 +171,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     , ((modm              , xK_n     ), toggleWS)
 
-    , ((modm              , xK_backslash), spawn "openim toggle skype")
+    , ((modm              , xK_backslash), spawn "pyimc toggle skype")
 
     , ((modm              , xK_slash ), spawn "aumix -v -7")
     , ((modm              , xK_equal ), spawn "aumix -v +7")
@@ -194,7 +194,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     --, ((modm2             , xK_o     ), spawn "")
     --, ((modm2             , xK_e     ), spawn "")
     , ((modm2             , xK_u     ), spawn $ XMonad.terminal conf)
-    , ((modm2             , xK_i     ), spawn "openim openchat")
+    , ((modm2             , xK_i     ), spawn "pyimc openchat")
 
     , ((modm2             , xK_apostrophe), spawn "firefox")
     -- used by xinerama
@@ -332,7 +332,7 @@ main =
         focusFollowsMouse  = myFocusFollowsMouse,
         borderWidth        = myBorderWidth,
         modMask            = modm,
-        numlockMask        = myNumlockMask,
+        --numlockMask        = myNumlockMask,
         workspaces         = myWorkspaces,
         normalBorderColor  = myNormalBorderColor,
         focusedBorderColor = myFocusedBorderColor,
