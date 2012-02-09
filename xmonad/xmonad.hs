@@ -118,7 +118,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     , ((modm .|. shiftMask, xK_s     ), sendMessage ToggleStruts)
 
-    , ((modm,               xK_s     ), scratchpadSpawnActionTerminal myTerminal)
+    , ((modm,               xK_s     ), scratchpadSpawnActionTerminal "urxvt")
 
     -- Move focus to the next window
     , ((mod1Mask,           xK_Tab   ), windows W.focusDown)
