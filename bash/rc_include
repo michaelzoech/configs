@@ -2,6 +2,9 @@ HISTSIZE=10000
 
 export EDITOR=vim
 
+export USE_CCACHE=1
+export NDK_CCACHE=ccache
+
 ANDROID_HOME=/opt/android-sdk
 ANDROID_NDK=/opt/android-ndk
 CONFIGS_HOME=$HOME/projects/configs/work
