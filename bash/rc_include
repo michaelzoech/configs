@@ -4,9 +4,9 @@ export EDITOR=vim
 
 ANDROID_HOME=/opt/android-sdk
 ANDROID_NDK=/opt/android-ndk
-CONFIGS_HOME=~/projects/configs/work
+CONFIGS_HOME=$HOME/projects/configs/work
 
-export PATH=$PATH:~/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK:$CONFIGS_HOME/scripts
+export PATH=$PATH:$HOME/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK:$CONFIGS_HOME/scripts
 
 source $CONFIGS_HOME/bash/aliases
 source $CONFIGS_HOME/bash/functions
