@@ -37,56 +37,14 @@ import System.Exit
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
--- The preferred terminal program, which is used in a binding below and by
--- certain contrib modules.
---
 myTerminal      = "konsole"
-
--- Width of the window border in pixels.
---
 myBorderWidth   = 2
-
--- modm lets you specify which modkey you want to use. The default
--- is mod1Mask ("left alt").  You may also consider using mod3Mask
--- ("right alt"), which does not conflict with emacs keybindings. The
--- "windows key" is usually mod4Mask.
---
-modm       = mod4Mask
-modm2        = mod5Mask
-
--- The mask for the numlock key. Numlock status is "masked" from the
--- current modifier status, so the keybindings will work with numlock on or
--- off. You may need to change this on some systems.
---
--- You can find the numlock modifier by running "xmodmap" and looking for a
--- modifier with Num_Lock bound to it:
---
--- > $ xmodmap | grep Num
--- > mod2        Num_Lock (0x4d)
---
--- Set numlockMask = 0 if you don't have a numlock key, or want to treat
--- numlock status separately.
---
-myNumlockMask   = mod2Mask
-
--- The default number of workspaces (virtual screens) and their names.
--- By default we use numeric strings, but any string may be used as a
--- workspace name. The number of workspaces is determined by the length
--- of this list.
---
--- A tagging example:
---
--- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
---
+modm            = mod4Mask   -- left alt
+modm2           = mod5Mask -- right alt
 myWorkspaces    = map show [1..9]
-
--- Border colors for unfocused and focused windows, respectively.
---
 myNormalBorderColor  = "#000000"
 myFocusedBorderColor = "#cd8b00"
 
---- Whether focus follows the mouse pointer.
---
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
 
@@ -95,10 +53,6 @@ myFont  = "-*-verdana-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
 
 myStatusbar = "my-dzen.sh"
 
-
-------------------------------------------------------------------------
--- Key bindings. Add, modify or remove key bindings here.
---
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     -- switch keyboard layout
@@ -192,7 +146,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     --, ((modm2             , xK_a     ), spawn "")
     --, ((modm2             , xK_o     ), spawn "")
-    --, ((modm2             , xK_e     ), spawn "")
+    , ((modm2             , xK_e     ), spawn "chromium")
     , ((modm2             , xK_u     ), spawn $ XMonad.terminal conf)
     , ((modm2             , xK_i     ), spawn "pyimc openchat")
 
@@ -224,9 +178,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
         | (key, sc) <- zip [xK_period, xK_comma] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
-------------------------------------------------------------------------
--- Mouse bindings: default actions bound to mouse events
---
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     -- mod-button1, Set the window to floating mode and move by dragging
@@ -255,21 +206,6 @@ myLayout = avoidStruts $ smartBorders $ (tiled ||| Mirror tiled ||| noBorders Fu
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
-------------------------------------------------------------------------
--- Window rules:
-
--- Execute arbitrary actions and WindowSet manipulations when managing
--- a new window. You can use this to, for example, always float a
--- particular program, or have a client always appear on a particular
--- workspace.
---
--- To find the property name associated with a program, use
--- > xprop | grep WM_CLASS
--- and click on the client you're interested in.
---
--- To match on the WM_NAME, you can use 'title' in the same way that
--- 'className' and 'resource' are used below.
---
 myManageHook = (composeAll . concat)
     [ [className =? c --> doFloat | c <- byClass]
     , [(liftM $ isInfixOf t) title --> doFloat | t <- byTitle]
@@ -282,29 +218,9 @@ myManageHook = (composeAll . concat)
         byTitle = ["VLC (XVideo output)", "Downloads", "Preferences", "Save As..."]
         byResource = []
 
-------------------------------------------------------------------------
--- Status bars and logging
-
--- Perform an arbitrary action on each internal state change or X event.
--- See the 'DynamicLog' extension for examples.
---
--- To emulate dwm's status bar
---
--- > logHook = dynamicLogDzen
---
 --myLogHook = dynamicLogDzen
 
-------------------------------------------------------------------------
--- Startup hook
-
--- Perform an arbitrary action each time xmonad starts or is restarted
--- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
--- per-workspace layout choices.
---
--- By default, do nothing.
 myStartupHook = setWMName "LG3D"
-
-------------------------------------------------------------------------
 
 myXPConfig :: XPConfig
 myXPConfig = defaultXPConfig
@@ -319,11 +235,6 @@ myXPConfig = defaultXPConfig
   , historySize       = 128
   }
 
-------------------------------------------------------------------------
--- Now run xmonad with all the defaults we set up.
-
--- Run xmonad with the settings you specify. No need to modify this.
---
 main =
   do dzenOut <- spawnPipe myStatusbar
      xmonad $ defaultConfig {
@@ -332,7 +243,6 @@ main =
         focusFollowsMouse  = myFocusFollowsMouse,
         borderWidth        = myBorderWidth,
         modMask            = modm,
-        --numlockMask        = myNumlockMask,
         workspaces         = myWorkspaces,
         normalBorderColor  = myNormalBorderColor,
         focusedBorderColor = myFocusedBorderColor,
