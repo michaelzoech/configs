@@ -10,3 +10,6 @@ Name=Shell
 Parent=FALLBACK/
 RemoteTabTitleFormat=%h : %u
 TabBarMode=1
+
+[Scrolling]
+HistoryMode=2
