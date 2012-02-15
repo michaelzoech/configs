@@ -42,10 +42,10 @@ URxvt*color14:     #83d0d3
 URxvt*color7:      #dcdccc
 URxvt*color15:     #ffffff
 
-URxvt*font:        xft:Inconsolata:pixelsize=14
-URxvt*Boldfont:    xft:Inconsolata:pixelsize=14
-!URxvt*font:        xft:DejaVu Sans Mono:pixelsize=12
-!URxvt*Boldfont:    xft:DejaVu Sans Mono:pixelsize=12
+!URxvt*font:        xft:Inconsolata:pixelsize=13
+!URxvt*Boldfont:    xft:Inconsolata:pixelsize=13
+URxvt*font:        xft:DejaVu Sans Mono:pixelsize=11
+URxvt*Boldfont:    xft:DejaVu Sans Mono:pixelsize=11
 URxvt*scrollBar:   false
 !URxvt*internalBorder:   10
 !URxvt.cursorBlink: True
