@@ -67,6 +67,7 @@ alias gru='git remote update -p'
 alias gfp='git fetch -p'
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
+alias gun='grs HEAD'
 
 # Git Keyboard Shortcuts
 # ---------------------------------------------
