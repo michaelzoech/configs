@@ -7,3 +7,6 @@
 [submodule "vim/bundle/xml.vim"]
 	path = vim/bundle/xml.vim
 	url = https://github.com/vim-scripts/xml.vim.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/sorin-ionescu/oh-my-zsh.git
