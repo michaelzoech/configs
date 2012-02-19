@@ -65,12 +65,6 @@ autocmd BufNewFile,BufRead *.gradle set filetype=groovy
 
 set ruler
 
-" project plugin
-let g:proj_flags="imstvg"
-let g:proj_window_width="30"
-map <C-T> <Esc>:tabnew<CR><Plug>ToggleProject/
-nmap <silent> <F3> <Plug>ToggleProject
-
 " show trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$\| \+\ze\t/
@@ -79,8 +73,6 @@ match ExtraWhitespace /\s\+$\| \+\ze\t/
 function Trimws()
 	%s/[ \t\r]\+$//eg
 endfunction
-
-let g:GetLatestVimScripts_allowautoinstall=1
 
 set pastetoggle=<F12>
 
@@ -106,4 +98,7 @@ map <Leader>s :bnext<Return>
 map <Leader>d :bd<Return>
 " the space at the end is needed/wanted
 map <Leader>f :b 
+
+" Typing 'jj' fast enough switches from insert to command mode
+inoremap jj <Esc>
 
