@@ -10,3 +10,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/sorin-ionescu/oh-my-zsh.git
+[submodule "scm_breeze"]
+	path = scm_breeze
+	url = https://github.com/ndbroadbent/scm_breeze.git
