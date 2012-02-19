@@ -102,3 +102,7 @@ zle -N zle-keymap-select
 
 # Use jj to switch into command mode (Esc replacement)
 bindkey "jj" vi-cmd-mode
+
+# Autojump faster directory switching
+source ~/.autojump/etc/profile.d/autojump.zsh
+

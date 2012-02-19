@@ -13,3 +13,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git@github.com:crazymaik/oh-my-zsh.git
+[submodule "autojump"]
+	path = autojump
+	url = https://github.com/joelthelion/autojump.git
