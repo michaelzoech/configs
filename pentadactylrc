@@ -4,7 +4,7 @@ map -modes=n ,g :set<Space>guioptions=rb
 map -modes=n,v <Left> gT
 map -modes=n,v <Right> gt
 map -modes=n E F
+inoremap 'jj' <Esc>
 set visualbell
 :autocmd LocationChange (calendar|mail)\.google\.com|www\.google\.com/reader -js modes.set(modes.PASS_THROUGH)
 set fbwhitelist=,youtube.com,vimeo.com,soundcloud.com
-command! delicious :open javascript:(function(){f='http://www.delicious.com/save?url='+encodeURIComponent(window.location.href)+'&title='+encodeURIComponent(document.title)+'&v=5&';a=function(){if(!window.open(f+'noui=1&jump=doclose','deliciousuiv5','location=yes,links=no,scrollbars=no,toolbar=no,width=550,height=550'))location.href=f+'jump=yes'};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})()
