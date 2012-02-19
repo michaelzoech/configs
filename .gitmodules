@@ -7,9 +7,9 @@
 [submodule "vim/bundle/xml.vim"]
 	path = vim/bundle/xml.vim
 	url = https://github.com/vim-scripts/xml.vim.git
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/sorin-ionescu/oh-my-zsh.git
 [submodule "scm_breeze"]
 	path = scm_breeze
 	url = https://github.com/ndbroadbent/scm_breeze.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = git@github.com:crazymaik/oh-my-zsh.git
