@@ -41,6 +41,7 @@ alias m4="make -j4"
 alias m8="make -j8"
 alias mk="mkdir -p"
 alias qg='arun qgit --all'
+alias ti='tig --all'
 
 # yaourt
 alias y='yaourt'
