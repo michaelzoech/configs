@@ -144,6 +144,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modm2             , xK_k     ), spawn "mpc toggle")
     , ((modm2             , xK_x     ), floatNext True >> (spawn $ myTerminal ++ " -geometry 80x35+480+90 -e ncmpcpp"))
 
+    , ((modm             , xK_a     ), spawn "togglecursor")
     --, ((modm2             , xK_a     ), spawn "")
     --, ((modm2             , xK_o     ), spawn "")
     , ((modm2             , xK_e     ), spawn "chromium")

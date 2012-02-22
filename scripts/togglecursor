@@ -1,0 +1,12 @@
+#!/bin/sh
+# Move mouse cursor to other screen.
+# Currently hardcoded to a screen width of 1920.
+OUTPUT=`xwarppointer get`
+XPOS=`echo $OUTPUT | cut -d ' ' -f 1`
+YPOS=`echo $OUTPUT | cut -d ' ' -f 2`
+if [ "$XPOS" -lt 1920 ]; then
+	let XPOS="XPOS + 1920"
+else
+	let XPOS="XPOS - 1920"
+fi
+xwarppointer abspos $XPOS $YPOS
