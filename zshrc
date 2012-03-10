@@ -107,6 +107,11 @@ bindkey "jj" vi-cmd-mode
 # Autojump faster directory switching
 source ~/.autojump/etc/profile.d/autojump.zsh
 
+# ant
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+ant () { command ant -logger org.apache.tools.ant.listener.AnsiColorLogger "$@" | sed 's/2;//g' ; }
+
 # Load profiles from /etc/profile.d
 if test -d /etc/profile.d/; then
 	for profile in /etc/profile.d/*.sh; do
