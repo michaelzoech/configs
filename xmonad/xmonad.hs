@@ -176,7 +176,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     --
     [((m .|. modm2, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_comma, xK_period] [0..]
+        | (key, sc) <- zip [xK_period, xK_comma] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
@@ -215,7 +215,7 @@ myManageHook = (composeAll . concat)
     ] <+> manageHook defaultConfig
       <+> scratchpadManageHook (W.RationalRect 0.25 0.2 0.5 0.6)
       <+> floatNextHook
-  where byClass = ["Gimp-2.6", "MPlayer", "Totem", "Pino", "Do", "Pidgin", "Skype", "Qmote"]
+  where byClass = ["Gimp-2.6", "MPlayer", "Totem", "Pino", "Do", "Pidgin", "Skype", "ITap mobile RDP"]
         byTitle = ["VLC (XVideo output)", "Downloads", "Preferences", "Save As..."]
         byResource = []
 
