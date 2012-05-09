@@ -92,6 +92,7 @@ export PATH=$PATH:$HOME/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tool
 
 # Use RVM to manage Ruby versions
 [[ -s "/home/maik/.rvm/scripts/rvm" ]] && source "/home/maik/.rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin
 
 # Show vi mode at right side
 function zle-line-init zle-keymap-select {
