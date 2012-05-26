@@ -127,12 +127,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     , ((modm              , xK_backslash), spawn "pyimc toggle skype")
 
-    , ((modm              , xK_slash ), spawn "aumix -v -7")
-    , ((modm              , xK_equal ), spawn "aumix -v +7")
+    , ((modm              , xK_slash ), spawn "amixer set Master 5-")
+    , ((modm              , xK_equal ), spawn "amixer set Master 5+")
 
-    , ((0                 , 0x1008FF11), spawn "aumix -v -5")
-    , ((0                 , 0x1008FF13), spawn "aumix -v +5")
-    , ((0                 , 0x1008FF12), spawn "aumix -v 0")
+    , ((0                 , 0x1008FF11), spawn "amixer set Master 5-")
+    , ((0                 , 0x1008FF13), spawn "amixer set Master 5+")
+    , ((0                 , 0x1008FF12), spawn "amixer set Master 0")
 
     , ((0                 , 0x1008FF02), spawn "sudo /usr/sbin/brightness up")
     , ((0                 , 0x1008FF03), spawn "sudo /usr/sbin/brightness down")
