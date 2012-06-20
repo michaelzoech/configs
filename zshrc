@@ -122,3 +122,14 @@ if test -d /etc/profile.d/; then
 	unset profile
 fi
 
+eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
+alias ff='fasd -f'
+alias fd='fasd -d'
+alias fa='fasd -a'
+alias fs='fasd -si'
+alias fsd='fasd -sid'
+alias fsf='fasd -sif'
+fasd_cd() { cd "$(fasd -e echo "$@")" } # use cd function
+alias z='fasd_cd -d'
+alias v='ff -e vim'
+alias sv='ff -e "sudo vim"'
