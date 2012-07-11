@@ -1,37 +1,36 @@
-# Sets Oh My Zsh options.
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="minimal"
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git)
 
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':omz:editor' keymap 'vi'
 
-# Auto convert .... to ../..
-zstyle ':omz:editor' dot-expansion 'no'
-
-# Set case-sensitivity for completion, history lookup, etc.
-zstyle ':omz:*:*' case-sensitive 'no'
-
-# Color output (auto set to 'no' on dumb terminals).
-zstyle ':omz:*:*' color 'yes'
-
-# Auto set the tab and window titles.
-zstyle ':omz:terminal' auto-title 'yes'
-
-# Set the plugins to load (see $OMZ/plugins/).
-#zstyle ':omz:load' plugin 'archive' 'git'
-#zstyle ':omz:load' plugin 'history-substring-search'
-
-# Set the prompt theme to load.
-# Setting it to 'random' loads a random theme.
-# Auto set to 'off' on dumb terminals.
-zstyle ':omz:prompt' theme 'minimal'
-
-# Define LANG used in environment.sh sourced by init.sh
-export LANG="en_US.UTF-8"
-
-# This will make you shout: OH MY ZSHELL!
-source "$HOME/.oh-my-zsh/init.zsh"
-
-# Normally not available in vi-mode but I want it
-bindkey "\C-R" history-incremental-search-backward
+source $ZSH/oh-my-zsh.sh
 
 # Misc aliases
 alias a='arun'
@@ -91,13 +90,6 @@ export CONFIGS_HOME=$HOME/projects/configs/work
 
 export PATH=$PATH:$HOME/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK:$CONFIGS_HOME/scripts
 
-# Use https://github.com/ndbroadbent/scm_breeze for better git aliases
-[ -s "/home/maik/.scm_breeze/scm_breeze.sh" ] && . "/home/maik/.scm_breeze/scm_breeze.sh"
-
-# Use RVM to manage Ruby versions
-[[ -s "/home/maik/.rvm/scripts/rvm" ]] && source "/home/maik/.rvm/scripts/rvm"
-PATH=$PATH:$HOME/.rvm/bin
-
 # Show vi mode at right side
 function zle-line-init zle-keymap-select {
     RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
@@ -125,6 +117,13 @@ if test -d /etc/profile.d/; then
 	done
 	unset profile
 fi
+
+# Use https://github.com/ndbroadbent/scm_breeze for better git aliases
+[ -s "/home/maik/.scm_breeze/scm_breeze.sh" ] && . "/home/maik/.scm_breeze/scm_breeze.sh"
+
+# Use RVM to manage Ruby versions
+[[ -s "/home/maik/.rvm/scripts/rvm" ]] && source "/home/maik/.rvm/scripts/rvm"
+PATH=$PATH:$HOME/.rvm/bin
 
 eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 alias ff='fasd -f'
