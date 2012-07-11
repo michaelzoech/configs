@@ -17,6 +17,7 @@ zstyle ':omz:terminal' auto-title 'yes'
 
 # Set the plugins to load (see $OMZ/plugins/).
 #zstyle ':omz:load' plugin 'archive' 'git'
+#zstyle ':omz:load' plugin 'history-substring-search'
 
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
@@ -28,6 +29,9 @@ export LANG="en_US.UTF-8"
 
 # This will make you shout: OH MY ZSHELL!
 source "$HOME/.oh-my-zsh/init.zsh"
+
+# Normally not available in vi-mode but I want it
+bindkey "\C-R" history-incremental-search-backward
 
 # Misc aliases
 alias a='arun'
