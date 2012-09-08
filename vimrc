@@ -16,6 +16,7 @@ Bundle 'xml.vim'
 
 " Github
 Bundle 'Shougo/neocomplcache'
+Bundle 'plasticboy/vim-markdown'
 
 filetype plugin indent on
 syntax on
