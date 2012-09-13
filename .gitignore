@@ -2,3 +2,6 @@ pentadactyl/info
 vim/.netrwhist
 vim/doc/tags
 vim/GetLatest/Installed
+vim/bundle/vim-coffee-script
+vim/bundle/xml.vim
+vim/bundle/vim-markdown
