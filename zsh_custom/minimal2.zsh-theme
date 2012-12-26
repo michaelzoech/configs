@@ -13,9 +13,9 @@ git_custom_status() {
 
 last_err_code() {
   if [[ $1 == 0 ]]; then
-    echo -n " »"
+    echo -n "\n»"
   else
-    echo -n " %{$bg[red]%}»%{$reset_color%}"
+    echo -n "\n%{$bg[red]%}»%{$reset_color%}"
   fi
 }
 
@@ -25,4 +25,4 @@ my_changes() {
   last_err_code $PREV_CODE
 }
 
-PROMPT='%3~ $(my_changes) %b'
+PROMPT='%{$fg[green]%}%8~%{$reset_color%} $(my_changes) %b'
