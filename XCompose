@@ -1,6 +1,13 @@
 # dead_acute is mapped to caps lock, see xinitrc
 # Optimized for dvorak-alt-intl layout
 
+<dead_acute> <a>            : "ä" adiaeresis
+<dead_acute> <A>            : "Ä" Adiaeresis
+<dead_acute> <o>            : "ö" odiaeresis
+<dead_acute> <O>            : "Ö" Odiaeresis
+<dead_acute> <u>            : "ü" udiaeresis
+<dead_acute> <U>            : "Ü" Udiaeresis
+
 <dead_acute> <h>            : "(" parenleft
 <dead_acute> <t>            : ")" parenright
 <dead_acute> <n>            : "{" braceleft
