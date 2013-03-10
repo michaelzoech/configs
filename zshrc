@@ -104,7 +104,7 @@ zle -N zle-keymap-select
 bindkey "jj" vi-cmd-mode
 
 # Autojump faster directory switching
-source ~/.autojump/etc/profile.d/autojump.zsh
+source ~/.autojump/bin/autojump.zsh
 
 # ant
 export CLICOLOR=1
