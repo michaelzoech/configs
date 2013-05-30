@@ -118,10 +118,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modm              , xK_q     ), restart "xmonad" True)
 
     -- goto workspace and focus window
-    , ((modm .|. shiftMask, xK_g     ), gotoMenu)
+    , ((modm .|. shiftMask, xK_g     ), gotoMenuArgs ["-l", "10", "-i", "-b", "-fn", "'xft:Inconsolata:size=11'"])
 
     -- bring and focus window
-    , ((modm .|. shiftMask, xK_b     ), bringMenu)
+    , ((modm .|. shiftMask, xK_b     ), bringMenuArgs ["-l", "10", "-i", "-b", "-fn", "'xft:Inconsolata:size=11'"])
 
     , ((modm              , xK_n     ), toggleWS)
 
