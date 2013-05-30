@@ -119,12 +119,12 @@ if test -d /etc/profile.d/; then
 	unset profile
 fi
 
-# Use https://github.com/ndbroadbent/scm_breeze for better git aliases
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && . "$HOME/.scm_breeze/scm_breeze.sh"
-
 # Use RVM to manage Ruby versions
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 PATH=$PATH:$HOME/.rvm/bin
+
+# Use https://github.com/ndbroadbent/scm_breeze for better git aliases
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && . "$HOME/.scm_breeze/scm_breeze.sh"
 
 eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 alias ff='fasd -f'
