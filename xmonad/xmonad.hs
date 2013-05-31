@@ -202,9 +202,9 @@ myLayout = avoidStruts $ smartBorders $ browserLayout $ commonLayouts
     delta = 3/100
     tiled = Tall 1 delta (1/2)
     -- Layouts for misc workspaces
-    commonLayouts = tiled ||| Mirror tiled ||| noBorders Full
+    commonLayouts = tiled ||| Mirror tiled ||| Full
     -- Layout for Chromium with Tabs Outliner extension on workspace 1
-    browserLayout = onWorkspace "1" (combineTwoP (TwoPane delta 0.16) (noBorders Full) (tiled) (Title "Tabs Outliner"))
+    browserLayout = onWorkspace "1" (combineTwoP (TwoPane delta 0.16) Full tiled (Title "Tabs Outliner"))
 
 myManageHook = (composeAll . concat)
     [ [className =? c --> doFloat | c <- byClass]
