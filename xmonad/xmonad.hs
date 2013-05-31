@@ -16,12 +16,16 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
 
+import XMonad.Layout.Column
+import XMonad.Layout.ComboP
+import XMonad.Layout.FixedColumn
 import XMonad.Layout.Grid
 import XMonad.Layout.IM
 import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.Reflect
 import XMonad.Layout.ThreeColumns
+import XMonad.Layout.TwoPane
 
 import XMonad.ManageHook
 
@@ -192,19 +196,15 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
 
-myLayout = avoidStruts $ smartBorders $ (tiled ||| Mirror tiled ||| noBorders Full)
+myLayout = avoidStruts $ smartBorders $ browserLayout $ commonLayouts
   where
-     -- default tiling algorithm partitions the screen into two panes
-     tiled   = Tall nmaster delta ratio
-
-     -- The default number of windows in the master pane
-     nmaster = 1
-
-     -- Default proportion of screen occupied by master pane
-     ratio   = 1/2
-
-     -- Percent of screen to increment by when resizing panes
-     delta   = 3/100
+    -- Percent of screen to increment by when resizing panes
+    delta = 3/100
+    tiled = Tall 1 delta (1/2)
+    -- Layouts for misc workspaces
+    commonLayouts = tiled ||| Mirror tiled ||| noBorders Full
+    -- Layout for Chromium with Tabs Outliner extension on workspace 1
+    browserLayout = onWorkspace "1" (combineTwoP (TwoPane delta 0.16) (noBorders Full) (tiled) (Title "Tabs Outliner"))
 
 myManageHook = (composeAll . concat)
     [ [className =? c --> doFloat | c <- byClass]
