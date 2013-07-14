@@ -16,6 +16,7 @@ Bundle 'xml.vim'
 
 " Github
 Bundle 'plasticboy/vim-markdown'
+Bundle 'matjutsushi/tagbar'
 
 filetype plugin indent on
 syntax on
@@ -105,3 +106,4 @@ map <Leader>f :b
 " Typing 'jj' fast enough switches from insert to command mode
 inoremap jj <Esc>
 
+nmap <Leader>b :TagbarToggle<CR>
