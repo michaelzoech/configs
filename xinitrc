@@ -24,9 +24,8 @@ xsetroot -cursor_name left_ptr
 #feh --bg-scale `find ~/wallpapers -type f -print | sort --random-sort | head -n 1`
 trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --height 17 --transparent true --tint 0x000000 --alpha 0 &
 skype &
-pidgin &
 conky &
 kupfer &
 sleep 2 && dropbox start &
 #nm-applet --sm-disable &
-exec ck-launch-session ~/.xmonad/xmonad-x86_64-linux
+exec ~/.xmonad/xmonad-x86_64-linux
