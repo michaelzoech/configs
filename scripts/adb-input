@@ -1,0 +1,96 @@
+#!/bin/env ruby
+#
+#   Copyright 2014 Michael Zoech
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+#
+
+require 'thread'
+require 'io/console'
+
+USAGE = <<-eos
+    Usage: ./adb-input
+
+    Send input from your keyboard to your Android device
+
+    This is mostly useful when using a physical device for development. Captures
+    most of the alphanumeric keys, Tab, Return and Arrow keys. Press Escape to
+    exit the process.
+eos
+
+HELP_ARGS = ['-h', '--help', '/?', '/h', '/help']
+
+CODES = { " " => 62,    # SPACE
+          "\t" => 61,   # TAB
+          "\n" => 66,   # RETURN
+          "\177" => 67, # DEL
+          "\e[A" => 19, # DPAD_UP
+          "\e[B" => 20, # DPAD_DOWN
+          "\e[C" => 22, # DPAD_RIGHT
+          "\e[D" => 21, # DPAD_LEFT
+        }
+
+def read_input
+  ch = STDIN.getch
+  ch += STDIN.read_nonblock(2) if ch == "\e"
+  ch
+end
+
+def handle_key(key)
+  if CODES.include? key
+    `adb shell input keyevent #{CODES[key]}\n`
+  else
+     puts "Unknown: #{key.inspect}\r\n"
+  end
+end
+
+def handle_text(text)
+  `adb shell input text \"#{text}\"\n`
+end
+
+def handle_inputs(keys)
+  unless keys.empty?
+    text = keys.take_while { |key| !CODES.include?(key) && key.length==1 }
+    keys.shift(text.length)
+    handle_text(text.join) unless text.empty?
+    handle_key(keys.shift) unless keys.empty?
+  end
+end
+
+def consume(queue)
+  keys = [queue.pop]
+  unless queue.empty?
+    keys << queue.pop
+  end
+  handle_inputs(keys)
+end
+
+def main
+  print(USAGE) || exit(0) if HELP_ARGS.include?(ARGV[0])
+  queue = Queue.new
+  Thread.new { loop { consume(queue) } }
+  loop do
+    key = read_input
+    break if key == "\e"
+    queue << key
+  end
+end
+
+
+begin
+  main
+rescue => e
+  puts e
+end
+
+puts "End"
