@@ -1,0 +1,42 @@
+
+# Aliases
+
+alias ls='ls --color=auto'
+
+alias y='yaourt'
+alias yr='yaourt -R'
+alias yrs='yaourt -Rs'
+alias ys='yaourt -S'
+alias yss='yaourt -Ss'
+alias yu='yaourt -Syu'
+
+# Environment variables
+
+## Enable ccache for Android and AOSP
+export USE_CCACHE=1
+export NDK_CCACHE=ccache
+
+export ANDROID_HOME=/opt/android-sdk
+export ANDROID_NDK=/opt/android-ndk
+export CONFIGS_HOME=$HOME/projects/configs/work
+
+export PATH=$PATH:$HOME/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK:$CONFIGS_HOME/scripts
+
+# Autojump for faster directory switching via configs repo
+source ~/.autojump/bin/autojump.zsh
+
+# Ant
+
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+ant () { command ant -logger org.apache.tools.ant.listener.AnsiColorLogger "$@" | sed 's/2;//g' ; }
+
+# Load profiles from /etc/profile.d
+
+if test -d /etc/profile.d/; then
+   for profile in /etc/profile.d/*.sh; do
+       test -r "$profile" && . "$profile"
+   done
+   unset profile
+fi
+

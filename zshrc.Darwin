@@ -1,0 +1,11 @@
+# Environment variables
+
+export CONFIGS_HOME=$HOME/projects/configs
+
+export PATH=/usr/local/bin:$PATH:$CONFIGS_HOME/scripts
+
+# Autojump for faster directory switching from Brew
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+

@@ -29,14 +29,13 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git)
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':omz:editor' keymap 'vi'
+zstyle ':omz:editor' keymap 'emacs'
 
 source $ZSH/oh-my-zsh.sh
 
 # Misc aliases
 alias a='arun'
 alias f="find . -iname"
-alias ls='ls --color=auto'
 alias u='ls'
 alias i='ls -lh'
 alias m="make"
@@ -47,14 +46,6 @@ alias mk="mkdir -p"
 alias qg='arun qgit --all'
 alias ti='tig --all'
 alias gg='arun gitg --all'
-
-# yaourt
-alias y='yaourt'
-alias yr='yaourt -R'
-alias yrs='yaourt -Rs'
-alias ys='yaourt -S'
-alias yss='yaourt -Ss'
-alias yu='yaourt -Syu'
 
 # Subversion
 alias sa='svn add'
@@ -76,48 +67,18 @@ function mkcd {
 	mkdir -p "$@" && builtin cd "$@"
 }
 
+# do an ls after every successful cd
+function cd {
+	builtin cd "$@" && ls
+}
+
 # Always show path in prompt
 unsetopt auto_name_dirs
 
 export EDITOR=vim
 
-# Enable ccache for Android NDK and AOSP projects
-export USE_CCACHE=1
-export NDK_CCACHE=ccache
-
-export ANDROID_HOME=/opt/android-sdk
-export ANDROID_NDK=/opt/android-ndk
-export CONFIGS_HOME=$HOME/projects/configs/work
-
-export PATH=$PATH:$HOME/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK:$CONFIGS_HOME/scripts
-
-# Show vi mode at right side
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
 # Use jj to switch into command mode (Esc replacement)
 bindkey "jj" vi-cmd-mode
-
-# Autojump faster directory switching
-source ~/.autojump/bin/autojump.zsh
-
-# ant
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-ant () { command ant -logger org.apache.tools.ant.listener.AnsiColorLogger "$@" | sed 's/2;//g' ; }
-
-# Load profiles from /etc/profile.d
-if test -d /etc/profile.d/; then
-	for profile in /etc/profile.d/*.sh; do
-		test -r "$profile" && . "$profile"
-	done
-	unset profile
-fi
 
 # Use RVM to manage Ruby versions
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -126,14 +87,5 @@ PATH=$PATH:$HOME/.rvm/bin
 # Use https://github.com/ndbroadbent/scm_breeze for better git aliases
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && . "$HOME/.scm_breeze/scm_breeze.sh"
 
-eval "$(fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
-alias ff='fasd -f'
-alias fd='fasd -d'
-alias fa='fasd -a'
-alias fs='fasd -si'
-alias fsd='fasd -sid'
-alias fsf='fasd -sif'
-fasd_cd() { cd "$(fasd -e echo "$@")" } # use cd function
-alias z='fasd_cd -d'
-alias v='ff -e vim'
-alias sv='ff -e "sudo vim"'
+source $HOME/.zshrc.`uname -s`
+
