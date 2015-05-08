@@ -3,20 +3,24 @@ runtime! archlinux.vim
 set nocompatible
 
 filetype off
+
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
 
 " http://vim-scripts.org/vim/scripts.html
-Bundle 'vim-coffee-script'
 Bundle 'xml.vim'
 
 " Github
+Bundle 'kien/ctrlp.vim'
 Bundle 'plasticboy/vim-markdown'
-Bundle 'matjutsushi/tagbar'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+
+call vundle#end()
 
 filetype plugin indent on
 syntax on
@@ -25,7 +29,8 @@ syntax on
 set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
-"set incsearch		" Incremental search
+"set hlsearch       " Highlight current search
+"set incsearch      " Highlight as you type a search expression
 "set autowrite		" Automatically save before commands like :next and :make
 set hidden       " Hide buffers when they are abandoned
 set mouse=a      " Enable mouse usage (all modes) in terminals
@@ -39,10 +44,6 @@ let mapleader = ","
 " Scroll the viewport faster by 3 lines
 nnoremap <C-e> <C-e><C-e><C-e>
 nnoremap <C-y> <C-y><C-y><C-y>
-
-" Highlight search terms
-"set hlsearch
-"set incsearch
 
 " Scroll buffer if cursor hits less than x lines on border
 set scrolloff=3
@@ -91,6 +92,10 @@ autocmd BufReadPost *
 "set grepprg=grep\ -nH\ $*
 "let g:tex_flavor = "latex"
 
+" Moving up/down per displayed line instead "real" line
+:nmap j gj
+:nmap k gk
+
 "shortcut to toggle whitespace display
 nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
@@ -102,6 +107,8 @@ map <Leader>s :bnext<Return>
 map <Leader>d :bd<Return>
 " the space at the end is needed/wanted
 map <Leader>f :b 
+
+:nmap \e :NERDTreeToggle<CR>
 
 " Typing 'jj' fast enough switches from insert to command mode
 inoremap jj <Esc>
