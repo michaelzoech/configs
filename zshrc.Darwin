@@ -1,8 +1,10 @@
 # Environment variables
 
 export CONFIGS_HOME=$HOME/projects/configs
+export ANDROID_HOME=$HOME/Library/Android/sdk
+#export ANDROID_NDK=/opt/android-ndk
 
-export PATH=/usr/local/bin:$PATH:$CONFIGS_HOME/scripts
+export PATH=/usr/local/bin:$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$CONFIGS_HOME/scripts
 
 # Autojump for faster directory switching from Brew
 
