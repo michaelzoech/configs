@@ -1,8 +1,5 @@
-pentadactyl/info
-vim/.netrwhist
-vim/doc/tags
-vim/GetLatest/Installed
-vim/bundle/vim-coffee-script
-vim/bundle/xml.vim
-vim/bundle/vim-markdown
-vim/bundle/tagbar
+/pentadactyl/info
+/vim/.netrwhist
+/vim/doc/tags
+/vim/GetLatest/Installed
+/vim/bundle/*
