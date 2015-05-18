@@ -98,8 +98,8 @@ alias gfp='git fetch -p'
 alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 alias gun='grs HEAD'
-alias gsu='git submodule update'
-alias gsui='git submodule update --init'
+alias gsu='git submodule update --recursive'
+alias gsui='git submodule update --init --recursive'
 
 # Git Keyboard Shortcuts
 # ----------------------------------------------
