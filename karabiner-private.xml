@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>My Crazy Hacks</name>
+    <appendix>Caps lock as Control Right via Seil and developer helpers</appendix>
+    <identifier>private.braces_on_home_row</identifier>
+    <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::CONTROL_R, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::CONTROL_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::CONTROL_R, KeyCode::MINUS, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::CONTROL_R, KeyCode::EQUAL, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_ITerm</name>
+    <url type="file">/Applications/ITerm.app</url>
+  </vkopenurldef>
+
+  <item>
+    <name>Change Control Right + B to iTerm</name>
+    <identifier>private.right_control_iterm</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::N, ModifierFlag::CONTROL_R,
+      KeyCode::VK_OPEN_URL_APP_ITerm,
+    </autogen>
+  </item>
+
+</root>
