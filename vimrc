@@ -41,6 +41,8 @@ colorscheme railscasts
 
 let mapleader = ","
 
+set matchpairs+=<:>
+
 " Scroll the viewport faster by 3 lines
 nnoremap <C-e> <C-e><C-e><C-e>
 nnoremap <C-y> <C-y><C-y><C-y>
