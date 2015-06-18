@@ -103,7 +103,7 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 " shortcuts for working with buffers and files
-map <Leader>t :CommandT<Return>
+map <Leader>t :CtrlP<Return>
 map <Leader>n :bprev<Return>
 map <Leader>s :bnext<Return>
 map <Leader>d :bd<Return>
@@ -115,4 +115,3 @@ map <Leader>f :b
 " Typing 'jj' fast enough switches from insert to command mode
 inoremap jj <Esc>
 
-nmap <Leader>b :TagbarToggle<CR>
