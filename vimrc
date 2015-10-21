@@ -38,7 +38,7 @@ set mouse=a      " Enable mouse usage (all modes) in terminals
 
 colorscheme railscasts
 
-"set background=dark
+set background=dark
 
 let mapleader = ","
 
