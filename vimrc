@@ -40,7 +40,7 @@ colorscheme railscasts
 
 set background=dark
 
-let mapleader = ","
+let mapleader = " "
 
 set matchpairs+=<:>
 
