@@ -19,6 +19,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fugitive'
 
 call vundle#end()
 
@@ -114,4 +115,16 @@ map <Leader>f :b
 
 " Typing 'jj' fast enough switches from insert to command mode
 inoremap jj <Esc>
+
+" Fugitive configuration
+" Always split vertically
+set diffopt+=vertical
+" Jump to next change with C-j
+nnoremap <expr> <C-j> &diff ? ']c' : '<C-W>j'
+" Jump to previous change with C-k
+nnoremap <expr> <C-k> &diff ? '[c' : '<C-W>k'
+" Use change from right side and update diff colors
+nnoremap <expr> <C-h> &diff ? ':diffget //3<CR>:diffupdate<CR>' : 'h'
+" Use change from left side and update diff colors
+nnoremap <expr> <C-l> &diff ? ':diffget //2<CR>:diffupdate<CR>' : 'l'
 
