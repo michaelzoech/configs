@@ -22,9 +22,6 @@ export CONFIGS_HOME=$HOME/projects/configs/work
 
 export PATH=$PATH:$HOME/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK:$CONFIGS_HOME/scripts
 
-# Autojump for faster directory switching via configs repo
-source ~/.autojump/bin/autojump.zsh
-
 # Ant
 
 export CLICOLOR=1

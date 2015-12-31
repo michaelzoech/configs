@@ -87,6 +87,9 @@ export PATH=$PATH:$HOME/.rvm/bin
 # Use https://github.com/ndbroadbent/scm_breeze for better git aliases
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && . "$HOME/.scm_breeze/scm_breeze.sh"
 
+# Use autojump
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+
 export PATH=$PATH:$HOME/apps
 
 source $HOME/.zshrc.`uname -s`
