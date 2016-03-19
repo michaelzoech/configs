@@ -9,6 +9,8 @@
     <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::CONTROL_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
     <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::CONTROL_R, KeyCode::MINUS, ModifierFlag::SHIFT_L</autogen>
     <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::CONTROL_R, KeyCode::EQUAL, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, ModifierFlag::CONTROL_R, KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, ModifierFlag::CONTROL_R, KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L</autogen>
   </item>
 
   <vkopenurldef>
