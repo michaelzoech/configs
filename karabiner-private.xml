@@ -56,4 +56,22 @@
     </autogen>
   </item>
 
+  <appdef>
+    <appname>CHROME</appname>
+    <equal>com.google.Chrome</equal>
+  </appdef>
+
+  <item>
+    <name>Chrome: Button 4/5 go backward/forward in history</name>
+    <identifier>private.chrome_navigate_history</identifier>
+    <only>CHROME</only>
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::BUTTON4,
+      KeyCode::MINUS, ModifierFlag::COMMAND_L</autogen>
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::BUTTON5,
+      KeyCode::EQUAL, ModifierFlag::COMMAND_L</autogen>
+  </item>
 </root>
