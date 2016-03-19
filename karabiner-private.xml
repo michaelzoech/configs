@@ -14,17 +14,45 @@
   </item>
 
   <vkopenurldef>
-    <name>KeyCode::VK_OPEN_URL_APP_ITerm</name>
-    <url type="file">/Applications/ITerm.app</url>
+    <name>KeyCode::VK_OPEN_URL_APP_XCODE</name>
+    <url type="file">/Applications/Xcode.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_CHROME</name>
+    <url type="file">/Applications/Google Chrome.app</url>
+  </vkopenurldef>
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_OUTLOOK</name>
+    <url type="file">/Applications/Microsoft Outlook.app</url>
   </vkopenurldef>
 
   <item>
-    <name>Change Control Right + B to iTerm</name>
-    <identifier>private.right_control_iterm</identifier>
+    <name>Left Control + Left Shift + C -> Open Xcode</name>
+    <identifier>private.control_shift_xcode</identifier>
     <autogen>
       __KeyToKey__
-      KeyCode::N, ModifierFlag::CONTROL_R,
-      KeyCode::VK_OPEN_URL_APP_ITerm,
+      KeyCode::I, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+      KeyCode::VK_OPEN_URL_APP_XCODE,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Left Control + Left Shift + C -> Open Xcode</name>
+    <identifier>private.control_shift_outlook</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+      KeyCode::VK_OPEN_URL_APP_OUTLOOK,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Left Control + Left Shift + G -> Open Chrome</name>
+    <identifier>private.control_shift_chrome</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::U, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L,
+      KeyCode::VK_OPEN_URL_APP_CHROME,
     </autogen>
   </item>
 
