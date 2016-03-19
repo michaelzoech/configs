@@ -2,8 +2,8 @@
 <root>
 
   <item>
-    <name>My Crazy Hacks</name>
-    <appendix>Caps lock as Control Right via Seil and developer helpers</appendix>
+    <name>Braces Helpers</name>
+    <appendix>Caps + J K L ; to print ( ) { }</appendix>
     <identifier>private.braces_on_home_row</identifier>
     <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::CONTROL_R, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
     <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::CONTROL_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
