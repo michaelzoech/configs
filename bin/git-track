@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# Set current branch up to track the remote branch of the same name
+branch=$(git rev-parse --abbrev-ref HEAD)
+git branch --set-upstream-to origin/$branch $branch

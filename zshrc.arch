@@ -20,7 +20,7 @@ export ANDROID_HOME=/opt/android-sdk
 export ANDROID_NDK=/opt/android-ndk
 export CONFIGS_HOME=$HOME/projects/configs/work
 
-export PATH=$PATH:$HOME/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK:$CONFIGS_HOME/scripts
+export PATH=$PATH:$HOME/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_NDK:$CONFIGS_HOME/bin:$CONFIGS_HOME/scripts
 
 # Ant
 
