@@ -13,3 +13,15 @@ defaults write org.pqrs.Seil sysctl '{ "enable_capslock" = 1; "keycode_capslock"
 # Karabiner
 # Enable my private.xml mappings
 # TODO
+
+# Finder
+
+# Show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Show Path Bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# iTerm 2
+# TODO
+
