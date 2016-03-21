@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# Delete local branches merged into current commit.
+branch=$(git rev-parse --abbrev-ref HEAD)
+git branch --merged | grep -v "\(^*\)\|\(develop\)\|\(master\)\|\($branch\)" | tr '\n' ' ' | xargs git branch -d
