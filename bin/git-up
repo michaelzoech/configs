@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# Push current branch to origin and set up remote tracking.
+branch=$(git rev-parse --abbrev-ref HEAD)
+git push -u origin $branch
