@@ -1,0 +1,16 @@
+..=cd ..
+...=cd ..\..
+....=cd ..\..\..
+..1=cd ..
+..2=cd ..\..
+..3=cd ..\..\..
+..4=cd ..\..\..\..
+..5=cd ..\..\..\..\..
+..6=cd ..\..\..\..\..\..
+..8=cd ..\..\..\..\..\..\..
+..9=cd ..\..\..\..\..\..\..\..
+
+cd=cd $* $T ls --show-control-chars -F --color
+u=ls --show-control-chars -F --color $*
+i=ls -lh --show-control-chars -F --color $*
+f=find . -iname $*
