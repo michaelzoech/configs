@@ -10,6 +10,7 @@
 ..8=cd ..\..\..\..\..\..\..
 ..9=cd ..\..\..\..\..\..\..\..
 
+ls=ls --show-control-chars -F --color
 cd=cd $* $T ls --show-control-chars -F --color
 u=ls --show-control-chars -F --color $*
 i=ls -lh --show-control-chars -F --color $*
