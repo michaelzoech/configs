@@ -6,3 +6,4 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 
 export PATH=/usr/local/bin:$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$CONFIGS_HOME/bin:$CONFIGS_HOME/scripts:$HOME/Library/Haskell/bin
 
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
