@@ -57,15 +57,15 @@ let &sbr = nr2char(8618).' '
 set visualbell
 
 " default tab settings
-autocmd FileType * set noexpandtab
+autocmd FileType * set expandtab
 set smarttab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set smartindent
 
-autocmd FileType groovy,scala,ruby,haskell,tex,bib,xml,erb setlocal sts=2 ts=2 sw=2 expandtab
-"autocmd FileType tex set textwidth=70
+autocmd FileType groovy,scala,ruby,haskell,tex,bib,xml,erb setlocal sts=2 ts=2 sw=2
+autocmd FileType make setlocal noexpandtab sts=4 ts=4 sw=4
 
 " treat html files as xml (i.e. indentation and ftplugins)
 autocmd BufNewFile,BufRead *.html,*.htm set filetype=xml
