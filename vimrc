@@ -15,7 +15,7 @@ Bundle 'gmarik/vundle'
 Bundle 'xml.vim'
 
 " Github
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -128,3 +128,7 @@ nnoremap <expr> <C-h> &diff ? ':diffget //3<CR>:diffupdate<CR>' : 'h'
 " Use change from left side and update diff colors
 nnoremap <expr> <C-l> &diff ? ':diffget //2<CR>:diffupdate<CR>' : 'l'
 
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\.cabal-sandbox$',
+  \ 'file': '\v.(dyn_hi|dyn_o|hi|o|p_hi|p_o|pyc)$',
+  \ }
