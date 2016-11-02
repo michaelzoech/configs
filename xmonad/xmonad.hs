@@ -41,7 +41,7 @@ import System.Exit
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
-myTerminal      = "konsole"
+myTerminal      = "urxvt"
 myBorderWidth   = 2
 modm            = mod1Mask   -- left alt
 modm2           = mod5Mask -- right alt
