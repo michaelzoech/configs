@@ -43,7 +43,7 @@ import qualified Data.Map        as M
 
 myTerminal      = "konsole"
 myBorderWidth   = 2
-modm            = mod4Mask   -- left alt
+modm            = mod1Mask   -- left alt
 modm2           = mod5Mask -- right alt
 myWorkspaces    = map show [1..9]
 myNormalBorderColor  = "#000000"
