@@ -4,24 +4,47 @@ set nocompatible
 
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" Required:
+set runtimepath+=~/.dein/repos/github.com/Shougo/dein.vim
 
-" http://vim-scripts.org/vim/scripts.html
-Bundle 'xml.vim'
+" Required:
+call dein#begin('~/.dein')
 
-" Github
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-fugitive'
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
 
-call vundle#end()
+call dein#add('othree/xml.vim')
+call dein#add('eagletmt/ghcmod-vim')
+call dein#add('eagletmt/neco-ghc')
+call dein#add('ctrlpvim/ctrlp.vim')
+call dein#add('plasticboy/vim-markdown')
+call dein#add('scrooloose/nerdtree')
+call dein#add('scrooloose/syntastic')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+call dein#add('tpope/vim-fugitive')
+
+" You can specify revision/branch/tag.
+"call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Required:
+call dein#end()
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"  call dein#install()
+"endif
+
+"End dein Scripts-------------------------
 
 filetype plugin indent on
 syntax on

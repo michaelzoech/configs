@@ -7,6 +7,3 @@
 [submodule "autojump"]
 	path = autojump
 	url = https://github.com/joelthelion/autojump.git
-[submodule "vim/bundle/vundle"]
-	path = vim/bundle/vundle
-	url = https://github.com/gmarik/vundle.git
