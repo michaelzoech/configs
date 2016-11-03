@@ -1,6 +1,0 @@
-[DEFAULT]
-skype = True
-pidgin = True
-menu = dmenu -l 10 -i -b -fn 'xft:Inconsolata:size=11'
-prefer_online = True
-sort_order = ['icq', 'xmpp', 'skype']

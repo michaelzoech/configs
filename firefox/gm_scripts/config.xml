@@ -1,9 +1,0 @@
-<UserScriptConfig>
-	<Script filename="google_reader_demarginfi.user.js" name="Google Reader Demarginfier" namespace="http://www.aintaer.com/Projects" description="Reduces margins on the new Google Reader layout" version="1.2" enabled="true" runAt="document-end" basedir="google_reader_demarginfi" modified="1320149805000" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" updateAvailable="" lastUpdateCheck="" installurl="http://userscripts.org/scripts/source/116850.user.js" updateurl="http://userscripts.org/scripts/source/116850.meta.js">
-		<Include>http://www.google.com/reader/view/*</Include>
-		<Include>https://www.google.com/reader/view/*</Include>
-	</Script>
-	<Script filename="fix_new_google_reader_la.user.js" name="Fix New Google Reader Layout" namespace="http://www.stealthmonkey.com" description="Fixes some UI flaws in the new Google Reader layout" version="" enabled="true" runAt="document-end" basedir="fix_new_google_reader_la" modified="1320149814000" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" updateAvailable="" lastUpdateCheck="" installurl="http://userscripts.org/scripts/source/116868.user.js" updateurl="http://userscripts.org/scripts/source/116868.meta.js">
-		<Include>http*://www.google.*/reader/*</Include>
-	</Script>
-</UserScriptConfig>
