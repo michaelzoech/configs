@@ -6,6 +6,30 @@ echo_step() {
 	printf "\n%s\n\n" "$@"
 }
 
+install_common_arch_packages() {
+	echo_step "Installing common packages"
+	local packages=(
+		bc
+		chromium
+		conky
+		git
+		tree
+		mplayer
+		mupdf
+		nvidia
+		openssh
+		password-gorilla
+		tig
+		vim
+		vlc
+		xmonad
+		xmonad-contrib
+		xterm
+		zsh
+	)
+	sudo apacman -S --needed ${packages[@]}
+}
+
 install_apacman() {
 	$(which apacman > /dev/null) && return 0 || :
 	echo_step "Installing apacman"
@@ -28,7 +52,6 @@ create_soft_link() {
 	local sourcepath="${scriptdir}/${filename}"
 	local targetpath="${HOME}/.${filename}"
 
-	echo "Checking $filename"
 	if [ -f "$targetpath" ] || [ -d "$targetpath" ]; then
 		[ "$(readlink "$targetpath")" = "$sourcepath" ] && return 0
 		echo "Error .$filename already exists in home folder but is not a soft link"
@@ -44,7 +67,7 @@ soft_link_files() {
 	echo_step "Creating soft links"
 	local scriptdir=$1
 
-	files=(
+	local files=(
 		apvlvrc
 		conkyrc
 		dzen
@@ -79,6 +102,7 @@ main() {
 	pushd ~/.bootstrap > /dev/null
 
 	install_apacman
+	install_common_arch_packages
 	soft_link_files "$DIR"
 	install_vim_dein
 
