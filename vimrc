@@ -27,6 +27,7 @@ call dein#add('plasticboy/vim-markdown')
 call dein#add('scrooloose/nerdtree')
 call dein#add('scrooloose/syntastic')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+call dein#add('tpope/vim-fireplace')
 call dein#add('tpope/vim-fugitive')
 
 " You can specify revision/branch/tag.
