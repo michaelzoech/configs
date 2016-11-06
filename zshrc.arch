@@ -9,6 +9,9 @@ alias ps='apacman -S'
 alias pss='apacman -Ss'
 alias pu='apacman -Syu'
 
+# View PDF with sepia background color
+alias mu="mupdf -C DFD0C9"
+
 # Environment variables
 
 ## Enable ccache for Android and AOSP
