@@ -3,11 +3,11 @@
 
 alias ls='ls --color=auto'
 
-alias pr='apacman -R'
-alias prs='apacman -Rs'
-alias ps='apacman -S'
-alias pss='apacman -Ss'
-alias pu='apacman -Syu'
+alias apr='apacman -R'
+alias aprs='apacman -Rs'
+alias aps='apacman -S'
+alias apss='apacman -Ss'
+alias apu='apacman -Syu'
 
 # View PDF with sepia background color
 alias mu="mupdf -C DFD0C9"
