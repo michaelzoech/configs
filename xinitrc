@@ -29,4 +29,5 @@ trayer --edge top --align right --SetDockType true --SetPartialStrut true --expa
 conky &
 #nm-applet --sm-disable &
 xrandr --output "DP-4" --right-of "DP-2"
+sleep 2 && dropbox-cli start &
 exec ~/.xmonad/xmonad-x86_64-linux
