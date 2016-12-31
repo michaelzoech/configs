@@ -39,4 +39,4 @@ temperature_unit          celsius
 
 
 TEXT
-  ${color1}Date: ${color2}${time %d.%m.%y %H:%M}${color1} Cpu: ${color2}${cpu}%${color1} GHz: ${color2}${freq_g}${color1}  Ram: ${color2}${memperc}%  ${color1}Swap: ${color2}${swapperc}% ${color1}Temp: ${color2}${acpitemp} ${execi 6 cat /proc/acpi/thermal_zone/CPUZ/temperature | cut -d " " -f 14} ${color1}Dropbox: ${color2}${execi 6 dropbox status | sed -n 1p}
+  ${color1}Date: ${color2}${time %d.%m.%y %H:%M}${color1} Cpu: ${color2}${cpu}%${color1} GHz: ${color2}${freq_g}${color1}  Ram: ${color2}${memperc}%  ${color1}Swap: ${color2}${swapperc}% ${color1}Dropbox: ${color2}${execi 6 dropbox-cli status | sed -n 1p}
