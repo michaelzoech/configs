@@ -18,7 +18,7 @@ alias mu="mupdf -C DFD0C9"
 export USE_CCACHE=1
 export NDK_CCACHE=ccache
 
-export ANDROID_HOME=/opt/android-sdk
+export ANDROID_HOME=$HOME/Android/Sdk
 export ANDROID_NDK=/opt/android-ndk
 export CONFIGS_HOME=$HOME/projects/configs
 
