@@ -44,6 +44,7 @@ import qualified Data.Map        as M
 myTerminal      = "urxvt"
 myBorderWidth   = 2
 modm            = mod1Mask   -- left alt
+windowsKey      = mod4Mask
 modm2           = mod5Mask -- right alt
 myWorkspaces    = map show [1..9]
 myNormalBorderColor  = "#000000"
@@ -92,7 +93,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modm,               xK_m     ), windows W.focusMaster  )
 
     -- Swap the focused window and the master window
-    , ((modm,               xK_Return), windows W.swapMaster)
+    , ((windowsKey,         xK_Return), windows W.swapMaster)
 
     -- Swap the focused window with the next window
     , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  )
@@ -169,7 +170,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- mod-ctrl-[1..9], Swap current workspace to workspace N
     --
     [((m .|. mask, k), windows $ f i)
-        | mask <- [mod1Mask, modm2]
+        | mask <- [modm, modm2]
         , (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask), (swapWithCurrent, controlMask), (copy, shiftMask .|. controlMask)]]
     ++
