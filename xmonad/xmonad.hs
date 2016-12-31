@@ -215,7 +215,7 @@ myManageHook = (composeAll . concat)
       <+> scratchpadManageHook (W.RationalRect 0.25 0.2 0.5 0.6)
       <+> floatNextHook
   where byClass = ["Gimp-2.6", "MPlayer", "Totem", "Pino", "Do", "Pidgin", "Skype", "ITap mobile RDP", "Qmote", "skypeforlinux"]
-        byTitle = ["VLC (XVideo output)", "Downloads", "Preferences", "Save As..."]
+        byTitle = ["VLC (XVideo output)", "Downloads", "Preferences", "Save As...", "Emulator"]
         byResource = []
 
 --myLogHook = dynamicLogDzen
