@@ -29,6 +29,7 @@ call dein#add('scrooloose/syntastic')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 call dein#add('tpope/vim-fireplace')
 call dein#add('tpope/vim-fugitive')
+call dein#add('leafgarland/typescript-vim')
 
 " You can specify revision/branch/tag.
 "call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -88,11 +89,11 @@ set shiftwidth=4
 set softtabstop=4
 set smartindent
 
-autocmd FileType groovy,scala,ruby,haskell,tex,bib,xml,erb setlocal sts=2 ts=2 sw=2
+autocmd FileType bib,erb,groovy,haskell,ruby,scala,tex,xml setlocal sts=2 ts=2 sw=2
+autocmd FileType typescript setlocal sts=4 ts=4 sw=4
 autocmd FileType make setlocal noexpandtab sts=4 ts=4 sw=4
 
 " treat html files as xml (i.e. indentation and ftplugins)
-autocmd BufNewFile,BufRead *.html,*.htm set filetype=xml
 autocmd BufNewFile,BufRead *.gradle set filetype=groovy
 
 set ruler
