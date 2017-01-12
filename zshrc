@@ -90,7 +90,7 @@ export PATH=$PATH:$HOME/.rvm/bin
 # Use autojump
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 
-export PATH=$PATH:$HOME/apps
+export PATH=$PATH:$HOME/apps:$HOME/.local/bin
 
 source $HOME/.zshrc.`uname -s`
 
