@@ -136,6 +136,14 @@ map <Leader>d :bd<Return>
 " the space at the end is needed/wanted
 map <Leader>f :b 
 
+" Shortcuts for moving between windows
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-S> <C-W><C-W>
+nnoremap <C-N> <C-W>W
+
 :nmap \e :NERDTreeToggle<CR>
 
 " Typing 'jj' fast enough switches from insert to command mode
@@ -143,15 +151,15 @@ inoremap jj <Esc>
 
 " Fugitive configuration
 " Always split vertically
-set diffopt+=vertical
+"set diffopt+=vertical
 " Jump to next change with C-j
-nnoremap <expr> <C-j> &diff ? ']c' : '<C-W>j'
+"nnoremap <expr> <C-j> &diff ? ']c' : '<C-W>j'
 " Jump to previous change with C-k
-nnoremap <expr> <C-k> &diff ? '[c' : '<C-W>k'
+"nnoremap <expr> <C-k> &diff ? '[c' : '<C-W>k'
 " Use change from right side and update diff colors
-nnoremap <expr> <C-h> &diff ? ':diffget //3<CR>:diffupdate<CR>' : 'h'
+"nnoremap <expr> <C-h> &diff ? ':diffget //3<CR>:diffupdate<CR>' : 'h'
 " Use change from left side and update diff colors
-nnoremap <expr> <C-l> &diff ? ':diffget //2<CR>:diffupdate<CR>' : 'l'
+"nnoremap <expr> <C-l> &diff ? ':diffget //2<CR>:diffupdate<CR>' : 'l'
 
 let g:ctrlp_custom_ignore = {
   \ 'dir': '\.cabal-sandbox$',
