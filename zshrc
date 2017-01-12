@@ -94,3 +94,9 @@ export PATH=$PATH:$HOME/apps
 
 source $HOME/.zshrc.`uname -s`
 
+# Disable shell flow control (usage of C-s and C-q as shell shortcuts)
+# C-s would enable terminal scroll lock
+# C-q would disable scroll lock
+# This way I can use these shortcuts in e.g. vim
+stty -ixon
+
