@@ -85,7 +85,6 @@ soft_link_files() {
 		zprofile
 		zsh_custom
 		zshrc
-		zshrc.arch
 	)
 
 	for file in "${files[@]}"

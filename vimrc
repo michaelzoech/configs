@@ -183,3 +183,5 @@ map <silent> tt :GhcModType<CR>
 map <silent> tc :GhcModTypeClear<CR>
 map <silent> ti :GhcModTypeInsert<CR>
 
+source ~/.vimrc_platform
+

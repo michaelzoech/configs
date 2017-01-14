@@ -92,7 +92,7 @@ export PATH=$PATH:$HOME/.rvm/bin
 
 export PATH=$PATH:$HOME/apps:$HOME/.local/bin
 
-source $HOME/.zshrc.`uname -s`
+source $HOME/.zshrc.platform
 
 # Disable shell flow control (usage of C-s and C-q as shell shortcuts)
 # C-s would enable terminal scroll lock
