@@ -146,7 +146,7 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-S> <C-W><C-W>
 nnoremap <C-N> <C-W>W
 
-:nmap \e :NERDTreeToggle<CR>
+:nmap <Leader>e :NERDTreeToggle<CR>
 
 " Typing 'jj' fast enough switches from insert to command mode
 inoremap jj <Esc>
