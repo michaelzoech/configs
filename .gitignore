@@ -4,3 +4,4 @@
 /vim/GetLatest/Installed
 /vim/bundle/*
 .DS_Store
+*.swp
