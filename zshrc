@@ -90,6 +90,19 @@ export PATH=$PATH:$HOME/.rvm/bin
 # Use autojump
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 
+source $HOME/.cargo/env
+
+case `uname -s` in
+    Darwin)
+        RUST_TOOLCHAIN_NAME=stable-x86_64-apple-darwin
+        ;;
+    *)
+        RUST_TOOLCHAIN_NAME=stable-x86_64-unknown-linux-gnu
+        ;;
+esac
+
+RUST_SRC_PATH=$HOME/.multirust/toolchains/$RUST_TOOLCHAIN_NAME/lib/rustlib/src/rust/src
+
 export PATH=$PATH:$HOME/apps:$HOME/.local/bin
 
 source $HOME/.zshrc.platform
