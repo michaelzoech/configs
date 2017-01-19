@@ -1,0 +1,5 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+{ "key": "ctrl+l",                "command": "workbench.action.quickOpen" },
+{ "key": "ctrl+shift+l",                "command": "workbench.action.showCommands" }
+]

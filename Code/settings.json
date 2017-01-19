@@ -1,0 +1,51 @@
+{
+    "vim.leader": " ",
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["leader", "p"],
+            "commands": [
+                {
+                    "command": "workbench.action.showCommands"
+                }
+            ]
+        },
+        {
+            "before": ["leader", "t"],
+            "commands": [
+                {
+                    "command": "workbench.action.quickOpen"
+                }
+            ]
+        },
+        {
+            "before": ["leader", "s"],
+            "commands": [
+                {
+                    "command": "workbench.action.nextEditor"
+                }
+            ]
+        },
+        {
+            "before": ["leader", "n"],
+            "commands": [
+                {
+                    "command": "workbench.action.previousEditor"
+                }
+            ]
+        },
+        {
+            "before": ["leader", "d"],
+            "commands": [
+                {
+                    "command": "workbench.action.closeActiveEditor"
+                }
+            ]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ]
+}
