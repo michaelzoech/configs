@@ -17,5 +17,3 @@ source $CONFIGS_HOME/bash/prompt
 
 [ -s "/home/maik/.scm_breeze/scm_breeze.sh" ] && . "/home/maik/.scm_breeze/scm_breeze.sh"
 
-[[ -s "/home/maik/.rvm/scripts/rvm" ]] && source "/home/maik/.rvm/scripts/rvm"
-[[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion

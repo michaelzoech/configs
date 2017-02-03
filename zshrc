@@ -80,15 +80,13 @@ export EDITOR=vim
 # Use jj to switch into command mode (Esc replacement)
 bindkey "jj" vi-cmd-mode
 
-# Use RVM to manage Ruby versions
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH=$PATH:$HOME/.rvm/bin
-
 # Use https://github.com/ndbroadbent/scm_breeze for better git aliases
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && . "$HOME/.scm_breeze/scm_breeze.sh"
 
 # Use autojump
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+
+export PATH=$HOME/.rbenv/shims:$PATH
 
 source $HOME/.cargo/env
 
