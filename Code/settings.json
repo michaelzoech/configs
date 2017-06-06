@@ -1,5 +1,26 @@
 {
+    // Exclude defaults + "objd"
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/objd": true
+    },
+
+    // Work around copy/past issues
+    "vim.useSystemClipboard": true,
+    "vim.handleKeys": {
+        "<C-c>": false,
+        "<C-v>": false,
+        "<C-x>": false
+    },
+
+    "vim.disableAnnoyingNeovimMessage": true,
+
     "vim.leader": " ",
+
     "vim.otherModesKeyBindingsNonRecursive": [
         {
             "before": ["leader", "p"],
@@ -42,6 +63,7 @@
             ]
         }
     ],
+
     "vim.insertModeKeyBindings": [
         {
             "before": ["j", "j"],
