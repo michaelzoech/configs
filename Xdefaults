@@ -51,8 +51,21 @@ URxvt*scrollBar:   false
 !URxvt.cursorBlink: True
 URxvt*urgentOnBell:true
 
-URxvt*perl-ext-common: default,matcher
+# Extensions
+#
+# matcher
+#  Clickable urls
+#
+# resize-font
+#  Ctrl++: increase size
+#  Ctrl+-: decrease size
+#  Ctrl+=: reset size
+#  Ctrl+?: display current size
+#
 
-URxvt*urlLauncher: firefox
-URxvt*matcher*button: 1
+URxvt*perl-ext-common: default,matcher,resize-font
+
+URxvt.url-launcher: firefox
+URxvt.matcher.button: 1
+
 
