@@ -1,0 +1,10 @@
+pcm.!default {
+    type hw
+    card S800
+}
+
+ctl.!default {
+    type hw
+    card S800
+}
+
