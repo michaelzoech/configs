@@ -25,7 +25,7 @@ xmodmap ~/.Xmodmap
 
 xsetroot -cursor_name left_ptr
 #feh --bg-scale `find ~/wallpapers -type f -print | sort --random-sort | head -n 1`
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --height 17 --transparent true --tint 0x000000 --alpha 0 &
+trayer --monitor primary --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --height 17 --transparent true --tint 0x000000 --alpha 0 &
 conky &
 #nm-applet --sm-disable &
 xrandr --output "DP-4" --right-of "DP-2"
