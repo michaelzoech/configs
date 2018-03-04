@@ -57,8 +57,6 @@ myFocusFollowsMouse = True
 myFont  = "-*-verdana-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
 --myFont = "-*-dejavu sans mono-medium-r-*-*-16-*-*-*-*-*-iso10646-*"
 
-myStatusbar = "my-dzen.sh"
-
 myWorkspaceScreens ws
   | ws == "9" = Just 1
   | otherwise = Nothing
@@ -82,7 +80,7 @@ fixedView f ws s =
     (Just screen) -> W.view ws . focusScreen screen $ s
     Nothing -> W.view ws s
 
-myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
+myKeys conf@XConfig {XMonad.modMask = modMask} = M.fromList $
 
     -- switch keyboard layout
     [ ((modm .|. shiftMask, xK_Return), spawn "switch-layout")
@@ -141,7 +139,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modm              , xK_v     ), sendMessage (IncMasterN (-1)))
 
     -- Quit xmonad
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
+    , ((modm .|. shiftMask, xK_q     ), io exitSuccess)
 
     -- Restart xmonad
     , ((modm              , xK_q     ), restart "xmonad" True)
@@ -171,7 +169,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modm2             , xK_q     ), spawn "mpc prev")
     , ((modm2             , xK_j     ), spawn "mpc next")
     , ((modm2             , xK_k     ), spawn "mpc toggle")
-    , ((modm2             , xK_x     ), floatNext True >> (spawn $ myTerminal ++ " -geometry 80x35+480+90 -e ncmpcpp --host 127.0.0.1"))
+    , ((modm2             , xK_x     ), floatNext True >> spawn (myTerminal ++ " -geometry 80x35+480+90 -e ncmpcpp --host 127.0.0.1"))
 
     , ((modm             , xK_a     ), spawn "togglecursor")
     , ((modm2             , xK_o     ), spawn "dolphin")
@@ -207,24 +205,24 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
         | (key, sc) <- zip [xK_period, xK_comma] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
-myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
-
+myMouseBindings XConfig {XMonad.modMask = modMask} = M.fromList
     -- mod-button1, Set the window to floating mode and move by dragging
-    [ ((modm, button1), (\w -> focus w >> mouseMoveWindow w))
+    [ ((modm, button1), \w -> focus w >> mouseMoveWindow w)
 
     -- mod-button2, Raise the window to the top of the stack
-    , ((modm, button2), (\w -> focus w >> windows W.swapMaster))
+    , ((modm, button2), \w -> focus w >> windows W.swapMaster)
 
     -- mod-button3, Set the window to floating mode and resize by dragging
-    , ((modm, button3), (\w -> focus w >> mouseResizeWindow w))
+    , ((modm, button3), \w -> focus w >> mouseResizeWindow w)
 
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
 
+-- Special handling to pin workspaces
 myAdditionalKeys =
   [ ("M-" ++ ws, windows $ fixedView myWorkspaceScreens ws) | ws <- myWorkspaces ]
 
-myLayout = avoidStruts $ smartBorders $ browserLayout $ commonLayouts
+myLayout = avoidStruts $ smartBorders $ browserLayout commonLayouts
   where
     -- Percent of screen to increment by when resizing panes
     delta = 3/100
@@ -236,7 +234,7 @@ myLayout = avoidStruts $ smartBorders $ browserLayout $ commonLayouts
 
 myManageHook = (composeAll . concat)
     [ [className =? c --> doFloat | c <- byClass]
-    , [(liftM $ isInfixOf t) title --> doFloat | t <- byTitle]
+    , [(fmap $ isInfixOf t) title --> doFloat | t <- byTitle]
     , [resource =? r --> doFloat | r <- byResource]
     , [isFullscreen --> doFullFloat]
     ] <+> manageHook def
@@ -245,8 +243,6 @@ myManageHook = (composeAll . concat)
   where byClass = ["Gimp-2.6", "MPlayer", "Totem", "Skype", "skypeforlinux", "Font-atlas"]
         byTitle = ["VLC (XVideo output)", "Downloads", "Preferences", "Save As...", "Emulator"]
         byResource = []
-
---myLogHook = dynamicLogDzen
 
 myStartupHook = setWMName "LG3D"
 
@@ -264,65 +260,23 @@ myXPConfig = def
   }
 
 main =
-  do dzenOut <- spawnPipe myStatusbar
-     xmonad $ def {
-      -- simple stuff
-        terminal           = myTerminal,
-        focusFollowsMouse  = myFocusFollowsMouse,
-        borderWidth        = myBorderWidth,
-        modMask            = modm,
-        workspaces         = myWorkspaces,
-        normalBorderColor  = myNormalBorderColor,
-        focusedBorderColor = myFocusedBorderColor,
+  xmonad $ def {
+    -- simple stuff
+    terminal           = myTerminal,
+    focusFollowsMouse  = myFocusFollowsMouse,
+    borderWidth        = myBorderWidth,
+    modMask            = modm,
+    workspaces         = myWorkspaces,
+    normalBorderColor  = myNormalBorderColor,
+    focusedBorderColor = myFocusedBorderColor,
 
-      -- key bindings
-        keys               = myKeys,
-        mouseBindings      = myMouseBindings,
+    -- key bindings
+    keys               = myKeys,
+    mouseBindings      = myMouseBindings,
 
-      -- hooks, layouts
-        layoutHook         = myLayout,
-        manageHook         = myManageHook <+> manageDocks,
-        logHook            = dynamicLogWithPP $ myDzenPP dzenOut,
-        startupHook        = myStartupHook
-    } `additionalKeysP` myAdditionalKeys
-
-myDzenPP h = def {
-  ppOutput = hPutStrLn h,
-  ppSep = " ^bg(" ++ myBgBgColor ++ ")^r(1,15)^bg()",
-  ppWsSep = "",
-  ppCurrent = wrapFgBg myCurrentWsFgColor myCurrentWsBgColor,
-  ppVisible = wrapFgBg myVisibleWsFgColor myVisibleWsBgColor,
-  ppHidden = wrapFg myHiddenWsFgColor,
-  ppHiddenNoWindows = wrapFg myHiddenEmptyWsFgColor,
-  ppUrgent = wrapBg myUrgentWsBgColor,
-  ppTitle = (\x -> " " ++ wrapFg myTitleFgColor x),
-  ppLayout  = dzenColor myFgColor"" .
-                (\x -> case x of
-                    "Tall" -> wrapBitmap "tall.xpm"
-                    "Mirror Tall" -> wrapBitmap "mtall.xpm"
-                    "Full" -> wrapBitmap "full.xpm"
-                )
-  }
-  where
-    wrapFgBg fgColor bgColor content= wrap ("^fg(" ++ fgColor ++ ")^bg(" ++ bgColor ++ ")") "^fg()^bg()" content
-    wrapFg color content = wrap ("^fg(" ++ color ++ ")") "^fg()" content
-    wrapBg color content = wrap ("^bg(" ++ color ++ ")") "^bg()" content
-    wrapBitmap bitmap = "^i(" ++ myBitmapsPath ++ bitmap ++ ")"
-
--- Paths
-myBitmapsPath = "/home/maik/.dzen/bitmaps/"
-
--- Colors
-myBgBgColor = "black"
-myFgColor = "gray80"
-myBgColor = "gray20"
-
-myCurrentWsFgColor = "white"
-myCurrentWsBgColor = "gray40"
-myVisibleWsFgColor = "gray80"
-myVisibleWsBgColor = "gray20"
-myHiddenWsFgColor = "gray80"
-myHiddenEmptyWsFgColor = "gray40"
-myUrgentWsBgColor = "brown"
-myTitleFgColor = "white"
+    -- hooks, layouts
+    layoutHook         = myLayout,
+    manageHook         = myManageHook <+> manageDocks,
+    startupHook        = myStartupHook
+  } `additionalKeysP` myAdditionalKeys
 

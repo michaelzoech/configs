@@ -3,5 +3,6 @@
 /vim/doc/tags
 /vim/GetLatest/Installed
 /vim/bundle/*
+/xmonad/prompt-history
 .DS_Store
 *.swp
