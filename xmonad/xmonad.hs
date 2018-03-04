@@ -19,13 +19,8 @@ import XMonad.Hooks.SetWMName
 
 import XMonad.Layout.Column
 import XMonad.Layout.ComboP
-import XMonad.Layout.FixedColumn
-import XMonad.Layout.Grid
-import XMonad.Layout.IM
 import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
-import XMonad.Layout.Reflect
-import XMonad.Layout.ThreeColumns
 import XMonad.Layout.TwoPane
 
 import XMonad.ManageHook
@@ -88,9 +83,9 @@ focusScreen :: Int -> WindowSet -> WindowSet
 focusScreen screen s = W.view (W.tag . W.workspace $ workspaceScreen screen s) s
 
 -- View a workspace on a predefined monitor.
-fixedView :: (WorkspaceId -> Maybe Int) -> WorkspaceId -> WindowSet -> WindowSet
-fixedView f ws s =
-  case f ws of
+fixedView :: WorkspaceId -> WindowSet -> WindowSet
+fixedView ws s =
+  case myWorkspaceScreens ws of
     (Just screen) -> W.view ws . focusScreen screen $ s
     Nothing -> greedyView ws s
 
@@ -166,17 +161,8 @@ myKeys conf@XConfig {XMonad.modMask = modMask} = M.fromList $
 
     , ((modm              , xK_n     ), toggleWS)
 
-    , ((modm              , xK_backslash), spawn "pyimc toggle skype")
-
-    , ((modm              , xK_slash ), spawn "amixer set Master 5-")
-    , ((modm              , xK_equal ), spawn "amixer set Master 5+")
-
-    , ((0                 , 0x1008FF11), spawn "amixer set Master 5-")
-    , ((0                 , 0x1008FF13), spawn "amixer set Master 5+")
-    , ((0                 , 0x1008FF12), spawn "amixer set Master 0")
-
-    , ((0                 , 0x1008FF02), spawn "sudo /usr/sbin/brightness up")
-    , ((0                 , 0x1008FF03), spawn "sudo /usr/sbin/brightness down")
+    , ((modm              , xK_slash ), spawn "amixer set Master 5%- -q")
+    , ((modm              , xK_equal ), spawn "amixer set Master 5%+ -q")
 
     , ((modm2             , xK_less  ), spawn "mpc seek -2%")
     , ((modm2             , xK_semicolon), spawn "mpc seek +2%")
@@ -208,7 +194,7 @@ myKeys conf@XConfig {XMonad.modMask = modMask} = M.fromList $
     [((m .|. mask, k), windows $ f i)
         | mask <- [modm, modm2]
         , (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-        , (f, m) <- [{-(W.greedyView, 0),-} (W.shift, shiftMask), (swapWithCurrent, controlMask), (copy, shiftMask .|. controlMask)]]
+        , (f, m) <- [(fixedView, 0), (W.shift, shiftMask), (swapWithCurrent, controlMask), (copy, shiftMask .|. controlMask)]]
     ++
 
     --
@@ -231,10 +217,6 @@ myMouseBindings XConfig {XMonad.modMask = modMask} = M.fromList
 
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
-
--- Special handling to pin workspaces
-myAdditionalKeys =
-  [ ("M-" ++ ws, windows $ fixedView myWorkspaceScreens ws) | ws <- myWorkspaces ]
 
 myLayout = avoidStruts $ smartBorders $ browserLayout commonLayouts
   where
@@ -292,5 +274,5 @@ main =
     layoutHook         = myLayout,
     manageHook         = myManageHook <+> manageDocks,
     startupHook        = myStartupHook
-  } `additionalKeysP` myAdditionalKeys
+  }
 
