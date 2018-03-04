@@ -9,33 +9,50 @@ echo_step() {
 install_common_arch_packages() {
 	echo_step "Installing common packages"
 	local packages=(
+		alsa-utils
 		bc
-		chromium
+		google-chrome
 		conky
+		dstat
+		feh
+		firefox
+		gimp
 		git
-		tree
+		gksu
+		inkscape
 		mplayer
 		mupdf
+		net-tools
 		nvidia
+		obs-studio
 		openssh
 		password-gorilla
+		ruby
+		rxvt-unicode
+		strace
+		sysstat
 		tig
+		thunar
+		tree
+		unzip
 		vim
 		vlc
 		xmonad
 		xmonad-contrib
 		xterm
+		zeal
 		zsh
 	)
-	sudo apacman -S --needed ${packages[@]}
+	sudo trizen -S --needed ${packages[@]}
 }
 
-install_apacman() {
+install_trizen() {
 	$(which apacman > /dev/null) && return 0 || :
 	echo_step "Installing apacman"
-	sudo pacman -S --noconfirm --needed --asdeps jshon
-	curl -O "https://raw.githubusercontent.com/oshazard/apacman/master/apacman"
-	bash ./apacman -S --noconfirm apacman
+	git clone https://aur.archlinux.org/trizen.git
+	pushd trizen > /dev/null
+	makepkg -si --noconfirm
+	popd > /dev/null
 }
 
 install_vim_dein() {
@@ -69,8 +86,8 @@ soft_link_files() {
 
 	local files=(
 		apvlvrc
+		asoundrc
 		conkyrc
-		dzen
 		git.scmbrc
 		oh-my-zsh
 		scmbrc
@@ -100,12 +117,13 @@ main() {
 	mkdir ~/.bootstrap
 	pushd ~/.bootstrap > /dev/null
 
-	install_apacman
+	install_trizen
 	install_common_arch_packages
 	soft_link_files "$DIR"
 	install_vim_dein
 
 	popd > /dev/null
+	rm -rf ~/.bootstrap
 }
 
 main
