@@ -164,25 +164,16 @@ myKeys conf@XConfig {XMonad.modMask = modMask} = M.fromList $
     , ((modm              , xK_slash ), spawn "amixer set Master 5%- -q")
     , ((modm              , xK_equal ), spawn "amixer set Master 5%+ -q")
 
-    , ((modm2             , xK_less  ), spawn "mpc seek -2%")
-    , ((modm2             , xK_semicolon), spawn "mpc seek +2%")
-    , ((modm2             , xK_q     ), spawn "mpc prev")
-    , ((modm2             , xK_j     ), spawn "mpc next")
-    , ((modm2             , xK_k     ), spawn "mpc toggle")
-    , ((modm2             , xK_x     ), floatNext True >> spawn (myTerminal ++ " -geometry 80x35+480+90 -e ncmpcpp --host 127.0.0.1"))
-
     , ((modm             , xK_a     ), spawn "togglecursor")
-    , ((modm2             , xK_o     ), spawn "dolphin")
-    , ((modm2             , xK_e     ), spawn "chromium")
+    , ((modm2             , xK_o     ), spawn "thunar")
+    , ((modm2             , xK_e     ), spawn "google-chrome-stable")
     , ((modm2             , xK_u     ), spawn $ XMonad.terminal conf)
-    , ((modm2             , xK_i     ), spawn "pyimc openchat")
 
     , ((modm2             , xK_apostrophe), spawn "firefox")
     -- used by xinerama
     --, ((modm2             , xK_comma ), spawn "")
     --, ((modm2             , xK_period), spawn "")
     , ((modm2             , xK_p     ), shellPrompt myXPConfig)
-    , ((modm2             , xK_y     ), spawn "thunderbird")
     ]
     ++
 
