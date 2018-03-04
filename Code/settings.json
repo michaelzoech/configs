@@ -71,5 +71,7 @@
             "before": ["j", "j"],
             "after": ["<Esc>"]
         }
-    ]
+    ],
+
+    "workbench.colorTheme": "Base16 Dark Eighties",
 }
