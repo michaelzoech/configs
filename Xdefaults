@@ -7,6 +7,7 @@ Xft.hintstyle:     hintfull
 Xft.antialias:     1
 Xft.rgba:          rgb
 
+URxvt*saveLines: 5000
 !URxvt*lineSpace: 0
 
 URxvt*cursorColor: #ff0000
