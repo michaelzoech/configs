@@ -161,8 +161,8 @@ myKeys conf@XConfig {XMonad.modMask = modMask} = M.fromList $
 
     , ((modm              , xK_n     ), toggleWS)
 
-    , ((modm              , xK_slash ), spawn "amixer set Master 5%- -q")
-    , ((modm              , xK_equal ), spawn "amixer set Master 5%+ -q")
+    , ((modm              , xK_slash ), spawn "amixer set Master 8%- -q")
+    , ((modm              , xK_equal ), spawn "amixer set Master 8%+ -q")
 
     , ((modm             , xK_a     ), spawn "togglecursor")
     , ((modm2             , xK_o     ), spawn "thunar")
