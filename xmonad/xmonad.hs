@@ -1,6 +1,7 @@
 
 import Control.Monad (liftM)
 import Data.List
+import Data.Maybe
 import Data.Ratio ((%))
 
 import XMonad
@@ -57,6 +58,29 @@ myFont  = "-*-verdana-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
 --myFont = "-*-dejavu sans mono-medium-r-*-*-16-*-*-*-*-*-iso10646-*"
 
 myStatusbar = "my-dzen.sh"
+
+myWorkspaceScreens ws
+  | ws == "9" = Just 1
+  | otherwise = Nothing
+
+-- Get the screen that a workspace is fixed to.
+workspaceScreen :: Int -> WindowSet -> W.Screen WorkspaceId (Layout Window) Window ScreenId ScreenDetail
+workspaceScreen screen s =
+    screens !! index
+      where
+        screens = sortOn W.screen $ W.screens s
+        index = if length screens < screen then 0 else screen
+
+-- Focus the monitor that a workspace is fixed to, without viewing the workspace.
+focusScreen :: Int -> WindowSet -> WindowSet
+focusScreen screen s = W.view (W.tag . W.workspace $ workspaceScreen screen s) s
+
+-- View a workspace on a predefined monitor.
+fixedView :: (WorkspaceId -> Maybe Int) -> WorkspaceId -> WindowSet -> WindowSet
+fixedView f ws s =
+  case f ws of
+    (Just screen) -> W.view ws . focusScreen screen $ s
+    Nothing -> W.view ws s
 
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
@@ -172,7 +196,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     [((m .|. mask, k), windows $ f i)
         | mask <- [modm, modm2]
         , (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask), (swapWithCurrent, controlMask), (copy, shiftMask .|. controlMask)]]
+        , (f, m) <- [{-(W.greedyView, 0),-} (W.shift, shiftMask), (swapWithCurrent, controlMask), (copy, shiftMask .|. controlMask)]]
     ++
 
     --
@@ -196,6 +220,9 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
+
+myAdditionalKeys =
+  [ ("M-" ++ ws, windows $ fixedView myWorkspaceScreens ws) | ws <- myWorkspaces ]
 
 myLayout = avoidStruts $ smartBorders $ browserLayout $ commonLayouts
   where
@@ -257,7 +284,7 @@ main =
         manageHook         = myManageHook <+> manageDocks,
         logHook            = dynamicLogWithPP $ myDzenPP dzenOut,
         startupHook        = myStartupHook
-    }
+    } `additionalKeysP` myAdditionalKeys
 
 myDzenPP h = defaultPP {
   ppOutput = hPutStrLn h,
