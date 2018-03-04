@@ -239,10 +239,10 @@ myManageHook = (composeAll . concat)
     , [(liftM $ isInfixOf t) title --> doFloat | t <- byTitle]
     , [resource =? r --> doFloat | r <- byResource]
     , [isFullscreen --> doFullFloat]
-    ] <+> manageHook defaultConfig
+    ] <+> manageHook def
       <+> scratchpadManageHook (W.RationalRect 0.25 0.2 0.5 0.6)
       <+> floatNextHook
-  where byClass = ["Gimp-2.6", "MPlayer", "Totem", "Pino", "Do", "Pidgin", "Skype", "ITap mobile RDP", "Qmote", "skypeforlinux"]
+  where byClass = ["Gimp-2.6", "MPlayer", "Totem", "Skype", "skypeforlinux", "Font-atlas"]
         byTitle = ["VLC (XVideo output)", "Downloads", "Preferences", "Save As...", "Emulator"]
         byResource = []
 
@@ -251,7 +251,7 @@ myManageHook = (composeAll . concat)
 myStartupHook = setWMName "LG3D"
 
 myXPConfig :: XPConfig
-myXPConfig = defaultXPConfig
+myXPConfig = def
   { font              = myFont
   --, bgColor           = "black"
   --, fgColor           = "#999999"
@@ -265,7 +265,7 @@ myXPConfig = defaultXPConfig
 
 main =
   do dzenOut <- spawnPipe myStatusbar
-     xmonad $ defaultConfig {
+     xmonad $ def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,
@@ -286,7 +286,7 @@ main =
         startupHook        = myStartupHook
     } `additionalKeysP` myAdditionalKeys
 
-myDzenPP h = defaultPP {
+myDzenPP h = def {
   ppOutput = hPutStrLn h,
   ppSep = " ^bg(" ++ myBgBgColor ++ ")^r(1,15)^bg()",
   ppWsSep = "",
