@@ -57,9 +57,23 @@ myFocusFollowsMouse = True
 myFont  = "-*-verdana-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
 --myFont = "-*-dejavu sans mono-medium-r-*-*-16-*-*-*-*-*-iso10646-*"
 
+myWorkspaceScreens :: WorkspaceId -> Maybe Int
 myWorkspaceScreens ws
   | ws == "9" = Just 1
   | otherwise = Nothing
+
+greedyView :: WorkspaceId -> WindowSet -> WindowSet
+greedyView w ws
+  | isCurrentFixedAndVisibleIsNext = ws
+  | any wTag (W.hidden ws) = W.view w ws
+  | (Just s) <- find (wTag . W.workspace) (W.visible ws)
+                        = ws { W.current = (W.current ws) { W.workspace = W.workspace s }
+                             , W.visible = s { W.workspace = W.workspace (W.current ws) }
+                                       : filter (not . wTag . W.workspace) (W.visible ws) }
+  | otherwise = ws
+  where
+    wTag = (w == ) . W.tag
+    isCurrentFixedAndVisibleIsNext = isJust (myWorkspaceScreens $ W.tag (W.workspace $ W.current ws)) && isJust (find (wTag . W.workspace) (W.visible ws))
 
 -- Get the screen that a workspace is fixed to.
 workspaceScreen :: Int -> WindowSet -> W.Screen WorkspaceId (Layout Window) Window ScreenId ScreenDetail
@@ -78,7 +92,7 @@ fixedView :: (WorkspaceId -> Maybe Int) -> WorkspaceId -> WindowSet -> WindowSet
 fixedView f ws s =
   case f ws of
     (Just screen) -> W.view ws . focusScreen screen $ s
-    Nothing -> W.view ws s
+    Nothing -> greedyView ws s
 
 myKeys conf@XConfig {XMonad.modMask = modMask} = M.fromList $
 
