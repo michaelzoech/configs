@@ -47,7 +47,7 @@ git_reset_hard_alias="grsh"
 git_rm_alias="grm"
 git_blame_alias="gbl"
 git_diff_alias="gd"
-git_diff_word_alias="gdw"
+#git_diff_word_alias="gdw"
 git_diff_cached_alias="gds"
 # 3. Standard commands
 git_clone_alias="gcl"
@@ -92,6 +92,8 @@ git_commit_amend_alias="gca"
 git_commit_amend_no_msg_alias="gcah"
 git_commit_no_msg_alias="gch"
 
+alias gdw='git diff --color-words=.'
+alias gdws='git diff --staged --color-words=.'
 alias gcm='git commit -m'
 alias gru='git remote update -p'
 alias gfp='git fetch -p'
