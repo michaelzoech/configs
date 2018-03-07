@@ -16,7 +16,8 @@
     "vim.handleKeys": {
         "<C-c>": false,
         "<C-v>": false,
-        "<C-x>": false
+        "<C-x>": false,
+        "<C-w>": false
     },
 
     "vim.disableAnnoyingNeovimMessage": true,
