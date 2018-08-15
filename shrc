@@ -17,3 +17,5 @@ alias gg='arun gitg --all'
 # Android
 alias ain='adb install'
 alias aun='adb uninstall'
+
+[[ -f ~/.shrc.platform ]] && . ~/.shrc.platform

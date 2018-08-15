@@ -1,0 +1,11 @@
+# vim: syntax=sh
+
+# Aliases for trizen
+alias ts='trizen -S'
+alias tss='trizen -Ss'
+alias tsu='trizen -Syu'
+alias tr='trizen -R'
+alias trs='trizen -Rs'
+
+# View pdfs with sepia background color
+alias mu='mupdf -C DFD0C9'

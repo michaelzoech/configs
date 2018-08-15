@@ -1,15 +1,4 @@
 
-# Aliases
-
-alias ts='trizen -S'
-alias tss='trizen -Ss'
-alias tsu='trizen -Syu'
-alias tr='trizen -R'
-alias trs='trizen -Rs'
-
-# View PDF with sepia background color
-alias mu="mupdf -C DFD0C9"
-
 # Environment variables
 
 ## Enable ccache for Android and AOSP
