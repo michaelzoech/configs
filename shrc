@@ -1,0 +1,19 @@
+# vim: syntax=sh
+
+# Misc aliases
+alias a='arun'
+alias f="find . -iname"
+alias u='ls'
+alias i='ls -lh'
+alias m="make"
+alias m2="make -j2"
+alias m4="make -j4"
+alias m8="make -j8"
+alias mk="mkdir -p"
+alias qg='arun qgit --all'
+alias ti='tig --all'
+alias gg='arun gitg --all'
+
+# Android
+alias ain='adb install'
+alias aun='adb uninstall'

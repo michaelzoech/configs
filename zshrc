@@ -33,34 +33,8 @@ zstyle ':omz:editor' keymap 'emacs'
 
 source $ZSH/oh-my-zsh.sh
 
-# Misc aliases
-alias a='arun'
-alias f="find . -iname"
-alias u='ls'
-alias i='ls -lh'
-alias m="make"
-alias m2="make -j2"
-alias m4="make -j4"
-alias m8="make -j8"
-alias mk="mkdir -p"
-alias qg='arun qgit --all'
-alias ti='tig --all'
-alias gg='arun gitg --all'
-
-# Subversion
-alias sa='svn add'
-alias scm='svn commit -m'
-alias sd='svn diff'
-alias st='svn diff --diff-cmd meld'
-alias sll='svn log --limit'
-alias spe='svn propedit svn:externals .'
-alias spi='svn propedit svn:ignore .'
-alias ss='svn status'
-alias sup='svn update'
-
-# Android
-alias ain='adb install'
-alias aun='adb uninstall'
+# Source common shell settings
+. ~/.shrc
 
 # recursive mkdir and cd if successful
 function mkcd {
@@ -74,8 +48,6 @@ function cd {
 
 # Always show path in prompt
 unsetopt auto_name_dirs
-
-export EDITOR=vim
 
 # Use jj to switch into command mode (Esc replacement)
 bindkey "jj" vi-cmd-mode

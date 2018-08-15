@@ -88,9 +88,12 @@ soft_link_files() {
 	local files=(
 		apvlvrc
 		asoundrc
+		bashrc
+		bash_profile
 		conkyrc
 		git.scmbrc
 		oh-my-zsh
+		profile
 		scmbrc
 		scm_breeze
 		vim

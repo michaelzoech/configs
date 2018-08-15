@@ -1,8 +1,6 @@
 
 # Aliases
 
-alias ls='ls --color=auto'
-
 alias ts='trizen -S'
 alias tss='trizen -Ss'
 alias tsu='trizen -Syu'
