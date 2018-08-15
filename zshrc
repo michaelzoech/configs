@@ -36,16 +36,6 @@ source $ZSH/oh-my-zsh.sh
 # Source common shell settings
 . ~/.shrc
 
-# recursive mkdir and cd if successful
-function mkcd {
-	mkdir -p "$@" && builtin cd "$@"
-}
-
-# do an ls after every successful cd
-function cd {
-	builtin cd "$@" && ls
-}
-
 # Always show path in prompt
 unsetopt auto_name_dirs
 

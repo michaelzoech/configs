@@ -1,5 +1,15 @@
 # vim: syntax=sh
 
+# Recursive mkdir and cd if successful
+function mkcd {
+    mkdir -p "$@" && builtin cd "$@"
+}
+
+# Do ls after successful cd
+function cd {
+    builtin cd "$@" && ls
+}
+
 # Misc aliases
 alias a='arun'
 alias f="find . -iname"

@@ -4,4 +4,4 @@
 export EDITOR=vim
 
 # Source a machine-specific profile
-[[ -f ~/.profile.machine ]] && . ~/.profile.machine
+[[ -f ~/.profile.platform ]] && . ~/.profile.platform

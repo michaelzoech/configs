@@ -14,19 +14,8 @@ function trunc_path() {
 	echo -n "${left}...${right}"
 }
 
-function parse_svn_dirty {
-	local lines=$(svn status 2>/dev/null | grep "^\([ACDIMR?\!\~]\)\|\( [CM]\)" | wc -l)
-	[[ $lines -gt 0 ]] && echo "*"
-}
-
-function parse_svn_revision {
-	local svn_rev=$(svn info 2>/dev/null | grep ^Revision | awk '{ print $2 }')
-	[[ -n $svn_rev ]] && echo "(r$svn_rev$(parse_svn_dirty))"
-}
-
 function parse_scm {
 	[[ $(__git_ps1) ]] && echo $(__git_ps1)
-	#parse_svn_revision
 }
 
 export GIT_PS1_SHOWDIRTYSTATE=1

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-COMPLETE="complete -o bashdefault -o default -o nospace -F"
-
 # Enable bash completion for alias
 # mkalias <completion function> <alias> <command with args>
 # e.g.
@@ -22,63 +20,3 @@ function mkalias () {
 	alias $alias_name="$*"
 }
 
-alias a="arun"
-alias c="cd"
-alias e="ls"
-alias f="find . -iname"
-alias l="ls -lh"
-alias m="make"
-alias m2="make -j2"
-alias m4="make -j4"
-alias m8="make -j8"
-alias mk="mkdir -p"
-alias o="ls -lh"
-alias u="j" # http://wiki.github.com/joelthelion/autojump/
-
-# yaourt
-alias y='yaourt' ; $COMPLETE _yaourt y
-alias yr='yaourt -R'
-alias yrs='yaourt -Rs'
-alias ys='yaourt -S'
-alias yss='yaourt -Ss'
-alias yu='yaourt -Syu'
-
-# git
-#alias ga="git add" ; $COMPLETE _git_add ga
-#alias gaa="git add -A"
-#alias gb='git branch' ; $COMPLETE _git_branch gb
-#mkalias _git gbd git branch -d
-#mkalias _git gbD git branch -D
-#alias gco='git checkout' ; $COMPLETE _git_checkout gco
-#alias gc='git commit' ; $COMPLETE _git_commit gc
-#alias gca='git commit --amend'
-#alias gcm='git commit -m'
-#alias gcam='git commit -am'
-#alias gd='git diff' ; $COMPLETE _git_diff gd
-#mkalias _git gds git diff --staged
-#alias gl='git log' ; $COMPLETE _git_log gl
-#alias gpu='git pull' ; $COMPLETE _git_pull gpu
-#alias gp='git push' ; $COMPLETE _git_push gp
-#alias grm='git rm' ; $COMPLETE _git_rm grm
-#alias gru='git remote update -p'
-#alias gs='git status -sb' ; $COMPLETE _git_status gs
-#alias gsr='git svn rebase'
-#alias gsd='git svn dcommit'
-
-#alias gdel="git status | grep 'deleted:' | awk '{print \$3}' | xargs git rm"
-alias qg='arun qgit --all'
-
-# svn
-alias sa='svn add'
-alias scm='svn commit -m'
-alias sd='svn diff'
-alias st='svn diff --diff-cmd meld'
-alias sll='svn log --limit'
-alias spe='svn propedit svn:externals .'
-alias spi='svn propedit svn:ignore .'
-alias ss='svn status'
-alias sup='svn update'
-
-#android
-alias ain='adb install'
-alias aun='adb uninstall'
