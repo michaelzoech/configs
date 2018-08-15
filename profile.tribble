@@ -1,0 +1,2 @@
+# vim: syntax=sh
+export PATH=$PATH:/home/maik/.cargo/bin
