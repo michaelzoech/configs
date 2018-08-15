@@ -11,6 +11,7 @@ install_common_arch_packages() {
 	local packages=(
 		alsa-utils
 		bc
+		bind-tools
 		google-chrome
 		conky
 		dstat
