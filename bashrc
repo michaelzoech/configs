@@ -52,5 +52,10 @@ function _pathelem(){
 
 complete -F _pathelem ...
 
+# Prompt
+reset_style='\[\033[00m\]'
+status_style=$reset_style'\[\033[0;32m\]'
+command_style=$reset_style'\[\033[0;29m\]'
+PS1="$status_style"'\u@\h \w\n'"$command_style"
+
 #alias ls='ls --color=auto'
-#PS1='[\u@\h \W]\$ '
