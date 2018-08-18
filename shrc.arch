@@ -9,3 +9,7 @@ alias trs='trizen -Rs'
 
 # View pdfs with sepia background color
 alias mu='mupdf -C DFD0C9'
+
+# Environment variables
+
+export PATH=$PATH:$HOME/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$CONFIGS_HOME/bin:$CONFIGS_HOME/scripts

@@ -1,3 +1,5 @@
+# vim: syntax=sh
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.zsh_custom
@@ -42,34 +44,4 @@ unsetopt auto_name_dirs
 # Use jj to switch into command mode (Esc replacement)
 bindkey "jj" vi-cmd-mode
 
-# Use https://github.com/ndbroadbent/scm_breeze for better git aliases
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && . "$HOME/.scm_breeze/scm_breeze.sh"
-
-# Use autojump
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
-
-export PATH=$HOME/.rbenv/shims:$PATH
-
-source $HOME/.cargo/env
-
-case `uname -s` in
-    Darwin)
-        RUST_TOOLCHAIN_NAME=stable-x86_64-apple-darwin
-        ;;
-    *)
-        RUST_TOOLCHAIN_NAME=stable-x86_64-unknown-linux-gnu
-        ;;
-esac
-
-RUST_SRC_PATH=$HOME/.multirust/toolchains/$RUST_TOOLCHAIN_NAME/lib/rustlib/src/rust/src
-
-export PATH=$PATH:$HOME/apps:$HOME/.local/bin
-
 source $HOME/.zshrc.platform
-
-# Disable shell flow control (usage of C-s and C-q as shell shortcuts)
-# C-s would enable terminal scroll lock
-# C-q would disable scroll lock
-# This way I can use these shortcuts in e.g. vim
-stty -ixon
-
