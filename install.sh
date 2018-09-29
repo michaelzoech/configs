@@ -16,7 +16,6 @@ install_common_arch_packages() {
 		conky
 		dstat
 		feh
-		firefox
 		gimp
 		git
 		gksu
@@ -34,6 +33,7 @@ install_common_arch_packages() {
 		sysstat
 		tig
 		thunar
+		trayer
 		tree
 		unzip
 		vim
@@ -44,7 +44,7 @@ install_common_arch_packages() {
 		zeal
 		zsh
 	)
-	sudo trizen -S --needed ${packages[@]}
+	trizen -S --needed ${packages[@]}
 }
 
 install_trizen() {
@@ -120,6 +120,9 @@ main() {
 	rm -rf ~/.bootstrap
 	mkdir ~/.bootstrap
 	pushd ~/.bootstrap > /dev/null
+
+	echo "Installing base packages"
+	echo "You should have installed base-devel and put the user into sudoers group"
 
 	install_trizen
 	install_common_arch_packages
