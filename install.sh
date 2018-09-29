@@ -27,6 +27,7 @@ install_common_arch_packages() {
 		obs-studio
 		openssh
 		password-gorilla
+		python
 		ruby
 		rxvt-unicode
 		strace
@@ -96,6 +97,7 @@ soft_link_files() {
 		profile
 		scmbrc
 		scm_breeze
+		shrc
 		vim
 		vimrc
 		XCompose

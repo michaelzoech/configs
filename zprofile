@@ -1,2 +1,2 @@
 # vim: syntax=sh
-source '~/.profile'
+source ~/.profile
