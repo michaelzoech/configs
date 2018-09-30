@@ -65,26 +65,23 @@ install_vim_dein() {
 }
 
 create_soft_link() {
-	local scriptdir=$1
-	local filename=$2
-
-	local sourcepath="${scriptdir}/${filename}"
-	local targetpath="${HOME}/.${filename}"
+	local filename=$(basename $1)
+	local sourcepath=$1
+	local targetpath=$2
 
 	if [ -f "$targetpath" ] || [ -d "$targetpath" ]; then
 		[ "$(readlink "$targetpath")" = "$sourcepath" ] && return 0
-		echo "Error .$filename already exists in home folder but is not a soft link"
-		exit 1
+		echo "Skipping '.$filename'. Already exists in home folder but is not a soft link!"
+	else
+		echo "Installing soft link for $filename"
+		ln -s "$sourcepath" "$targetpath"
 	fi
-
-	echo "Installing soft link for $filename"
-
-	ln -s "$sourcepath" "$targetpath"
 }
 
 soft_link_files() {
 	echo_step "Creating soft links"
 	local scriptdir=$1
+	local platform=$(if [[ "$(uname -o)" =~ Linux ]] ; then echo -n "arch" ; else echo -n "Darwin" ; fi)
 
 	local files=(
 		apvlvrc
@@ -112,7 +109,10 @@ soft_link_files() {
 
 	for file in "${files[@]}"
 	do
-		create_soft_link "$scriptdir" $file
+		local common_file="$scriptdir/$file"
+		local platform_file="$scriptdir/$file.$platform"
+		create_soft_link "$common_file" "$HOME/.$file"
+		[[ -f "$platform_file" ]] && create_soft_link "$platform_file" "$HOME/.$file.platform"
 	done
 }
 
