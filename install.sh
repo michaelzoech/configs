@@ -123,8 +123,11 @@ main() {
 	mkdir ~/.bootstrap
 	pushd ~/.bootstrap > /dev/null
 
-	echo "Installing base packages"
-	echo "You should have installed base-devel and put the user into sudoers group"
+	if [[ ! -f "/etc/sudoers" ]] ; then
+		echo "Cannot find '/etc/sudoers'!"
+		echo "Install base-devel and allow user to become sudo root!"
+		exit 1
+	fi
 
 	install_trizen
 	install_common_arch_packages
