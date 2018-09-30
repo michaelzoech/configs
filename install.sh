@@ -24,7 +24,6 @@ install_common_arch_packages() {
         mupdf
         net-tools
         nvidia
-        obs-studio
         openssh
         password-gorilla
         python
