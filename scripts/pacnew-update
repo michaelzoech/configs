@@ -4,7 +4,7 @@
 pacnew=$(find /etc -type f -name "*.pacnew")
 
 for config in $pacnew; do
-  gksudo meld ${config%\.*} $config &
+  sudo meld ${config%\.*} $config &
   echo "you have to manually delete $config"
   wait
 done
