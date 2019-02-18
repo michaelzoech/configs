@@ -18,6 +18,7 @@ xset r rate 250 30
 # Terminate xorg through ctrl-alt-bksp
 # Disable caps lock
 setxkbmap -option terminate:ctrl_alt_bksp -option ctrl:nocaps
+setxkbmap dvorak
 
 # Map unused caps lock to dead_acute, see XCompose file why this is done
 xmodmap -e "keycode 66 = dead_acute"
@@ -29,5 +30,6 @@ trayer --monitor primary --edge top --align right --SetDockType true --SetPartia
 conky &
 #nm-applet --sm-disable &
 xrandr --output "DP-4" --right-of "DP-2"
-sleep 2 && dropbox-cli start &
+redshift &
+#sleep 2 && dropbox-cli start &
 exec ~/.xmonad/xmonad-x86_64-linux
