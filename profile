@@ -15,6 +15,9 @@ export ANDROID_HOME=$HOME/Android/Sdk
 # Local python installed binaries
 export PATH=$PATH:$HOME/.local/bin
 
+# Go bin folder
+export PATH=$PATH:$HOME/go/bin
+
 export PATH=$PATH:$HOME/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$CONFIGS_HOME/bin:$CONFIGS_HOME/scripts
 
 # Source a machine-specific profile
