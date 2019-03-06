@@ -38,8 +38,6 @@ install_common_arch_packages() {
         unzip
         vim
         vlc
-        xmonad
-        xmonad-contrib
         xterm
         zeal
         zsh
