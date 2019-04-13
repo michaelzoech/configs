@@ -73,6 +73,5 @@
             "after": ["<Esc>"]
         }
     ],
-
-    "workbench.colorTheme": "Base16 Dark Eighties",
+    "workbench.colorTheme": "RailsCasts Plus Theme"
 }
