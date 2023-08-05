@@ -9,8 +9,9 @@ export EDITOR=vim
 # Configs directory
 export CONFIGS_HOME=$HOME/projects/configs
 
-# Android home folder
-export ANDROID_HOME=$HOME/Android/Sdk
+# Android
+export ANDROID_HOME=$HOME/apps/Android/Sdk
+export ANDROID_NDK_HOME=$HOME/apps/Android/Sdk/ndk-bundle
 
 # Local python installed binaries
 export PATH=$PATH:$HOME/.local/bin
