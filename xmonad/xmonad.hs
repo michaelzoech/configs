@@ -49,8 +49,8 @@ myFocusedBorderColor = "#cd8b00"
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
 
-myFont  = "-*-verdana-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
---myFont = "-*-dejavu sans mono-medium-r-*-*-16-*-*-*-*-*-iso10646-*"
+--myFont  = "-*-verdana-medium-r-*-*-14-*-*-*-*-*-iso10646-1"
+myFont = "-*-dejavu sans mono-medium-r-*-*-16-*-*-*-*-*-iso10646-*"
 
 myWorkspaceScreens :: WorkspaceId -> Maybe Int
 myWorkspaceScreens ws
