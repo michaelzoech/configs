@@ -42,6 +42,6 @@ source $ZSH/oh-my-zsh.sh
 unsetopt auto_name_dirs
 
 # Use jj to switch into command mode (Esc replacement)
-bindkey "jj" vi-cmd-mode
+bindkey "uu" vi-cmd-mode
 
 source $HOME/.zshrc.platform

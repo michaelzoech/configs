@@ -1,0 +1,28 @@
+set nu
+set relativenumber
+
+set scrolloff=8
+
+set nohlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set ideajoin
+
+let mapleader = " "
+
+inoremap uu <Esc>
+
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+sethandler <C-C> a:ide
+sethandler <C-D> a:vim
+sethandler <C-N> a:ide
+sethandler <C-P> a:ide
+sethandler <C-S> a:ide
+sethandler <C-U> a:vim
+sethandler <C-V> a:ide
