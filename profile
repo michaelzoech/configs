@@ -3,8 +3,8 @@
 # Rust binaries on path installed via rustup
 source $HOME/.cargo/env
 
-# Vim is the default editor
-export EDITOR=vim
+# Neovim is the default editor
+export EDITOR=nvim
 
 # Configs directory
 export CONFIGS_HOME=$HOME/projects/configs
