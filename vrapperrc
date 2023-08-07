@@ -1,4 +1,0 @@
-set ignorecase
-set smartcase
-inoremap jj <Esc>
-set scrolloff=3
