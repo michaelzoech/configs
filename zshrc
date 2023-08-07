@@ -41,7 +41,7 @@ source $ZSH/oh-my-zsh.sh
 # Always show path in prompt
 unsetopt auto_name_dirs
 
-# Use jj to switch into command mode (Esc replacement)
+# Use uu to switch into command mode (Esc replacement)
 bindkey "uu" vi-cmd-mode
 
 source $HOME/.zshrc.platform

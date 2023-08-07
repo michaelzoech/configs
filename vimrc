@@ -148,8 +148,8 @@ nnoremap <C-N> <C-W>W
 
 :nmap <Leader>e :NERDTreeToggle<CR>
 
-" Typing 'jj' fast enough switches from insert to command mode
-inoremap jj <Esc>
+" Typing 'uu' fast enough switches from insert to command mode
+inoremap uu <Esc>
 
 " Fugitive configuration
 " Always split vertically
