@@ -16,6 +16,8 @@ inoremap uu <Esc>
 
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
+nnoremap { {zz
+nnoremap } }zz
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
