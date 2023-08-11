@@ -22,7 +22,8 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
 
-  use('mhartington/oceanic-next')
+  --use('mhartington/oceanic-next')
+  use('navarasu/onedark.nvim')
 
   if packer_bootstrap then
     require('packer').sync()
