@@ -31,5 +31,5 @@ conky &
 #nm-applet --sm-disable &
 xrandr --output "DP-4" --right-of "DP-2"
 redshift &
-#sleep 2 && dropbox-cli start &
+(sleep 2 && dropbox-cli start) &
 exec ~/.xmonad/xmonad-x86_64-linux
