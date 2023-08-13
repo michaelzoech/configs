@@ -12,7 +12,7 @@ function cd {
 
 # Misc aliases
 alias a='arun'
-alias f="find . -iname"
+alias f="fzf"
 alias u='ls'
 alias i='ls -lh'
 alias m="make"

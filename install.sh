@@ -16,6 +16,7 @@ install_common_arch_packages() {
         conky
         dstat
         feh
+        fzf
         gimp
         git
         gksu
