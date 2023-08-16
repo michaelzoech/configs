@@ -21,5 +21,8 @@ export PATH=$PATH:$HOME/go/bin
 
 export PATH=$PATH:$HOME/apps/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$CONFIGS_HOME/bin:$CONFIGS_HOME/scripts
 
+# Elixir
+export PATH=$PATH:$HOME/.mix/escripts
+
 # Source a machine-specific profile
 [[ -f ~/.profile.platform ]] && . ~/.profile.platform
