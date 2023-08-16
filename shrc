@@ -51,4 +51,10 @@ RUST_SRC_PATH=$HOME/.multirust/toolchains/$RUST_TOOLCHAIN_NAME/lib/rustlib/src/r
 # This way I can use these shortcuts in e.g. vim
 stty -ixon
 
+n() {
+  pushd ~/Dropbox/Notes
+  nvim .
+  popd
+}
+
 [[ -f ~/.shrc.platform ]] && . ~/.shrc.platform
