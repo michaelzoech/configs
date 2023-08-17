@@ -22,3 +22,6 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
 vim.keymap.set("i", "uu", "<Esc>")
+
+vim.keymap.set("n", "<leader>h", ":bprevious<CR>")
+vim.keymap.set("n", "<leader>l", ":bnext<CR>")
