@@ -20,8 +20,6 @@ call dein#begin('~/.dein')
 call dein#add('Shougo/dein.vim')
 
 call dein#add('othree/xml.vim')
-call dein#add('eagletmt/ghcmod-vim')
-call dein#add('eagletmt/neco-ghc')
 call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('plasticboy/vim-markdown')
 call dein#add('scrooloose/nerdtree')
@@ -176,12 +174,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-
-map <silent> te :GhcModCheck<CR>
-map <silent> ts :GhcModSplitFunCase<CR>
-map <silent> tt :GhcModType<CR>
-map <silent> tc :GhcModTypeClear<CR>
-map <silent> ti :GhcModTypeInsert<CR>
 
 source ~/.vimrc.platform
 
