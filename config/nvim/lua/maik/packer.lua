@@ -25,6 +25,8 @@ return require('packer').startup(function(use)
   --use('mhartington/oceanic-next')
   use('navarasu/onedark.nvim')
 
+  use ('numToStr/Comment.nvim')
+
   if packer_bootstrap then
     require('packer').sync()
   end
