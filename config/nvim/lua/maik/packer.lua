@@ -59,6 +59,13 @@ return require('packer').startup(function(use)
   -- }
 
   use {
+    "folke/trouble.nvim",
+    requires = {
+      {"nvim-tree/nvim-web-devicons"},
+    },
+  }
+
+  use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
     requires = {
