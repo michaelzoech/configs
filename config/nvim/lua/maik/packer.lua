@@ -22,8 +22,12 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
 
+
   --use('mhartington/oceanic-next')
   use('navarasu/onedark.nvim')
+  use { 'santos-gabriel-dario/darcula-solid.nvim',
+    requires = 'rktjmp/lush.nvim'
+  }
 
   use ('numToStr/Comment.nvim')
 
