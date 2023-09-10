@@ -22,4 +22,5 @@ vim.keymap.set('n', '<leader>ps', function()
 end)
 vim.keymap.set('n', '<leader>pl', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>pr', builtin.resume, {})
+vim.keymap.set('n', '<leader>pb', builtin.buffers, {})
 

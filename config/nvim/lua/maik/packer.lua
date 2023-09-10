@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
     requires = 'rktjmp/lush.nvim'
   }
 
+  use('rgroli/other.nvim')
+
   use ('numToStr/Comment.nvim')
 
   use {
