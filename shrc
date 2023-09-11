@@ -52,9 +52,9 @@ RUST_SRC_PATH=$HOME/.multirust/toolchains/$RUST_TOOLCHAIN_NAME/lib/rustlib/src/r
 stty -ixon
 
 n() {
-  pushd ~/Dropbox/Notes
-  nvim .
-  popd
+  pushd ~/Dropbox/Notes > /dev/null
+  nvim Inbox.md
+  popd > /dev/null
 }
 
 [[ -f ~/.shrc.platform ]] && . ~/.shrc.platform
