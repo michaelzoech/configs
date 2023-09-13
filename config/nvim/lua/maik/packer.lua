@@ -33,6 +33,8 @@ return require('packer').startup(function(use)
 
   use('numToStr/Comment.nvim')
 
+  use('sbdchd/neoformat')
+
   use {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
