@@ -1,10 +1,12 @@
 local lsp = require('lsp-zero').preset({})
 
 lsp.ensure_installed({
+  -- Needs shellcheck installed
   'bashls',
   'elixirls',
   'gopls',
   'lua_ls',
+  -- Needs vale installed
   'vale_ls',
 })
 
