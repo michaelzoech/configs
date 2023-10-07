@@ -1,6 +1,7 @@
 local lsp = require('lsp-zero').preset({})
 
 lsp.ensure_installed({
+  'bashls',
   'elixirls',
   'gopls',
   'lua_ls',

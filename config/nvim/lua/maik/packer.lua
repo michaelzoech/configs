@@ -81,6 +81,7 @@ return require('packer').startup(function(use)
       { 'neovim/nvim-lspconfig' },             -- Required
       { 'williamboman/mason.nvim' },           -- Optional
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+      { 'bash-lsp/bash-language-server' },
 
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },     -- Required
