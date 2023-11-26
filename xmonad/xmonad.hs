@@ -19,6 +19,7 @@ import XMonad.Hooks.SetWMName
 
 import XMonad.Layout.Column
 import XMonad.Layout.ComboP
+import XMonad.Layout.MultiColumns
 import XMonad.Layout.NoBorders
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.TwoPane
@@ -116,9 +117,11 @@ myKeys conf@XConfig {XMonad.modMask = modMask} = M.fromList $
 
     -- Move focus to the next window
     , ((modm,               xK_j     ), windows W.focusDown)
+    , ((mod1Mask,               xK_j     ), windows W.focusDown)
 
     -- Move focus to the previous window
     , ((modm,               xK_k     ), windows W.focusUp  )
+    , ((mod1Mask,               xK_k     ), windows W.focusUp  )
 
     -- Move focus to the master window
     , ((modm,               xK_m     ), windows W.focusMaster  )
@@ -214,8 +217,9 @@ myLayout = avoidStruts $ smartBorders $ browserLayout commonLayouts
     -- Percent of screen to increment by when resizing panes
     delta = 3/100
     tiled = Tall 1 delta (1/2)
+    columns = multiCol [1] 1 delta 0.33
     -- Layouts for misc workspaces
-    commonLayouts = tiled ||| Mirror tiled ||| noBorders Full
+    commonLayouts = tiled ||| Mirror tiled ||| columns |||  noBorders Full
     -- Layout for Chromium with Tabs Outliner extension on workspace 1
     browserLayout = onWorkspace "1" ((combineTwoP (TwoPane delta 0.16) (noBorders Full) tiled (Title "Sidewise")) ||| noBorders Full)
 

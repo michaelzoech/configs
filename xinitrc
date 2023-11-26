@@ -21,7 +21,7 @@ setxkbmap -option terminate:ctrl_alt_bksp -option ctrl:nocaps
 setxkbmap dvorak
 
 # Map unused caps lock to dead_acute, see XCompose file why this is done
-xmodmap -e "keycode 66 = dead_acute"
+#xmodmap -e "keycode 66 = dead_acute"
 xmodmap ~/.Xmodmap
 
 xsetroot -cursor_name left_ptr

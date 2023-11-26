@@ -13,7 +13,7 @@ lsp.ensure_installed({
 lsp.on_attach(function(_client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
-  lsp.default_keymaps({buffer = bufnr})
+  lsp.default_keymaps({ buffer = bufnr })
 end)
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
@@ -39,4 +39,14 @@ cmp.setup({
     ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
     ['<C-Space>'] = cmp.mapping.complete(),
   }
+})
+
+local format_group = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = { "*.lua", "*.ex", "*.exs" },
+  callback = function()
+    vim.lsp.buf.format()
+  end,
+  group = format_group
 })
