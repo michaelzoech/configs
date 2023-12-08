@@ -1,7 +1,0 @@
-update-java-alternatives
-  ( -l
-  | -s <vm>
-  | -h
-  | -t );
-
-vm = ! ls /usr/lib/jvm ;
