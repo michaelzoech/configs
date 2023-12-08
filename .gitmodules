@@ -4,6 +4,3 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "autojump"]
-	path = autojump
-	url = https://github.com/joelthelion/autojump.git
