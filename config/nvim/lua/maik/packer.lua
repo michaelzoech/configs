@@ -35,28 +35,28 @@ return require('packer').startup(function(use)
 
   use('sbdchd/neoformat')
 
-  use {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        suggestion = {
-          enabled = true,
-          auto_trigger = true,
-          keymap = {
-            accept = "<M-g>",
-            accept_word = "<M-c>",
-            accept_line = "<M-r>",
-            next = "<M-]>",
-            prev = "<M-[>",
-            dismiss = "<C-]>",
-          },
-        },
-        panel = { enabled = false },
-      })
-    end,
-  }
+  -- use {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup({
+  --       suggestion = {
+  --         enabled = true,
+  --         auto_trigger = true,
+  --         keymap = {
+  --           accept = "<M-g>",
+  --           accept_word = "<M-c>",
+  --           accept_line = "<M-r>",
+  --           next = "<M-]>",
+  --           prev = "<M-[>",
+  --           dismiss = "<C-]>",
+  --         },
+  --       },
+  --       panel = { enabled = false },
+  --     })
+  --   end,
+  -- }
 
   -- use {
   --   "zbirenbaum/copilot-cmp",
