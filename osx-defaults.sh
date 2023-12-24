@@ -30,6 +30,8 @@ defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -int 0
 # Make hidden apps transparent in dock
 defaults write com.apple.dock showhidden -bool true
+# Show Cmd+Tab switcher on all displays
+defaults write com.apple.dock appswitcher-all-displays -bool true
 
 killall Dock
 
