@@ -6,6 +6,7 @@ lsp.ensure_installed({
   'elixirls',
   'gopls',
   'lua_ls',
+  'pylsp',
   -- Needs vale installed
   'vale_ls',
 })
