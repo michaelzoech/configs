@@ -1,7 +1,0 @@
-#!/bin/bash
-for file in $@
-do
-	filename=${file%.*zip}
-	mkdir $filename
-	unzip $file -d $filename
-done
