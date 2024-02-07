@@ -1,4 +1,0 @@
-# vim: syntax=sh
-
-# opam configuration
-[[ ! -r /home/maik/.opam/opam-init/init.zsh ]] || source /home/maik/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

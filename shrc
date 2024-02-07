@@ -1,49 +1,40 @@
-# vim: syntax=sh
+#vim: syntax=sh
 
-# Recursive mkdir and cd if successful
-function mkcd {
-    mkdir -p "$@" && builtin cd "$@"
-}
+export CLICOLOR=1
 
 # Do ls after successful cd
 function cd {
     builtin cd "$@" && ls
 }
 
-# Misc aliases
-alias a='arun'
-alias f="fzf"
+# Navigate to Git root directory from any sub directory
+function cdr() {
+  local curdir="$(pwd)"
+  while [ "$curdir" != "/" ]; do
+    if [ -d "$curdir/.git" ]; then
+      cd "$curdir"
+      return 0
+    fi
+    curdir=$(dirname "$curdir")
+  done
+  echo "ERROR: Git root not found!"
+  return 1
+}
+
+#alias f="fzf"
+alias n='nvim'
 alias u='ls'
 alias i='ls -lh'
-alias m="make"
-alias m2="make -j2"
-alias m4="make -j4"
-alias m8="make -j8"
-alias mk="mkdir -p"
-alias qg='arun qgit --all'
+alias ii='ls -lah'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
 alias ti='tig --all'
-alias gg='arun gitg --all'
-
-# Android
-alias ain='adb install'
-alias aun='adb uninstall'
-
-# Use https://github.com/ndbroadbent/scm_breeze for better git aliases
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && . "$HOME/.scm_breeze/scm_breeze.sh"
-
-# Use autojump
-[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
-
-case `uname -s` in
-    Darwin)
-        RUST_TOOLCHAIN_NAME=stable-x86_64-apple-darwin
-        ;;
-    *)
-        RUST_TOOLCHAIN_NAME=stable-x86_64-unknown-linux-gnu
-        ;;
-esac
-
-RUST_SRC_PATH=$HOME/.multirust/toolchains/$RUST_TOOLCHAIN_NAME/lib/rustlib/src/rust/src
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
 # Disable shell flow control (usage of C-s and C-q as shell shortcuts)
 # C-s would enable terminal scroll lock
@@ -51,10 +42,19 @@ RUST_SRC_PATH=$HOME/.multirust/toolchains/$RUST_TOOLCHAIN_NAME/lib/rustlib/src/r
 # This way I can use these shortcuts in e.g. vim
 stty -ixon
 
-n() {
-  pushd ~/Dropbox/Notes > /dev/null
+# Use bat as man pager
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+function no() {
+  pushd "$HOME/Dropbox/Notes" > /dev/null
   nvim Inbox.md
   popd > /dev/null
 }
 
-[[ -f ~/.shrc.platform ]] && . ~/.shrc.platform
+function co() {
+  pushd "$CONFIGS_HOME" > /dev/null
+  nvim .
+  popd > /dev/null
+}
+
+#[[ -f ~/.shrc.platform ]] && . ~/.shrc.platform

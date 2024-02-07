@@ -14,6 +14,8 @@ defaults write -g NSAutomaticCapitalizationEnabled -bool false
 defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false
 # No automatic spell correction
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+# TODO
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 
 # Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true

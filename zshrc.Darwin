@@ -1,9 +1,0 @@
-# Environment variables
-
-export CONFIGS_HOME=$HOME/projects/configs
-export ANDROID_HOME=$HOME/Library/Android/sdk
-#export ANDROID_NDK=/opt/android-ndk
-
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$CONFIGS_HOME/bin:$CONFIGS_HOME/scripts:$HOME/Library/Haskell/bin:/usr/local/bin
-
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
