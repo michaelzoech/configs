@@ -1,4 +1,7 @@
 #!/usr/bin/env zsh
+#
+# https://macos-defaults.com/
+#
 
 # Show ~/Library folder
 chflags nohidden ~/Library
@@ -17,8 +20,23 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 # TODO
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 
+# Finder
+
 # Show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write -g AppleShowAllExtensions -bool true
+# Show path bar in the bottom
+defaults write com.apple.finder ShowPathbar -bool true
+# Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+# Hide all icons on desktop
+defaults write com.apple.finder CreateDesktop -bool false
+
+killall Finder
+
+# Space for Menubar icons
+
+#defaults write -g NSStatusItemSelectionPadding -int 6
+#defaults write -g NSStatusItemSpacing -int 8
 
 ## Dock
 
