@@ -22,7 +22,6 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('nvim-treesitter/playground')
 
-
   --use('mhartington/oceanic-next')
   use('navarasu/onedark.nvim')
   use { 'santos-gabriel-dario/darcula-solid.nvim',
@@ -35,59 +34,11 @@ return require('packer').startup(function(use)
 
   use('sbdchd/neoformat')
 
-  -- use {
-  --   "zbirenbaum/copilot.lua",
-  --   cmd = "Copilot",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("copilot").setup({
-  --       suggestion = {
-  --         enabled = true,
-  --         auto_trigger = true,
-  --         keymap = {
-  --           accept = "<M-g>",
-  --           accept_word = "<M-c>",
-  --           accept_line = "<M-r>",
-  --           next = "<M-]>",
-  --           prev = "<M-[>",
-  --           dismiss = "<C-]>",
-  --         },
-  --       },
-  --       panel = { enabled = false },
-  --     })
-  --   end,
-  -- }
-
-  -- use {
-  --   "zbirenbaum/copilot-cmp",
-  --   after = { "copilot.lua" },
-  --   config = function ()
-  --     require("copilot_cmp").setup()
-  --   end
-  -- }
-
   use {
     "folke/trouble.nvim",
     requires = {
       { "nvim-tree/nvim-web-devicons" },
     },
-  }
-
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    requires = {
-      -- LSP Support
-      { 'neovim/nvim-lspconfig' },             -- Required
-      { 'williamboman/mason.nvim' },           -- Optional
-      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-      { 'bash-lsp/bash-language-server' },
-
-      -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },     -- Required
-      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },     -- Required
-    }
   }
 
   if packer_bootstrap then
